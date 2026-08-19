@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>H^3 Research Terminal</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <button class="brand-button" data-view="watchlist" aria-label="H^3">
+        <span class="brand-name">H^3</span>
+      </button>
+      <nav class="top-nav" aria-label="top views">
+        <button class="top-nav-item active" data-view="watchlist" data-i18n="navWatchlist">Watchlist</button>
+        <button class="top-nav-item" data-view="research" data-i18n="navResearch">Research</button>
+        <button class="top-nav-item" data-view="macro" data-i18n="navMacro">Macro</button>
+        <button class="top-nav-item" data-view="log" data-i18n="navLog">Log</button>
+        <button class="top-nav-item" data-view="about" data-i18n="navAbout">About</button>
+      </nav>
+      <div class="header-actions">
+        <div class="command-search" aria-label="search">
+          <span>&gt;</span>
+          <input id="searchInput" type="search" placeholder="SEARCH_" autocomplete="off" data-i18n-placeholder="searchPlaceholder" />
+          <i aria-hidden="true"></i>
+          <div class="search-results" id="searchResults"></div>
+        </div>
+        <label class="language-switch">
+          <span data-i18n="languageLabel">LANG</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="en-US">English (US)</option>
+            <option value="zh-CN">&#31616;&#20307;&#20013;&#25991;</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <section class="ticker-tape" aria-label="market ticker">
+      <div class="ticker-track" id="tickerStrip"></div>
+    </section>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="research navigation">
+        <div class="profile-box">
+          <div class="avatar">H3</div>
+          <div>
+            <strong>H3_RESEARCH</strong>
+            <span data-i18n="frameworkOnline">FRAMEWORK_ONLINE</span>
+          </div>
+        </div>
+
+        <button class="primary-action" data-view="research" data-i18n="openResearchMatrix">OPEN_RESEARCH_MATRIX</button>
+
+        <nav class="side-nav">
+          <button class="side-nav-item active" data-view="watchlist" data-i18n="navWatchlist">Watchlist</button>
+          <button class="side-nav-item" data-view="research" data-i18n="navResearch">Research</button>
+          <button class="side-nav-item" data-view="macro" data-i18n="navMacro">Macro</button>
+          <button class="side-nav-item" data-view="log" data-i18n="navLog">Log</button>
+          <button class="side-nav-item" data-view="about" data-i18n="navAbout">About</button>
+        </nav>
+
+        <div class="rail-note">
+          <span data-i18n="updatedLabel">Data updated at</span>
+          <strong id="updatedAt" data-i18n="loading">Loading</strong>
+          <span id="schedule">&#27599;&#26085;&#21271;&#20140;&#26102;&#38388; 15:30</span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="view active" id="view-watchlist">
+          <div class="page-head">
+            <div>
+              <h1 data-i18n="activeTitle">H^3 Active Watchlist</h1>
+              <p class="daily-core" id="dailyCore" data-i18n="activeBody">Start from market state, industry themes, evidence level, and validation queue. Keep only research targets that can be verified.</p>
+            </div>
+            <div class="status-chip">
+              <span></span>
+              <b data-i18n="dataFeedReady">DATA_FEED_READY</b>
+            </div>
+          </div>
+
+          <article class="glass-panel verdict-panel">
+            <div class="panel-title">
+              <h2 data-i18n="verdictTitle">H^3 Daily Verdict</h2>
+              <small data-i18n="verdictSub">market soil / theme / evidence / action</small>
+            </div>
+            <div class="verdict-grid" id="dailyVerdict"></div>
+          </article>
+
+          <div class="grid dashboard-grid">
+            <article class="glass-panel wide">
+              <div class="panel-title">
+                <h2 data-i18n="heatmapTitle">Theme Heatmap</h2>
+                <small data-i18n="heatmapSub">A-share sectors + US industry ETFs</small>
+              </div>
+              <div class="heatmap" id="sectorHeatmap"></div>
+            </article>
+            <article class="glass-panel">
+              <div class="panel-title">
+                <h2 data-i18n="validationTitle">Validation Queue</h2>
+                <small data-i18n="validationSub">heat to next checks</small>
+              </div>
+              <div class="validation-stack">
+                <div class="validation-list" id="validationQueue"></div>
+                <div class="quality-console">
+                  <div class="quality-head">
+                    <strong data-i18n="qualityTitle">Data Quality</strong>
+                    <span data-i18n="qualityStatus">PASS</span>
+                  </div>
+                  <div class="quality-grid" id="dataQuality"></div>
+                  <p data-i18n="qualityNote">Deployment is blocked if validation fails.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="company-grid" id="companyGrid"></div>
+        </section>
+
+        <section class="view" id="view-research">
+          <div class="page-head">
+            <div>
+              <h1 data-i18n="researchTitle">In-Depth Research</h1>
+              <p data-i18n="researchBody">Serenity Alpha, TAM-Adj-PEG, GF-DMA, Bayesian Valuation. Turn market heat into a traceable research framework.</p>
+            </div>
+            <div class="status-chip secondary">
+              <span></span>
+              <b data-i18n="evidenceFirst">EVIDENCE_FIRST</b>
+            </div>
+          </div>
+
+          <div class="framework-grid" id="frameworkGrid"></div>
+
+          <article class="glass-panel company-detail-panel" id="companyDetailPanel" hidden>
+            <div class="panel-title">
+              <div>
+                <h2 id="companyDetailTitle">Research Object</h2>
+                <small id="companyDetailSub">status / decision / framework</small>
+              </div>
+              <button class="detail-close" id="companyDetailClose" type="button" aria-label="Close detail">x</button>
+            </div>
+            <div class="company-detail" id="companyDetail"></div>
+          </article>
+
+          <article class="glass-panel">
+            <div class="panel-title">
+              <h2 data-i18n="frameworkFlowTitle">Hypothesis Flow</h2>
+              <small data-i18n="frameworkFlowSub">news to investable hypothesis</small>
+            </div>
+            <div class="flow" id="hypothesisFlow"></div>
+          </article>
+
+          <div class="research-table-wrap glass-panel">
+            <table class="research-table">
+              <thead>
+                <tr>
+                  <th data-i18n="thCompany">Company</th>
+                  <th data-i18n="thStatus">Status</th>
+                  <th data-i18n="thChain">Chain</th>
+                  <th data-i18n="thEvidence">Evidence level</th>
+                  <th data-i18n="thLatest">Latest validation</th>
+                  <th>GF-DMA</th>
+                  <th data-i18n="thPricingRisk">Pricing risk</th>
+                  <th data-i18n="thNext">Next step</th>
+                </tr>
+              </thead>
+              <tbody id="researchRows"></tbody>
+            </table>
+          </div>
+
+          <article class="glass-panel research-core-panel">
+            <div class="panel-title">
+              <h2 data-i18n="coreTitle">Research Core</h2>
+              <small data-i18n="coreSub">thesis / evidence / elasticity / next validation</small>
+            </div>
+            <div class="research-core-grid" id="researchCore"></div>
+          </article>
+        </section>
+
+        <section class="view" id="view-macro">
+          <div class="page-head">
+            <div>
+              <h1 data-i18n="macroTitle">Macro Fundamentals</h1>
+              <p data-i18n="macroBody">Read the market soil first, then judge industry themes and financial transmission.</p>
+            </div>
+            <div class="status-chip">
+              <span></span>
+              <b data-i18n="officialFirst">OFFICIAL_SOURCE_FIRST</b>
+            </div>
+          </div>
+
+          <div class="index-grid" id="indexMatrix"></div>
+
+          <div class="grid dashboard-grid">
+            <article class="glass-panel">
+              <div class="panel-title">
+                <h2 data-i18n="macroConsole">Macro Console</h2>
+                <small data-i18n="macroSub">official data first</small>
+              </div>
+              <div class="macro-grid" id="macroGrid"></div>
+            </article>
+            <article class="glass-panel">
+              <div class="panel-title">
+                <h2 data-i18n="watchTitle">Watch Items</h2>
+                <small data-i18n="watchSub">next validation round</small>
+              </div>
+              <div class="watch-items" id="watchItems"></div>
+              <div class="watch-radar" id="watchRadar"></div>
+            </article>
+          </div>
+
+          <article class="glass-panel">
+            <div class="panel-title">
+              <h2 data-i18n="signalTitle">Macro Signal Board</h2>
+              <small data-i18n="signalSub">growth / inflation / liquidity / risk</small>
+            </div>
+            <div class="macro-signal-grid" id="macroSignals"></div>
+          </article>
+        </section>
+
+        <section class="view" id="view-log">
+          <div class="page-head">
+            <div>
+              <h1 data-i18n="logTitle">Research Log</h1>
+              <p data-i18n="logBody">Every upgrade, downgrade, open validation, and evidence change should become a traceable research event.</p>
+            </div>
+            <div class="status-chip secondary">
+              <span></span>
+              <b data-i18n="logStatus">DECISION_HISTORY</b>
+            </div>
+          </div>
+
+          <article class="glass-panel">
+            <div class="panel-title">
+              <h2 data-i18n="logStreamTitle">Decision Stream</h2>
+              <small data-i18n="logStreamSub">company events + validation events</small>
+            </div>
+            <div class="research-log" id="researchLog"></div>
+          </article>
+        </section>
+
+        <section class="view" id="view-about">
+          <div class="page-head">
+            <div>
+              <h1 data-i18n="aboutTitle">About H^3</h1>
+              <p data-i18n="aboutBody">A public research operating system for turning market moves into verifiable investment hypotheses.</p>
+            </div>
+            <div class="status-chip">
+              <span></span>
+              <b data-i18n="aboutStatus">METHOD_FIRST</b>
+            </div>
+          </div>
+
+          <div class="about-grid" id="aboutGrid"></div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="status-footer">
+      <span><i></i> <b data-i18n="footerStable">H3_RESEARCH_SYSTEM_STABLE</b></span>
+      <span data-i18n="footerNoRec">NO_DIRECT_STOCK_RECOMMENDATION</span>
+      <span data-i18n="footerPublic">PUBLIC_DEPLOYMENT_READY</span>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

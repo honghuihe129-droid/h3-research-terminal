@@ -1,0 +1,16 @@
+{
+  "name": "h3-research-terminal",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build_public_dist.js",
+    "check": "node --check site/app.js && node scripts/validate_market_data.js site/data/market-data.json",
+    "deploy:cloudflare": "powershell -ExecutionPolicy Bypass -File scripts/deploy_cloudflare_pages.ps1",
+    "update:cloudflare": "powershell -ExecutionPolicy Bypass -File scripts/update_and_deploy_cloudflare.ps1",
+    "serve": "node scripts/serve_site.js 4173",
+    "update:dma": "node scripts/update_dma_history.js"
+  },
+  "devDependencies": {
+    "netlify-cli": "^26.2.0"
+  }
+}

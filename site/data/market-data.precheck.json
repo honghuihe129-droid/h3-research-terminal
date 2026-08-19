@@ -1,0 +1,1055 @@
+{
+    "generatedAt":  "2026-08-18T15:30:54+08:00",
+    "nextScheduledUpdate":  "Daily 15:30 Beijing time",
+    "sourcePolicy":  "公司公告/官方文件 \u003e 交易所披露 \u003e 官方产业数据 \u003e 权威媒体 \u003e 研报 \u003e 互动平台 \u003e 市场传闻",
+    "macro":  [
+                  {
+                      "region":  "China",
+                      "metric":  "GDP growth",
+                      "value":  "+4.7%",
+                      "delta":  "2026 H1 YoY / Q2 +4.3%",
+                      "read":  "Growth remains positive, but Q2 slowed",
+                      "source":  "NBS",
+                      "url":  "https://www.stats.gov.cn/english/PressRelease/202607/t20260717_1964160.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "Manufacturing PMI",
+                      "value":  "50.3",
+                      "delta":  "+0.3pct",
+                      "read":  "Back in expansion territory",
+                      "source":  "NBS",
+                      "url":  "https://www.stats.gov.cn/sj/zxfb/202606/t20260630_1964032.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "Industrial output",
+                      "value":  "+5.3%",
+                      "delta":  "June 2026 YoY",
+                      "read":  "Production remains firm",
+                      "source":  "NBS",
+                      "url":  "https://www.stats.gov.cn/sj/zxfb/202607/t20260715_1964123.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "Retail sales",
+                      "value":  "+1.0%",
+                      "delta":  "June 2026 YoY",
+                      "read":  "Consumption still soft",
+                      "source":  "NBS",
+                      "url":  "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964127.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "CPI",
+                      "value":  "+1.0%",
+                      "delta":  "June 2026 YoY",
+                      "read":  "Mild inflation",
+                      "source":  "NBS",
+                      "url":  "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260709_1964084.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "PPI",
+                      "value":  "+4.1%",
+                      "delta":  "June 2026 YoY",
+                      "read":  "Factory-gate prices remain firm",
+                      "source":  "NBS",
+                      "url":  "https://www.stats.gov.cn/sj/zxfb/202607/t20260709_1964083.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "Fixed asset investment",
+                      "value":  "-5.7%",
+                      "delta":  "Jan-Jun 2026 YoY",
+                      "read":  "Investment remains a drag",
+                      "source":  "NBS",
+                      "url":  "https://www.stats.gov.cn/english/PressRelease/202607/t20260717_1964158.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "Goods exports",
+                      "value":  "+13.4%",
+                      "delta":  "2026 H1 YoY",
+                      "read":  "External demand strong",
+                      "source":  "GACC / Xinhua",
+                      "url":  "https://www.xinhuanet.com/20260714/5aaa930c87bd42e693acbfe3fbfbcb2a/c.html"
+                  },
+                  {
+                      "region":  "China",
+                      "metric":  "FX reserves",
+                      "value":  "$3.4163T",
+                      "delta":  "June 2026, -0.75% MoM",
+                      "read":  "Reserve buffer still high",
+                      "source":  "SAFE",
+                      "url":  "https://www.safe.gov.cn/qingdao/2026/0714/2956.html"
+                  },
+                  {
+                      "region":  "United States",
+                      "metric":  "Fed funds target range",
+                      "value":  "3.50%-3.75%",
+                      "delta":  "Latest FOMC range",
+                      "read":  "Policy rate still caps valuation expansion",
+                      "source":  "Federal Reserve",
+                      "url":  "https://fred.stlouisfed.org/series/DFEDTARU"
+                  },
+                  {
+                      "region":  "United States",
+                      "metric":  "CPI YoY",
+                      "value":  "+2.2%",
+                      "delta":  "FRED latest",
+                      "read":  "Inflation is the rate-cut gatekeeper",
+                      "source":  "FRED / BLS",
+                      "url":  "https://fred.stlouisfed.org/series/CPIAUCSL"
+                  },
+                  {
+                      "region":  "United States",
+                      "metric":  "Unemployment rate",
+                      "value":  "4.2%",
+                      "delta":  "FRED latest",
+                      "read":  "Labor market still orderly",
+                      "source":  "FRED / BLS",
+                      "url":  "https://fred.stlouisfed.org/series/UNRATE"
+                  },
+                  {
+                      "region":  "United States",
+                      "metric":  "Real GDP",
+                      "value":  "+2.1%",
+                      "delta":  "QoQ SAAR",
+                      "read":  "Growth remains positive",
+                      "source":  "FRED / BEA",
+                      "url":  "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
+                  },
+                  {
+                      "region":  "United States",
+                      "metric":  "10Y Treasury yield",
+                      "value":  "4.57%",
+                      "delta":  "FRED latest",
+                      "read":  "Discount-rate pressure remains high",
+                      "source":  "FRED / Treasury",
+                      "url":  "https://fred.stlouisfed.org/series/DGS10"
+                  },
+                  {
+                      "region":  "United States",
+                      "metric":  "Retail sales MoM",
+                      "value":  "+0.2%",
+                      "delta":  "FRED latest",
+                      "read":  "Demand still expanding",
+                      "source":  "FRED / Census",
+                      "url":  "https://fred.stlouisfed.org/series/RSAFS"
+                  },
+                  {
+                      "region":  "United States",
+                      "metric":  "Nonfarm payrolls",
+                      "value":  "+57k",
+                      "delta":  "Monthly change",
+                      "read":  "Hiring positive but slower",
+                      "source":  "FRED / BLS",
+                      "url":  "https://fred.stlouisfed.org/series/PAYEMS"
+                  }
+              ],
+    "indices":  [
+                    {
+                        "market":  "A-share",
+                        "name":  "SSE Composite",
+                        "symbol":  "sh000001",
+                        "price":  3990.3,
+                        "changePct":  0.19,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Latest quote updated, DMA requires historical recalculation"
+                    },
+                    {
+                        "market":  "A-share",
+                        "name":  "SZSE Component",
+                        "symbol":  "sz399001",
+                        "price":  14622.5,
+                        "changePct":  -0.56,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Latest quote updated, DMA requires historical recalculation"
+                    },
+                    {
+                        "market":  "A-share",
+                        "name":  "ChiNext",
+                        "symbol":  "sz399006",
+                        "price":  3705.56,
+                        "changePct":  -0.92,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Latest quote updated, DMA requires historical recalculation"
+                    },
+                    {
+                        "market":  "A-share",
+                        "name":  "CSI 300",
+                        "symbol":  "sh000300",
+                        "price":  4725.81,
+                        "changePct":  -0.32,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Latest quote updated, DMA requires historical recalculation"
+                    },
+                    {
+                        "market":  "A-share",
+                        "name":  "CSI 500",
+                        "symbol":  "sh000905",
+                        "price":  8177.18,
+                        "changePct":  -0.09,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Latest quote updated, DMA requires historical recalculation"
+                    },
+                    {
+                        "market":  "A-share",
+                        "name":  "CSI 1000",
+                        "symbol":  "sh000852",
+                        "price":  7945.96,
+                        "changePct":  -0.28,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Latest quote updated, DMA requires historical recalculation"
+                    },
+                    {
+                        "market":  "US",
+                        "name":  "SPY",
+                        "symbol":  "SPY",
+                        "price":  772.67,
+                        "changePct":  -0.47,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Nasdaq latest quote"
+                    },
+                    {
+                        "market":  "US",
+                        "name":  "QQQ",
+                        "symbol":  "QQQ",
+                        "price":  729.87,
+                        "changePct":  -0.16,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Nasdaq latest quote"
+                    },
+                    {
+                        "market":  "US",
+                        "name":  "SOXX",
+                        "symbol":  "SOXX",
+                        "price":  559.12,
+                        "changePct":  1.58,
+                        "dma":  {
+                                    "ma50":  null,
+                                    "ma100":  null,
+                                    "ma200":  null,
+                                    "ma20":  null
+                                },
+                        "read":  "Nasdaq latest quote"
+                    }
+                ],
+    "sectors":  [
+                    {
+                        "name":  "转基因",
+                        "changePct":  8.27,
+                        "inflowCnyBn":  9.12,
+                        "leader":  "万向德农",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "粮食概念",
+                        "changePct":  7.45,
+                        "inflowCnyBn":  16.25,
+                        "leader":  "金健米业",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "农业种植",
+                        "changePct":  4.81,
+                        "inflowCnyBn":  26.32,
+                        "leader":  "红四方",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "历史新高",
+                        "changePct":  3.97,
+                        "inflowCnyBn":  -12.25,
+                        "leader":  "中石科技",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "水产概念",
+                        "changePct":  3.69,
+                        "inflowCnyBn":  6,
+                        "leader":  "蔚蓝生物",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "华为欧拉",
+                        "changePct":  3.17,
+                        "inflowCnyBn":  8.12,
+                        "leader":  "诚迈科技",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "猪肉概念",
+                        "changePct":  3.09,
+                        "inflowCnyBn":  10.45,
+                        "leader":  "天邦食品",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "土地流转",
+                        "changePct":  2.82,
+                        "inflowCnyBn":  12.86,
+                        "leader":  "天山生物",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "生态农业",
+                        "changePct":  2.6,
+                        "inflowCnyBn":  4,
+                        "leader":  "蔚蓝生物",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "昨日连板_含一字",
+                        "changePct":  2.38,
+                        "inflowCnyBn":  -14.55,
+                        "leader":  "桂发祥",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "草甘膦",
+                        "changePct":  2.33,
+                        "inflowCnyBn":  0.93,
+                        "leader":  "国投丰乐",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "噪声防治",
+                        "changePct":  2.32,
+                        "inflowCnyBn":  -0.42,
+                        "leader":  "九州一轨",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    }
+                ],
+    "usSectors":  [
+                      {
+                          "name":  "Semiconductors",
+                          "symbol":  "SOXX",
+                          "changePct":  1.58,
+                          "price":  559.12,
+                          "leader":  "SOXX",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Energy",
+                          "symbol":  "XLE",
+                          "changePct":  1.08,
+                          "price":  62.58,
+                          "leader":  "XLE",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Robotics",
+                          "symbol":  "BOTZ",
+                          "changePct":  0.21,
+                          "price":  37.82,
+                          "leader":  "BOTZ",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Technology",
+                          "symbol":  "XLK",
+                          "changePct":  0.16,
+                          "price":  190.32,
+                          "leader":  "XLK",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Industrials",
+                          "symbol":  "XLI",
+                          "changePct":  -0.1,
+                          "price":  186.32,
+                          "leader":  "XLI",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Healthcare",
+                          "symbol":  "XLV",
+                          "changePct":  -0.19,
+                          "price":  167.05,
+                          "leader":  "XLV",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Financials",
+                          "symbol":  "XLF",
+                          "changePct":  -1,
+                          "price":  57.58,
+                          "leader":  "XLF",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Consumer Discretionary",
+                          "symbol":  "XLY",
+                          "changePct":  -1.23,
+                          "price":  116.75,
+                          "leader":  "XLY",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Cybersecurity",
+                          "symbol":  "CIBR",
+                          "changePct":  -1.82,
+                          "price":  97.79,
+                          "leader":  "CIBR",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Cloud",
+                          "symbol":  "SKYY",
+                          "changePct":  -1.87,
+                          "price":  162.24,
+                          "leader":  "SKYY",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Communication",
+                          "symbol":  "XLC",
+                          "changePct":  -1.89,
+                          "price":  110.82,
+                          "leader":  "XLC",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Software",
+                          "symbol":  "IGV",
+                          "changePct":  -2.01,
+                          "price":  101.99,
+                          "leader":  "IGV",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      }
+                  ],
+    "companies":  [
+                      {
+                          "market":  "美股",
+                          "name":  "NVIDIA",
+                          "symbol":  "NVDA",
+                          "chain":  "GPU 平台",
+                          "evidenceType":  "直接财务验证",
+                          "latest":  "FY2027 Q1 收入 816.15 亿美元, 同比约 +85%, 毛利率约 74.9%",
+                          "growth":  85.2,
+                          "quality":  92,
+                          "dmaHealth":  82,
+                          "pricingRisk":  "中",
+                          "classification":  "直接受益",
+                          "action":  "核心锚, 跟踪指引和毛利率",
+                          "status":  "核心锚",
+                          "lastDecision":  "保持核心",
+                          "nextCatalyst":  "下一次数据中心收入、Blackwell/Rubin 交付和毛利率指引",
+                          "evidenceScore":  94,
+                          "valuationScore":  72,
+                          "researchUpdatedAt":  "2026-08-10",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  95,
+                                                             "read":  "需求、收入和毛利率已被财务验证"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  78,
+                                                              "read":  "TAM 仍大但估值已要求高增长持续"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  82,
+                                                          "read":  "趋势健康，但需防止估值先行"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  74,
+                                                             "read":  "市场已定价高确定性增长，需要新指引继续上修"
+                                                         }
+                                        },
+                          "source":  "SEC Companyfacts",
+                          "url":  "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+                          "upgradeCondition":  "数据中心收入、毛利率和下一代 GPU 交付同步上修",
+                          "downgradeCondition":  "毛利率下滑、交付延迟或云厂商 Capex 放缓",
+                          "invalidationCondition":  "AI 服务器需求无法继续转化为收入和现金流",
+                          "events":  [
+                                         {
+                                             "date":  "2026-08-10",
+                                             "from":  "核心锚",
+                                             "to":  "核心锚",
+                                             "reason":  "收入和毛利率仍提供直接财务验证",
+                                             "evidence":  "FY2027 Q1 数据中心收入和毛利率",
+                                             "source":  "SEC Companyfacts"
+                                         }
+                                     ]
+                      },
+                      {
+                          "market":  "美股",
+                          "name":  "Broadcom",
+                          "symbol":  "AVGO",
+                          "chain":  "ASIC + AI 网络",
+                          "evidenceType":  "公司公告 + 合作公告",
+                          "latest":  "FY2026 Q2 收入 221.87 亿美元, AI 半导体收入 108 亿美元, 同比 +143%",
+                          "growth":  143,
+                          "quality":  90,
+                          "dmaHealth":  80,
+                          "pricingRisk":  "中",
+                          "classification":  "直接受益",
+                          "action":  "看 OpenAI 芯片部署和 AI 网络收入",
+                          "status":  "核心锚",
+                          "lastDecision":  "保持核心",
+                          "nextCatalyst":  "AI 半导体收入、XPU/网络订单和客户代际部署",
+                          "evidenceScore":  92,
+                          "valuationScore":  74,
+                          "researchUpdatedAt":  "2026-08-10",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  92,
+                                                             "read":  "ASIC 和 AI 网络收入已进入财务报表"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  80,
+                                                              "read":  "成长质量较高，估值取决于 AI 收入持续性"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  80,
+                                                          "read":  "趋势仍强，等待回撤后的确认"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  76,
+                                                             "read":  "OpenAI/云厂商 ASIC 线索会显著改变增长概率"
+                                                         }
+                                        },
+                          "source":  "Broadcom IR",
+                          "url":  "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                          "upgradeCondition":  "AI 半导体收入继续超指引且客户代际部署更清晰",
+                          "downgradeCondition":  "AI 收入低于指引或 XPU/网络项目推迟",
+                          "invalidationCondition":  "ASIC 订单无法维持收入增速和利润质量",
+                          "events":  [
+                                         {
+                                             "date":  "2026-08-10",
+                                             "from":  "核心锚",
+                                             "to":  "核心锚",
+                                             "reason":  "AI 半导体收入已进入财务报表并保持高增",
+                                             "evidence":  "FY2026 Q2 AI 半导体收入同比 +143%",
+                                             "source":  "Broadcom IR"
+                                         }
+                                     ]
+                      },
+                      {
+                          "market":  "美股",
+                          "name":  "Micron",
+                          "symbol":  "MU",
+                          "chain":  "HBM/DRAM",
+                          "evidenceType":  "直接财务验证",
+                          "latest":  "FY2026 Q3 收入 414.56 亿美元, 毛利率 84.6%",
+                          "growth":  346,
+                          "quality":  78,
+                          "dmaHealth":  48,
+                          "pricingRisk":  "高",
+                          "classification":  "直接受益, 周期属性强",
+                          "action":  "不按线性成长股处理, 重点看 ASP 和库存",
+                          "status":  "高弹性跟踪",
+                          "lastDecision":  "保持但提高风险提示",
+                          "nextCatalyst":  "HBM 长协、DRAM ASP、库存和毛利率持续性",
+                          "evidenceScore":  82,
+                          "valuationScore":  58,
+                          "researchUpdatedAt":  "2026-08-10",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  84,
+                                                             "read":  "HBM/DRAM 需求强，但周期属性明显"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  58,
+                                                              "read":  "不能按线性成长股估值，需折扣周期波动"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  48,
+                                                          "read":  "趋势健康度偏弱，价格和基本面需要重新同步"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  55,
+                                                             "read":  "市场容易把周期高点误判为长期成长"
+                                                         }
+                                        },
+                          "source":  "SEC Companyfacts",
+                          "url":  "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+                          "upgradeCondition":  "HBM 长协、ASP 和毛利率同时保持强势",
+                          "downgradeCondition":  "库存上升、ASP 转弱或毛利率快速回落",
+                          "invalidationCondition":  "本轮增长被证明只是存储周期价格弹性",
+                          "events":  [
+                                         {
+                                             "date":  "2026-08-10",
+                                             "from":  "直接受益",
+                                             "to":  "高弹性跟踪",
+                                             "reason":  "需求强但周期属性和趋势健康度需要折扣",
+                                             "evidence":  "HBM/DRAM 财务弹性与 GF-DMA 偏弱并存",
+                                             "source":  "SEC Companyfacts"
+                                         }
+                                     ]
+                      },
+                      {
+                          "market":  "A股",
+                          "name":  "中际旭创",
+                          "symbol":  "300308.SZ",
+                          "chain":  "光模块",
+                          "evidenceType":  "财务兑现验证",
+                          "latest":  "2026Q1 收入 194.96 亿元, 同比 +192%; 净利 57.35 亿元, 同比 +262%",
+                          "growth":  192,
+                          "quality":  88,
+                          "dmaHealth":  68,
+                          "pricingRisk":  "中高",
+                          "classification":  "供应链财务验证",
+                          "action":  "看 800G/1.6T 放量和毛利率",
+                          "status":  "主线跟踪",
+                          "lastDecision":  "保持核心供应链",
+                          "nextCatalyst":  "800G/1.6T 出货、海外客户和毛利率",
+                          "evidenceScore":  88,
+                          "valuationScore":  66,
+                          "researchUpdatedAt":  "2026-08-10",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  88,
+                                                             "read":  "光模块收入弹性已验证"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  68,
+                                                              "read":  "成长强但客户集中和估值需要折扣"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  68,
+                                                          "read":  "趋势尚健康，但需防止短期拥挤"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  64,
+                                                             "read":  "继续上修取决于出货和毛利率是否共振"
+                                                         }
+                                        },
+                          "source":  "东方财富财报汇总, 需回查公司公告",
+                          "url":  "https://www.cninfo.com.cn/",
+                          "upgradeCondition":  "800G/1.6T 放量、海外客户和毛利率继续共振",
+                          "downgradeCondition":  "收入环比放缓或毛利率跌破趋势",
+                          "invalidationCondition":  "光模块需求无法继续兑现到收入和利润",
+                          "events":  [
+                                         {
+                                             "date":  "2026-08-10",
+                                             "from":  "供应链财务验证",
+                                             "to":  "主线跟踪",
+                                             "reason":  "光模块收入和利润弹性已被财务验证",
+                                             "evidence":  "2026Q1 收入和净利高速增长",
+                                             "source":  "东方财富财报汇总, 需回查公司公告"
+                                         }
+                                     ]
+                      },
+                      {
+                          "market":  "A股",
+                          "name":  "天孚通信",
+                          "symbol":  "300394.SZ",
+                          "chain":  "光器件",
+                          "evidenceType":  "财务质量验证",
+                          "latest":  "2026Q1 收入同比 +40.8%, 净利同比 +45.8%, 毛利率 56.6%",
+                          "growth":  40.8,
+                          "quality":  86,
+                          "dmaHealth":  61,
+                          "pricingRisk":  "中",
+                          "classification":  "供应链财务验证",
+                          "action":  "质量优先, 跟踪增长再加速",
+                          "status":  "质量跟踪",
+                          "lastDecision":  "保持质量锚",
+                          "nextCatalyst":  "高毛利器件 ASP、客户渗透和收入再加速",
+                          "evidenceScore":  86,
+                          "valuationScore":  70,
+                          "researchUpdatedAt":  "2026-08-10",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  82,
+                                                             "read":  "财务质量较强，弹性弱于光模块主链"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  72,
+                                                              "read":  "质量溢价合理，但需要增长再加速"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  61,
+                                                          "read":  "趋势中性偏强"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  68,
+                                                             "read":  "若高毛利持续，增长确定性可上修"
+                                                         }
+                                        },
+                          "source":  "东方财富财报汇总, 需回查公司公告",
+                          "url":  "https://www.cninfo.com.cn/",
+                          "upgradeCondition":  "高毛利器件收入再加速且客户渗透继续提升",
+                          "downgradeCondition":  "高毛利无法维持或收入增速继续放缓",
+                          "invalidationCondition":  "质量溢价无法被增长持续性覆盖",
+                          "events":  [
+                                         {
+                                             "date":  "2026-08-10",
+                                             "from":  "供应链财务验证",
+                                             "to":  "质量跟踪",
+                                             "reason":  "毛利率和利润质量较强但弹性低于主链",
+                                             "evidence":  "2026Q1 毛利率 56.6%",
+                                             "source":  "东方财富财报汇总, 需回查公司公告"
+                                         }
+                                     ]
+                      },
+                      {
+                          "market":  "A股",
+                          "name":  "寒武纪",
+                          "symbol":  "688256.SH",
+                          "chain":  "国产 AI 芯片",
+                          "evidenceType":  "高弹性财务验证",
+                          "latest":  "2026Q1 收入同比 +159.6%, 净利同比 +185.0%",
+                          "growth":  159.6,
+                          "quality":  70,
+                          "dmaHealth":  52,
+                          "pricingRisk":  "高",
+                          "classification":  "国产替代趋势 + 财务验证",
+                          "action":  "必须验证持续订单、回款、生态",
+                          "status":  "高弹性观察",
+                          "lastDecision":  "保持观察，不升核心",
+                          "nextCatalyst":  "持续订单、回款、费用率和生态客户复购",
+                          "evidenceScore":  70,
+                          "valuationScore":  42,
+                          "researchUpdatedAt":  "2026-08-10",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  72,
+                                                             "read":  "国产替代线索强，但商业化仍需验证"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  45,
+                                                              "read":  "估值更像期权，需要现金流证据"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  52,
+                                                          "read":  "趋势中性，易受情绪驱动"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  46,
+                                                             "read":  "核心概率取决于复购和利润质量"
+                                                         }
+                                        },
+                          "source":  "东方财富财报汇总, 需回查公司公告",
+                          "url":  "https://www.sse.com.cn/",
+                          "upgradeCondition":  "持续订单、回款、费用率和生态复购同时改善",
+                          "downgradeCondition":  "收入放缓、现金流转弱或客户集中风险扩大",
+                          "invalidationCondition":  "国产算力商业化无法形成可持续利润质量",
+                          "events":  [
+                                         {
+                                             "date":  "2026-08-10",
+                                             "from":  "高弹性财务验证",
+                                             "to":  "高弹性观察",
+                                             "reason":  "国产替代线索强但现金流和复购仍需验证",
+                                             "evidence":  "2026Q1 高增但估值更像期权",
+                                             "source":  "东方财富财报汇总, 需回查公司公告"
+                                         }
+                                     ]
+                      },
+                      {
+                          "market":  "A股",
+                          "name":  "澜起科技",
+                          "symbol":  "688008.SH",
+                          "chain":  "AI 服务器内存接口",
+                          "evidenceType":  "财务质量验证",
+                          "latest":  "2026Q1 收入同比 +19.5%, 净利同比 +61.3%, 毛利率 69.8%",
+                          "growth":  19.5,
+                          "quality":  84,
+                          "dmaHealth":  64,
+                          "pricingRisk":  "中",
+                          "classification":  "供应链间接利好 + 财务验证",
+                          "action":  "看利润质量和 DDR5/MRCD 渗透",
+                          "status":  "间接受益",
+                          "lastDecision":  "保持观察",
+                          "nextCatalyst":  "DDR5/MRCD 渗透、利润质量和服务器链收入",
+                          "evidenceScore":  80,
+                          "valuationScore":  68,
+                          "researchUpdatedAt":  "2026-08-10",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  76,
+                                                             "read":  "AI 服务器链间接受益，财务质量较好"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  70,
+                                                              "read":  "估值需要利润增速继续覆盖"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  64,
+                                                          "read":  "趋势健康度中等"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  66,
+                                                             "read":  "若服务器接口放量，概率可稳步上修"
+                                                         }
+                                        },
+                          "source":  "东方财富财报汇总, 需回查公司公告",
+                          "url":  "https://www.sse.com.cn/",
+                          "upgradeCondition":  "DDR5/MRCD 渗透提升并带动服务器链收入和利润增长",
+                          "downgradeCondition":  "利润增速无法覆盖估值或服务器链需求走弱",
+                          "invalidationCondition":  "AI 服务器链间接利好无法进入公司财务报表",
+                          "events":  [
+                                         {
+                                             "date":  "2026-08-10",
+                                             "from":  "供应链间接利好",
+                                             "to":  "间接受益",
+                                             "reason":  "利润质量较好但财务传导仍偏间接",
+                                             "evidence":  "2026Q1 净利增速和毛利率表现较好",
+                                             "source":  "东方财富财报汇总, 需回查公司公告"
+                                         }
+                                     ]
+                      }
+                  ],
+    "passList":  [
+                     {
+                         "name":  "雅克科技",
+                         "reason":  "HBM 概念热度强, 但 2026Q1 收入同比为负, 暂不按直接受益处理"
+                     },
+                     {
+                         "name":  "长电科技/华天科技",
+                         "reason":  "先进封装主题强, 但需分项收入和毛利率验证后再升格"
+                     },
+                     {
+                         "name":  "沐曦股份/摩尔线程",
+                         "reason":  "国产 GPU 期权属性, 利润和现金流验证不足, 不进核心池"
+                     },
+                     {
+                         "name":  "未被公告点名的 A股映射",
+                         "reason":  "海外龙头利好若未点名 A股公司, 只能归为产业趋势或间接利好"
+                     }
+                 ],
+    "hypothesisFlow":  [
+                           {
+                               "stage":  "新闻",
+                               "label":  "AI Capex 上修, HBM/光互联/ASIC 强需求",
+                               "score":  86
+                           },
+                           {
+                               "stage":  "真实需求",
+                               "label":  "GPU、ASIC、HBM、光模块、AI 网络设备订单",
+                               "score":  82
+                           },
+                           {
+                               "stage":  "财务传导",
+                               "label":  "收入、毛利率、经营现金流、指引上修",
+                               "score":  76
+                           },
+                           {
+                               "stage":  "弹性筛选",
+                               "label":  "市值、利润基数、客户集中度、产能约束",
+                               "score":  64
+                           },
+                           {
+                               "stage":  "验证路径",
+                               "label":  "公告、财报、调研记录、交易所披露",
+                               "score":  90
+                           }
+                       ],
+    "watchItems":  [
+                       {
+                           "item":  "云厂商 Capex",
+                           "metric":  "MSFT/GOOG/AMZN/META 资本开支和 AI 服务器指引",
+                           "priority":  "高",
+                           "status":  "开放",
+                           "window":  "下一轮美股大型科技财报",
+                           "trigger":  "Capex 指引继续上修或 AI 服务器交付放缓",
+                           "relatedSymbols":  [
+                                                  "NVDA",
+                                                  "AVGO",
+                                                  "MU"
+                                              ],
+                           "lastCheck":  "2026-08-10",
+                           "events":  [
+                                          {
+                                              "date":  "2026-08-10",
+                                              "from":  "开放",
+                                              "to":  "开放",
+                                              "reason":  "仍是 AI 主线最核心的需求闸门",
+                                              "evidence":  "MSFT/GOOG/AMZN/META Capex 指引",
+                                              "source":  "财报和公司指引"
+                                          }
+                                      ]
+                       },
+                       {
+                           "item":  "HBM 周期顶部",
+                           "metric":  "MU/SK/Samsung ASP、库存、长期协议",
+                           "priority":  "高",
+                           "status":  "开放",
+                           "window":  "MU/SK/Samsung 财报与价格月度数据",
+                           "trigger":  "ASP 转弱、库存上升或长协价格松动",
+                           "relatedSymbols":  [
+                                                  "MU",
+                                                  "NVDA"
+                                              ],
+                           "lastCheck":  "2026-08-10",
+                           "events":  [
+                                          {
+                                              "date":  "2026-08-10",
+                                              "from":  "开放",
+                                              "to":  "开放",
+                                              "reason":  "HBM 真需求和存储周期弹性需要分开验证",
+                                              "evidence":  "ASP、库存、长协和毛利率",
+                                              "source":  "公司财报和行业价格数据"
+                                          }
+                                      ]
+                       },
+                       {
+                           "item":  "A股光模块兑现",
+                           "metric":  "中际旭创、天孚通信 Q2/Q3 收入和毛利率",
+                           "priority":  "高",
+                           "status":  "开放",
+                           "window":  "A股 Q2/Q3 财报与交易所公告",
+                           "trigger":  "收入放缓、毛利率下行或海外客户订单变化",
+                           "relatedSymbols":  [
+                                                  "300308.SZ",
+                                                  "300394.SZ"
+                                              ],
+                           "lastCheck":  "2026-08-10",
+                           "events":  [
+                                          {
+                                              "date":  "2026-08-10",
+                                              "from":  "开放",
+                                              "to":  "开放",
+                                              "reason":  "股价热度必须继续映射到收入和毛利率",
+                                              "evidence":  "中际旭创、天孚通信 Q2/Q3 财报",
+                                              "source":  "交易所公告和公司财报"
+                                          }
+                                      ]
+                       },
+                       {
+                           "item":  "国产算力商业化",
+                           "metric":  "寒武纪客户、订单、回款、费用率",
+                           "priority":  "中高",
+                           "status":  "观察",
+                           "window":  "季度财报、订单公告和回款披露",
+                           "trigger":  "复购和现金流改善才能升级",
+                           "relatedSymbols":  [
+                                                  "688256.SH"
+                                              ],
+                           "lastCheck":  "2026-08-10",
+                           "events":  [
+                                          {
+                                              "date":  "2026-08-10",
+                                              "from":  "观察",
+                                              "to":  "观察",
+                                              "reason":  "需要从主题弹性进入订单、回款和复购验证",
+                                              "evidence":  "客户、订单、现金流、费用率",
+                                              "source":  "公司公告和财报"
+                                          }
+                                      ]
+                       },
+                       {
+                           "item":  "先进封装真实弹性",
+                           "metric":  "长电、华天先进封装分项收入和毛利率",
+                           "priority":  "中",
+                           "status":  "观察",
+                           "window":  "半导体封测公司分项收入披露",
+                           "trigger":  "先进封装收入和毛利率同步改善",
+                           "relatedSymbols":  [
+
+                                              ],
+                           "lastCheck":  "2026-08-10",
+                           "events":  [
+                                          {
+                                              "date":  "2026-08-10",
+                                              "from":  "观察",
+                                              "to":  "观察",
+                                              "reason":  "主题热度需要分项收入和毛利率确认",
+                                              "evidence":  "先进封装收入和毛利率",
+                                              "source":  "公司公告和财报"
+                                          }
+                                      ]
+                       },
+                       {
+                           "item":  "宏观估值约束",
+                           "metric":  "中国 PMI/PPI, 美联储利率与通胀措辞",
+                           "priority":  "中",
+                           "status":  "开放",
+                           "window":  "每次 CPI/FOMC/PMI 更新",
+                           "trigger":  "利率上行或需求走弱会压制长久期成长估值",
+                           "relatedSymbols":  [
+                                                  "NVDA",
+                                                  "AVGO",
+                                                  "300308.SZ"
+                                              ],
+                           "lastCheck":  "2026-08-10",
+                           "events":  [
+                                          {
+                                              "date":  "2026-08-10",
+                                              "from":  "开放",
+                                              "to":  "开放",
+                                              "reason":  "利率和需求仍决定成长股估值上限",
+                                              "evidence":  "CPI/FOMC/PMI",
+                                              "source":  "FRED / NBS"
+                                          }
+                                      ]
+                       }
+                   ],
+    "sources":  [
+                    {
+                        "name":  "国家统计局 PMI",
+                        "url":  "https://www.stats.gov.cn/sj/zxfb/202606/t20260630_1964032.html"
+                    },
+                    {
+                        "name":  "Federal Reserve FOMC",
+                        "url":  "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
+                    },
+                    {
+                        "name":  "Broadcom IR",
+                        "url":  "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial"
+                    },
+                    {
+                        "name":  "OpenAI and Broadcom",
+                        "url":  "https://investors.broadcom.com/news-releases/news-release-details/openai-and-broadcom-unveil-llm-optimized-intelligence-processor"
+                    },
+                    {
+                        "name":  "SEC Companyfacts",
+                        "url":  "https://www.sec.gov/edgar/sec-api-documentation"
+                    },
+                    {
+                        "name":  "巨潮资讯",
+                        "url":  "https://www.cninfo.com.cn/"
+                    },
+                    {
+                        "name":  "上交所",
+                        "url":  "https://www.sse.com.cn/"
+                    },
+                    {
+                        "name":  "深交所",
+                        "url":  "https://www.szse.cn/"
+                    }
+                ]
+}

@@ -1,0 +1,13 @@
+node_modules/
+.netlify/
+.wrangler/
+.agents/
+.codex/
+dist/
+logs/
+reference/
+skills/
+.env
+.env.*
+npm-debug.log*
+*.zip
