@@ -119,6 +119,16 @@ function validatePreciousMetal(row, index) {
   if (!isFiniteNumber(row.changePct) || Math.abs(row.changePct) > 25) {
     addError(`Suspicious ${label}.changePct`, `${row.symbol || row.name || "unknown"}=${row.changePct}`);
   }
+  ["flowPrice"].forEach((key) => {
+    if (row[key] !== undefined && (!isFiniteNumber(row[key]) || row[key] < 0)) {
+      addError(`Invalid ${label}.${key}`, `${row.symbol || row.name || "unknown"}=${row[key]}`);
+    }
+  });
+  ["flowChangePct"].forEach((key) => {
+    if (row[key] !== undefined && (!isFiniteNumber(row[key]) || Math.abs(row[key]) > 25)) {
+      addError(`Suspicious ${label}.${key}`, `${row.symbol || row.name || "unknown"}=${row[key]}`);
+    }
+  });
   assertUrl(row.url, `${label}.url`);
 }
 

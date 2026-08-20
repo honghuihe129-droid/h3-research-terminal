@@ -1,5 +1,5 @@
 {
-    "generatedAt":  "2026-08-20T11:21:35+08:00",
+    "generatedAt":  "2026-08-20T11:49:35+08:00",
     "nextScheduledUpdate":  "Daily 15:30 Beijing time",
     "sourcePolicy":  "公司公告/官方文件 \u003e 交易所披露 \u003e 官方产业数据 \u003e 权威媒体 \u003e 研报 \u003e 互动平台 \u003e 市场传闻",
     "macro":  [
@@ -151,45 +151,53 @@
     "preciousMetals":  [
                            {
                                "name":  "Gold",
-                               "symbol":  "GLD",
-                               "proxy":  "SPDR Gold Shares",
-                               "price":  413.84,
-                               "changePct":  3.84,
+                               "symbol":  "GC=F",
+                               "proxy":  "COMEX gold futures",
+                               "price":  4555.1,
+                               "changePct":  3.99,
+                               "pricingAnchor":  "LBMA London spot gold reference",
+                               "flowSymbol":  "GLD",
+                               "flowPrice":  413.84,
+                               "flowChangePct":  3.84,
                                "role":  "Macro hedge",
                                "status":  "Watch",
-                               "thesis":  "Gold is a macro hedge, not an equity-chain signal yet",
-                               "validation":  "Confirm with real rates, US dollar, central-bank demand, and ETF flows before mapping to miners",
-                               "nextStep":  "Track gold first; consider GDX only after trend and fund flow confirmation",
-                               "source":  "Nasdaq / GLD",
-                               "url":  "https://www.nasdaq.com/market-activity/etf/gld"
+                               "thesis":  "Gold is first a macro hedge; miners are a later equity-chain extension",
+                               "validation":  "Confirm with COMEX GC, London spot reference, real rates, US dollar, central-bank demand, and GLD flows before mapping to miners",
+                               "nextStep":  "Track GC and the London spot reference first; consider GDX only after trend and fund-flow confirmation",
+                               "source":  "Yahoo Finance / COMEX GC + GLD; LBMA reference",
+                               "url":  "https://finance.yahoo.com/quote/GC%3DF"
                            },
                            {
                                "name":  "Silver",
-                               "symbol":  "SLV",
-                               "proxy":  "iShares Silver Trust",
-                               "price":  60.01,
-                               "changePct":  4.47,
+                               "symbol":  "SI=F",
+                               "proxy":  "COMEX silver futures",
+                               "price":  67.19,
+                               "changePct":  3.39,
+                               "pricingAnchor":  "LBMA London spot silver reference",
+                               "flowSymbol":  "SLV",
+                               "flowPrice":  60.01,
+                               "flowChangePct":  4.47,
                                "role":  "High-beta precious metal",
                                "status":  "Watch",
                                "thesis":  "Silver is gold beta plus industrial demand, so confirmation must be stricter",
-                               "validation":  "Confirm with gold trend, industrial demand, supply deficit, and gold/silver ratio repair",
-                               "nextStep":  "Track silver as a macro asset; consider SIL or the silver chain only after demand confirmation",
-                               "source":  "Nasdaq / SLV",
-                               "url":  "https://www.nasdaq.com/market-activity/etf/slv"
+                               "validation":  "Confirm with COMEX SI, London spot reference, gold trend, industrial demand, supply deficit, and SLV flows",
+                               "nextStep":  "Track SI as a macro asset; consider SIL or the silver chain only after demand confirmation",
+                               "source":  "Yahoo Finance / COMEX SI + SLV; LBMA reference",
+                               "url":  "https://finance.yahoo.com/quote/SI%3DF"
                            },
                            {
                                "name":  "Gold/Silver ratio",
-                               "symbol":  "GLD/SLV",
-                               "proxy":  "ETF proxy ratio",
-                               "price":  6.9,
-                               "changePct":  -0.63,
+                               "symbol":  "GC/SI",
+                               "proxy":  "COMEX futures ratio",
+                               "price":  67.79,
+                               "changePct":  0.6,
                                "role":  "Relative confirmation",
                                "status":  "Gate",
                                "thesis":  "Ratio repair decides whether silver is confirming or merely lagging gold",
                                "validation":  "Silver leadership requires the ratio to fall while both metals stay above trend",
-                               "nextStep":  "Use ratio repair as the bridge from macro asset to miners or industrial-chain research",
-                               "source":  "Nasdaq / GLD + SLV",
-                               "url":  "https://www.nasdaq.com/market-activity/etf/gld"
+                               "nextStep":  "Use ratio repair as the bridge from macro assets to miners or industrial-chain research",
+                               "source":  "Yahoo Finance / COMEX GC + SI",
+                               "url":  "https://finance.yahoo.com/quote/GC%3DF"
                            }
                        ],
     "indices":  [
@@ -197,8 +205,8 @@
                         "market":  "A-share",
                         "name":  "SSE Composite",
                         "symbol":  "sh000001",
-                        "price":  3901.13,
-                        "changePct":  0.17,
+                        "price":  3905.23,
+                        "changePct":  0.28,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -211,8 +219,8 @@
                         "market":  "A-share",
                         "name":  "SZSE Component",
                         "symbol":  "sz399001",
-                        "price":  13996.13,
-                        "changePct":  0.76,
+                        "price":  14024.41,
+                        "changePct":  0.97,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -225,8 +233,8 @@
                         "market":  "A-share",
                         "name":  "ChiNext",
                         "symbol":  "sz399006",
-                        "price":  3501.98,
-                        "changePct":  0.82,
+                        "price":  3509.44,
+                        "changePct":  1.03,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -239,8 +247,8 @@
                         "market":  "A-share",
                         "name":  "CSI 300",
                         "symbol":  "sh000300",
-                        "price":  4594.44,
-                        "changePct":  0.13,
+                        "price":  4598.14,
+                        "changePct":  0.21,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -253,8 +261,8 @@
                         "market":  "A-share",
                         "name":  "CSI 500",
                         "symbol":  "sh000905",
-                        "price":  7859.19,
-                        "changePct":  0.97,
+                        "price":  7880.34,
+                        "changePct":  1.24,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -267,8 +275,8 @@
                         "market":  "A-share",
                         "name":  "CSI 1000",
                         "symbol":  "sh000852",
-                        "price":  7608.17,
-                        "changePct":  1.2,
+                        "price":  7629.99,
+                        "changePct":  1.49,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -323,85 +331,85 @@
     "sectors":  [
                     {
                         "name":  "CAR-T细胞疗法",
-                        "changePct":  9.16,
-                        "inflowCnyBn":  25.79,
+                        "changePct":  10,
+                        "inflowCnyBn":  26.19,
                         "leader":  "智飞生物",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "重组蛋白",
-                        "changePct":  7.36,
-                        "inflowCnyBn":  9.2,
+                        "changePct":  8.25,
+                        "inflowCnyBn":  10.25,
+                        "leader":  "近岸蛋白",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "CRO",
+                        "changePct":  8.06,
+                        "inflowCnyBn":  32.81,
                         "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "基因测序",
-                        "changePct":  7.26,
-                        "inflowCnyBn":  12.15,
+                        "changePct":  7.88,
+                        "inflowCnyBn":  13,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "CRO",
-                        "changePct":  7.02,
-                        "inflowCnyBn":  30.67,
-                        "leader":  "近岸蛋白",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
                         "name":  "精准诊断",
-                        "changePct":  6.89,
-                        "inflowCnyBn":  13.68,
+                        "changePct":  7.35,
+                        "inflowCnyBn":  14.37,
                         "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "单抗概念",
-                        "changePct":  6.64,
-                        "inflowCnyBn":  15.09,
+                        "changePct":  7.15,
+                        "inflowCnyBn":  15.45,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "体外诊断概念",
-                        "changePct":  6.28,
-                        "inflowCnyBn":  14.04,
+                        "changePct":  6.75,
+                        "inflowCnyBn":  14.69,
                         "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "生物疫苗",
-                        "changePct":  6.26,
-                        "inflowCnyBn":  19.53,
+                        "changePct":  6.71,
+                        "inflowCnyBn":  20.13,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "免疫治疗",
-                        "changePct":  6.1,
-                        "inflowCnyBn":  10.58,
+                        "changePct":  6.67,
+                        "inflowCnyBn":  10.72,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "精准医疗",
-                        "changePct":  5.98,
-                        "inflowCnyBn":  14.59,
+                        "changePct":  6.5,
+                        "inflowCnyBn":  15.41,
                         "leader":  "智飞生物",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "创新药",
-                        "changePct":  5.74,
-                        "inflowCnyBn":  60.36,
+                        "changePct":  6.42,
+                        "inflowCnyBn":  63.64,
                         "leader":  "中 关 村",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "肝炎概念",
-                        "changePct":  5.68,
-                        "inflowCnyBn":  16.52,
+                        "changePct":  6.27,
+                        "inflowCnyBn":  16.95,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     }
@@ -1063,12 +1071,14 @@
                        },
                        {
                            "item":  "贵金属宏观资产",
-                           "metric":  "GLD/SLV 价格、金银比、实际利率、美元和 ETF 资金流",
+                           "metric":  "COMEX GC/SI 纽约期货、伦敦现货定价参考、GLD/SLV 资金流、实际利率和美元",
                            "priority":  "中高",
                            "status":  "观察",
-                           "window":  "每日宏观资产更新 / 每周 ETF 资金流",
-                           "trigger":  "GLD/SLV 趋势和 ETF 资金流同时确认；再评估 GDX、SIL、金矿股和白银产业链",
+                           "window":  "每日宏观资产更新 / 每周 ETF 资金流 / LBMA 定价参考",
+                           "trigger":  "纽约期货趋势、伦敦现货口径和 ETF 资金流同时确认；再评估 GDX、SIL、金矿股和白银产业链",
                            "relatedSymbols":  [
+                                                  "GC=F",
+                                                  "SI=F",
                                                   "GLD",
                                                   "SLV"
                                               ],
@@ -1078,9 +1088,9 @@
                                               "date":  "2026-08-20",
                                               "from":  "未纳入",
                                               "to":  "观察",
-                                              "reason":  "先把黄金和白银作为宏观资产加入 H^3，不急着扩展到矿股和白银产业链",
-                                              "evidence":  "GLD/SLV 报价、金银比、实际利率、美元和 ETF 资金流",
-                                              "source":  "Nasdaq / WGC / Silver Institute / FRED"
+                                              "reason":  "先把黄金和白银作为宏观资产加入 H^3：COMEX 给交易价格，伦敦现货给定价口径，ETF 资金流给拥挤度验证",
+                                              "evidence":  "COMEX GC/SI、伦敦现货参考、GLD/SLV 报价、实际利率、美元和 ETF 资金流",
+                                              "source":  "Yahoo Finance / LBMA / WGC / Silver Institute / FRED"
                                           }
                                       ]
                        }

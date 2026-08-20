@@ -207,12 +207,14 @@ const i18n = {
     valuationNextRead: "Bubble cools when price falls toward DMA or earnings catch up; discount upgrades only after financial evidence improves",
     preciousTitle: "Precious Metals Watch",
     preciousStatus: "Macro assets first",
-    preciousRead: "Gold and silver enter H^3 as macro assets, not as a rush into miners. Confirm trend and fund flow before extending to GDX, SIL, gold miners, or the silver chain",
+    preciousRead: "Gold and silver enter H^3 as macro assets first. COMEX futures provide the refreshable price signal, London spot is the pricing reference, and GLD/SLV only confirm fund flow",
     preciousGoldGate: "Gold gate",
     preciousSilverGate: "Silver gate",
     preciousRatioGate: "Gold/silver ratio",
+    pricingReference: "Pricing reference",
+    flowProxy: "ETF flow proxy",
     preciousNext: "Expansion rule",
-    preciousNextRead: "Only expand from GLD/SLV to GDX, SIL, miners, or the silver industrial chain after trend, real-rate, ETF-flow, and demand signals confirm together",
+    preciousNextRead: "Only expand toward GDX, SIL, miners, or the silver industrial chain after futures trend, London-spot reference, real rates, ETF flow, and demand signals confirm together",
     watchTitle: "Watch Items",
     watchSub: "next validation round",
     radarPriority: "Priority mix",
@@ -484,12 +486,14 @@ const i18n = {
     valuationNextRead: "\u6ce1\u6cab\u51b7\u5374\u6765\u81ea\u4ef7\u683c\u56de\u5230 DMA \u9644\u8fd1\u6216\u76c8\u5229\u8ffd\u4e0a\uff1b\u4f4e\u4f30\u5347\u7ea7\u53ea\u6765\u81ea\u8d22\u52a1\u8bc1\u636e\u6539\u5584",
     preciousTitle: "\u8d35\u91d1\u5c5e\u89c2\u5bdf",
     preciousStatus: "\u5148\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7",
-    preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\uff0c\u4e0d\u6025\u7740\u6269\u5c55\u5230\u77ff\u80a1\u3002\u7b49\u8d8b\u52bf\u548c\u8d44\u91d1\u6d41\u786e\u8ba4\u540e\uff0c\u518d\u8003\u8651 GDX\u3001SIL\u3001\u91d1\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
+    preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\u3002COMEX \u671f\u8d27\u63d0\u4f9b\u53ef\u6bcf\u65e5\u66f4\u65b0\u7684\u4ef7\u683c\u4fe1\u53f7\uff0c\u4f26\u6566\u73b0\u8d27\u4f5c\u4e3a\u5b9a\u4ef7\u53c2\u8003\uff0cGLD/SLV \u53ea\u7528\u6765\u786e\u8ba4\u8d44\u91d1\u6d41",
     preciousGoldGate: "\u9ec4\u91d1\u95f8\u95e8",
     preciousSilverGate: "\u767d\u94f6\u95f8\u95e8",
     preciousRatioGate: "\u91d1\u94f6\u6bd4",
+    pricingReference: "\u5b9a\u4ef7\u53c2\u8003",
+    flowProxy: "ETF \u8d44\u91d1\u6d41\u4ee3\u7406",
     preciousNext: "\u6269\u5c55\u89c4\u5219",
-    preciousNextRead: "\u53ea\u6709\u5728\u8d8b\u52bf\u3001\u5b9e\u9645\u5229\u7387\u3001ETF \u8d44\u91d1\u6d41\u548c\u9700\u6c42\u4fe1\u53f7\u5171\u632f\u540e\uff0c\u624d\u4ece GLD/SLV \u6269\u5c55\u5230 GDX\u3001SIL\u3001\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
+    preciousNextRead: "\u53ea\u6709\u5728\u671f\u8d27\u8d8b\u52bf\u3001\u4f26\u6566\u73b0\u8d27\u53c2\u8003\u3001\u5b9e\u9645\u5229\u7387\u3001ETF \u8d44\u91d1\u6d41\u548c\u9700\u6c42\u4fe1\u53f7\u5171\u632f\u540e\uff0c\u624d\u6269\u5c55\u5230 GDX\u3001SIL\u3001\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
     watchTitle: "Watch Items",
     watchSub: "next validation round",
     radarPriority: "\u4f18\u5148\u7ea7\u5206\u5e03",
@@ -755,6 +759,12 @@ const valueTranslations = {
   "\u4e2d\u56fd PMI/PPI, \u7f8e\u8054\u50a8\u5229\u7387\u4e0e\u901a\u80c0\u63aa\u8f9e": "China PMI/PPI, Fed rate and inflation wording",
   "\u6bcf\u6b21 CPI/FOMC/PMI \u66f4\u65b0": "Every CPI/FOMC/PMI update",
   "\u5229\u7387\u4e0a\u884c\u6216\u9700\u6c42\u8d70\u5f31\u4f1a\u538b\u5236\u957f\u4e45\u671f\u6210\u957f\u4f30\u503c": "Higher rates or weaker demand pressure long-duration growth valuations",
+  "\u8d35\u91d1\u5c5e\u5b8f\u89c2\u8d44\u4ea7": "Precious metals macro assets",
+  "COMEX GC/SI \u7ebd\u7ea6\u671f\u8d27\u3001\u4f26\u6566\u73b0\u8d27\u5b9a\u4ef7\u53c2\u8003\u3001GLD/SLV \u8d44\u91d1\u6d41\u3001\u5b9e\u9645\u5229\u7387\u548c\u7f8e\u5143": "COMEX GC/SI futures, London spot pricing reference, GLD/SLV flow, real rates, and the US dollar",
+  "\u6bcf\u65e5\u5b8f\u89c2\u8d44\u4ea7\u66f4\u65b0 / \u6bcf\u5468 ETF \u8d44\u91d1\u6d41 / LBMA \u5b9a\u4ef7\u53c2\u8003": "Daily macro-asset update / weekly ETF flow / LBMA pricing reference",
+  "\u7ebd\u7ea6\u671f\u8d27\u8d8b\u52bf\u3001\u4f26\u6566\u73b0\u8d27\u53e3\u5f84\u548c ETF \u8d44\u91d1\u6d41\u540c\u65f6\u786e\u8ba4\uff1b\u518d\u8bc4\u4f30 GDX\u3001SIL\u3001\u91d1\u77ff\u80a1\u548c\u767d\u94f6\u4ea7\u4e1a\u94fe": "New York futures trend, London spot reference, and ETF flow must confirm together before reviewing GDX, SIL, miners, or the silver chain",
+  "\u5148\u628a\u9ec4\u91d1\u548c\u767d\u94f6\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7\u52a0\u5165 H^3\uff1aCOMEX \u7ed9\u4ea4\u6613\u4ef7\u683c\uff0c\u4f26\u6566\u73b0\u8d27\u7ed9\u5b9a\u4ef7\u53e3\u5f84\uff0cETF \u8d44\u91d1\u6d41\u7ed9\u62e5\u6324\u5ea6\u9a8c\u8bc1": "Gold and silver enter H^3 first as macro assets: COMEX gives the trading price, London spot gives the pricing reference, and ETF flow checks crowding",
+  "COMEX GC/SI\u3001\u4f26\u6566\u73b0\u8d27\u53c2\u8003\u3001GLD/SLV \u62a5\u4ef7\u3001\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u548c ETF \u8d44\u91d1\u6d41": "COMEX GC/SI, London spot reference, GLD/SLV quotes, real rates, the US dollar, and ETF flow",
   "\u65b0\u95fb": "News",
   "\u771f\u5b9e\u9700\u6c42": "Real demand",
   "\u8d22\u52a1\u4f20\u5bfc": "Financial transmission",
@@ -777,11 +787,26 @@ const zhValueTranslations = {
   "SPDR Gold Shares": "SPDR \u9ec4\u91d1 ETF",
   "iShares Silver Trust": "iShares \u767d\u94f6 ETF",
   "ETF proxy ratio": "ETF \u4ee3\u7406\u6bd4\u503c",
+  "COMEX gold futures": "COMEX \u9ec4\u91d1\u671f\u8d27",
+  "COMEX silver futures": "COMEX \u767d\u94f6\u671f\u8d27",
+  "COMEX futures ratio": "COMEX \u91d1\u94f6\u6bd4",
+  "LBMA London spot gold reference": "LBMA \u4f26\u6566\u73b0\u8d27\u91d1\u53c2\u8003",
+  "LBMA London spot silver reference": "LBMA \u4f26\u6566\u73b0\u8d27\u94f6\u53c2\u8003",
+  "ETF flow proxy": "ETF \u8d44\u91d1\u6d41\u4ee3\u7406",
   "Macro hedge": "\u5b8f\u89c2\u5bf9\u51b2",
   "High-beta precious metal": "\u9ad8 beta \u8d35\u91d1\u5c5e",
   "Relative confirmation": "\u76f8\u5bf9\u5f3a\u5f31\u9a8c\u8bc1",
   "Watch": "\u89c2\u5bdf",
   "Gate": "\u95f8\u95e8",
+  "Gold is first a macro hedge; miners are a later equity-chain extension": "\u9ec4\u91d1\u9996\u5148\u662f\u5b8f\u89c2\u5bf9\u51b2\u8d44\u4ea7\uff0c\u77ff\u80a1\u662f\u540e\u7eed\u6743\u76ca\u94fe\u6269\u5c55",
+  "Confirm with COMEX GC, London spot reference, real rates, US dollar, central-bank demand, and GLD flows before mapping to miners": "\u5148\u7528 COMEX GC\u3001\u4f26\u6566\u73b0\u8d27\u53c2\u8003\u3001\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u3001\u592e\u884c\u9700\u6c42\u548c GLD \u8d44\u91d1\u6d41\u9a8c\u8bc1\uff0c\u518d\u6620\u5c04\u5230\u77ff\u80a1",
+  "Track GC and the London spot reference first; consider GDX only after trend and fund-flow confirmation": "\u5148\u8ddf\u8e2a GC \u4e0e\u4f26\u6566\u73b0\u8d27\u53c2\u8003\uff1b\u53ea\u6709\u8d8b\u52bf\u548c\u8d44\u91d1\u6d41\u786e\u8ba4\u540e\u518d\u8003\u8651 GDX",
+  "Confirm with COMEX SI, London spot reference, gold trend, industrial demand, supply deficit, and SLV flows": "\u7528 COMEX SI\u3001\u4f26\u6566\u73b0\u8d27\u53c2\u8003\u3001\u9ec4\u91d1\u8d8b\u52bf\u3001\u5de5\u4e1a\u9700\u6c42\u3001\u4f9b\u9700\u7f3a\u53e3\u548c SLV \u8d44\u91d1\u6d41\u9a8c\u8bc1",
+  "Track SI as a macro asset; consider SIL or the silver chain only after demand confirmation": "\u5148\u628a SI \u5f53\u5b8f\u89c2\u8d44\u4ea7\u8ddf\u8e2a\uff1b\u9700\u6c42\u786e\u8ba4\u540e\u518d\u8003\u8651 SIL \u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
+  "Use ratio repair as the bridge from macro assets to miners or industrial-chain research": "\u7528\u91d1\u94f6\u6bd4\u4fee\u590d\u4f5c\u4e3a\u4ece\u5b8f\u89c2\u8d44\u4ea7\u8fc7\u6e21\u5230\u77ff\u80a1\u6216\u4ea7\u4e1a\u94fe\u7814\u7a76\u7684\u6865",
+  "Yahoo Finance / COMEX GC + GLD; LBMA reference": "Yahoo Finance / COMEX GC + GLD\uff1bLBMA \u53c2\u8003",
+  "Yahoo Finance / COMEX SI + SLV; LBMA reference": "Yahoo Finance / COMEX SI + SLV\uff1bLBMA \u53c2\u8003",
+  "Yahoo Finance / COMEX GC + SI": "Yahoo Finance / COMEX GC + SI",
   "Gold is a macro hedge, not an equity-chain signal yet": "\u9ec4\u91d1\u5148\u662f\u5b8f\u89c2\u5bf9\u51b2\u8d44\u4ea7\uff0c\u8fd8\u4e0d\u662f\u6743\u76ca\u4ea7\u4e1a\u94fe\u4fe1\u53f7",
   "Silver is gold beta plus industrial demand, so confirmation must be stricter": "\u767d\u94f6\u662f\u9ec4\u91d1 beta + \u5de5\u4e1a\u9700\u6c42\uff0c\u56e0\u6b64\u9a8c\u8bc1\u8981\u66f4\u4e25",
   "Ratio repair decides whether silver is confirming or merely lagging gold": "\u91d1\u94f6\u6bd4\u4fee\u590d\u51b3\u5b9a\u767d\u94f6\u662f\u5426\u771f\u6b63\u786e\u8ba4\u9ec4\u91d1\u884c\u60c5",
@@ -1659,8 +1684,19 @@ function renderValuationTemperature(data) {
 function formatAssetPrice(item) {
   const value = Number(item.price);
   if (!Number.isFinite(value) || value <= 0) return "n/a";
-  if (String(item.symbol || "").includes("/")) return value.toFixed(2);
+  if (isRatioAsset(item)) return value.toFixed(2);
   return `$${value.toFixed(2)}`;
+}
+
+function isRatioAsset(item) {
+  const symbol = String(item.symbol || "");
+  return symbol === "GC/SI" || symbol === "GLD/SLV" || /ratio/i.test(String(item.name || ""));
+}
+
+function formatSecondaryPrice(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number <= 0) return "n/a";
+  return `$${number.toFixed(2)}`;
 }
 
 function renderPreciousMetals(data) {
@@ -1668,12 +1704,20 @@ function renderPreciousMetals(data) {
   if (!metals.length) return "";
   const cards = metals.map((item, index) => {
     const gateLabels = [t("preciousGoldGate"), t("preciousSilverGate"), t("preciousRatioGate")];
-    const tone = item.symbol === "GLD/SLV" ? "neutral" : pctClass(item.changePct);
+    const tone = isRatioAsset(item) ? "neutral" : pctClass(item.changePct);
+    const pricingAnchor = item.pricingAnchor
+      ? `<small>${t("pricingReference")}: ${trValue(item.pricingAnchor)}</small>`
+      : "";
+    const flowProxy = item.flowSymbol
+      ? `<small>${t("flowProxy")}: ${item.flowSymbol} ${formatSecondaryPrice(item.flowPrice)} / ${fmtPct(item.flowChangePct)}</small>`
+      : "";
     return `
       <article class="${tone}">
         <span>${gateLabels[index] || trValue(item.role)}</span>
         <strong>${trValue(item.name)} ${formatAssetPrice(item)}</strong>
         <small>${trValue(item.proxy)} / ${fmtPct(item.changePct)}</small>
+        ${pricingAnchor}
+        ${flowProxy}
         <p>${trValue(item.validation)}</p>
       </article>
     `;

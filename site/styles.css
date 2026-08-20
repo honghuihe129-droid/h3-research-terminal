@@ -2454,7 +2454,7 @@ td strong {
 .precious-watch-grid article {
   display: grid;
   gap: 7px;
-  min-height: 126px;
+  min-height: 156px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.26);
@@ -2474,6 +2474,15 @@ td strong {
 
 .precious-watch-grid article.down strong {
   color: var(--primary);
+}
+
+.precious-watch-grid small {
+  display: block;
+}
+
+.precious-watch-grid small + small {
+  color: rgba(226, 226, 226, 0.54);
+  font-size: 12px;
 }
 
 .precious-watch-next {

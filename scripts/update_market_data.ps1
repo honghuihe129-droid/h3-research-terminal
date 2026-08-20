@@ -117,6 +117,44 @@ function Get-NasdaqQuote {
   }
 }
 
+function Get-YahooChartQuote {
+  param([string]$Symbol)
+  $encoded = [System.Uri]::EscapeDataString($Symbol)
+  $headers = @{
+    "User-Agent" = "Mozilla/5.0"
+    "Accept" = "application/json"
+  }
+  $url = "https://query1.finance.yahoo.com/v8/finance/chart/$encoded`?range=5d&interval=1d"
+  $json = Get-TextUtf8 $url $headers | ConvertFrom-Json
+  $result = @($json.chart.result)[0]
+  if (-not $result) { throw "No Yahoo Finance chart result for $Symbol" }
+
+  $meta = $result.meta
+  $quote = @($result.indicators.quote)[0]
+  $closes = @($quote.close | Where-Object { $_ -ne $null -and [double]$_ -gt 0 })
+  if ($closes.Count -eq 0 -and -not $meta.regularMarketPrice) {
+    throw "No Yahoo Finance close data for $Symbol"
+  }
+
+  $price = if ($meta.regularMarketPrice) { [double]$meta.regularMarketPrice } else { [double]$closes[$closes.Count - 1] }
+  $prev = if ($meta.chartPreviousClose) {
+    [double]$meta.chartPreviousClose
+  } elseif ($closes.Count -gt 1) {
+    [double]$closes[$closes.Count - 2]
+  } else {
+    $price
+  }
+  $changePct = if ($prev -gt 0) { (($price / $prev) - 1) * 100 } else { 0 }
+
+  [ordered]@{
+    symbol = $Symbol
+    price = [Math]::Round($price, 2)
+    changePct = [Math]::Round($changePct, 2)
+    source = "Yahoo Finance"
+    url = "https://finance.yahoo.com/quote/$encoded"
+  }
+}
+
 function Get-DefaultUsSectors {
   @(
     [ordered]@{ name = "Semiconductors"; symbol = "SOXX"; changePct = 0; leader = "SOXX"; evidence = "Fallback sector ETF heat, refresh required" },
@@ -232,52 +270,62 @@ function Get-PreciousMetals {
   param($ExistingPreciousMetals)
 
   try {
+    $goldFuture = Get-YahooChartQuote "GC=F"
+    $silverFuture = Get-YahooChartQuote "SI=F"
     $gold = Get-NasdaqQuote "GLD" "etf"
     $silver = Get-NasdaqQuote "SLV" "etf"
-    $ratio = if ($silver.price -gt 0) { [Math]::Round(($gold.price / $silver.price), 2) } else { $null }
+    $ratio = if ($silverFuture.price -gt 0) { [Math]::Round(($goldFuture.price / $silverFuture.price), 2) } else { $null }
 
     return @(
       [ordered]@{
         name = "Gold"
-        symbol = "GLD"
-        proxy = "SPDR Gold Shares"
-        price = $gold.price
-        changePct = $gold.changePct
+        symbol = "GC=F"
+        proxy = "COMEX gold futures"
+        price = $goldFuture.price
+        changePct = $goldFuture.changePct
+        pricingAnchor = "LBMA London spot gold reference"
+        flowSymbol = "GLD"
+        flowPrice = $gold.price
+        flowChangePct = $gold.changePct
         role = "Macro hedge"
         status = "Watch"
-        thesis = "Gold is a macro hedge, not an equity-chain signal yet"
-        validation = "Confirm with real rates, US dollar, central-bank demand, and ETF flows before mapping to miners"
-        nextStep = "Track gold first; consider GDX only after trend and fund flow confirmation"
-        source = "Nasdaq / GLD"
-        url = "https://www.nasdaq.com/market-activity/etf/gld"
+        thesis = "Gold is first a macro hedge; miners are a later equity-chain extension"
+        validation = "Confirm with COMEX GC, London spot reference, real rates, US dollar, central-bank demand, and GLD flows before mapping to miners"
+        nextStep = "Track GC and the London spot reference first; consider GDX only after trend and fund-flow confirmation"
+        source = "Yahoo Finance / COMEX GC + GLD; LBMA reference"
+        url = $goldFuture.url
       },
       [ordered]@{
         name = "Silver"
-        symbol = "SLV"
-        proxy = "iShares Silver Trust"
-        price = $silver.price
-        changePct = $silver.changePct
+        symbol = "SI=F"
+        proxy = "COMEX silver futures"
+        price = $silverFuture.price
+        changePct = $silverFuture.changePct
+        pricingAnchor = "LBMA London spot silver reference"
+        flowSymbol = "SLV"
+        flowPrice = $silver.price
+        flowChangePct = $silver.changePct
         role = "High-beta precious metal"
         status = "Watch"
         thesis = "Silver is gold beta plus industrial demand, so confirmation must be stricter"
-        validation = "Confirm with gold trend, industrial demand, supply deficit, and gold/silver ratio repair"
-        nextStep = "Track silver as a macro asset; consider SIL or the silver chain only after demand confirmation"
-        source = "Nasdaq / SLV"
-        url = "https://www.nasdaq.com/market-activity/etf/slv"
+        validation = "Confirm with COMEX SI, London spot reference, gold trend, industrial demand, supply deficit, and SLV flows"
+        nextStep = "Track SI as a macro asset; consider SIL or the silver chain only after demand confirmation"
+        source = "Yahoo Finance / COMEX SI + SLV; LBMA reference"
+        url = $silverFuture.url
       },
       [ordered]@{
         name = "Gold/Silver ratio"
-        symbol = "GLD/SLV"
-        proxy = "ETF proxy ratio"
+        symbol = "GC/SI"
+        proxy = "COMEX futures ratio"
         price = $ratio
-        changePct = [Math]::Round($gold.changePct - $silver.changePct, 2)
+        changePct = [Math]::Round($goldFuture.changePct - $silverFuture.changePct, 2)
         role = "Relative confirmation"
         status = "Gate"
         thesis = "Ratio repair decides whether silver is confirming or merely lagging gold"
         validation = "Silver leadership requires the ratio to fall while both metals stay above trend"
-        nextStep = "Use ratio repair as the bridge from macro asset to miners or industrial-chain research"
-        source = "Nasdaq / GLD + SLV"
-        url = "https://www.nasdaq.com/market-activity/etf/gld"
+        nextStep = "Use ratio repair as the bridge from macro assets to miners or industrial-chain research"
+        source = "Yahoo Finance / COMEX GC + SI"
+        url = $goldFuture.url
       }
     )
   } catch {
@@ -285,20 +333,22 @@ function Get-PreciousMetals {
     if ($fallback.Count -gt 0) { return $fallback }
     return @(
       [ordered]@{
-        name = "Gold"; symbol = "GLD"; proxy = "SPDR Gold Shares"; price = 0; changePct = 0
+        name = "Gold"; symbol = "GC=F"; proxy = "COMEX gold futures"; price = 0; changePct = 0
+        pricingAnchor = "LBMA London spot gold reference"; flowSymbol = "GLD"; flowPrice = 0; flowChangePct = 0
         role = "Macro hedge"; status = "Watch"
-        thesis = "Gold is a macro hedge, not an equity-chain signal yet"
-        validation = "Confirm with real rates, US dollar, central-bank demand, and ETF flows before mapping to miners"
-        nextStep = "Track gold first; consider GDX only after trend and fund flow confirmation"
-        source = "Fallback"; url = "https://www.nasdaq.com/market-activity/etf/gld"
+        thesis = "Gold is first a macro hedge; miners are a later equity-chain extension"
+        validation = "Confirm with COMEX GC, London spot reference, real rates, US dollar, central-bank demand, and GLD flows before mapping to miners"
+        nextStep = "Track GC and the London spot reference first; consider GDX only after trend and fund-flow confirmation"
+        source = "Fallback"; url = "https://finance.yahoo.com/quote/GC%3DF"
       },
       [ordered]@{
-        name = "Silver"; symbol = "SLV"; proxy = "iShares Silver Trust"; price = 0; changePct = 0
+        name = "Silver"; symbol = "SI=F"; proxy = "COMEX silver futures"; price = 0; changePct = 0
+        pricingAnchor = "LBMA London spot silver reference"; flowSymbol = "SLV"; flowPrice = 0; flowChangePct = 0
         role = "High-beta precious metal"; status = "Watch"
         thesis = "Silver is gold beta plus industrial demand, so confirmation must be stricter"
-        validation = "Confirm with gold trend, industrial demand, supply deficit, and gold/silver ratio repair"
-        nextStep = "Track silver as a macro asset; consider SIL or the silver chain only after demand confirmation"
-        source = "Fallback"; url = "https://www.nasdaq.com/market-activity/etf/slv"
+        validation = "Confirm with COMEX SI, London spot reference, gold trend, industrial demand, supply deficit, and SLV flows"
+        nextStep = "Track SI as a macro asset; consider SIL or the silver chain only after demand confirmation"
+        source = "Fallback"; url = "https://finance.yahoo.com/quote/SI%3DF"
       }
     )
   }
@@ -316,21 +366,21 @@ function Ensure-PreciousMetalsWatchItem {
   $items = @($ExistingWatchItems | Where-Object { $_.item -ne $itemName })
   $items += [ordered]@{
     item = $itemName
-    metric = U "R0xEL1NMViDku7fmoLzjgIHph5Hpk7bmr5TjgIHlrp7pmYXliKnnjofjgIHnvo7lhYPlkowgRVRGIOi1hOmHkea1gQ=="
+    metric = U "Q09NRVggR0MvU0kg57q957qm5pyf6LSn44CB5Lym5pWm546w6LSn5a6a5Lu35Y+C6ICD44CBR0xEL1NMViDotYTph5HmtYHjgIHlrp7pmYXliKnnjoflkoznvo7lhYM="
     priority = U "5Lit6auY"
     status = U "6KeC5a+f"
-    window = U "5q+P5pel5a6P6KeC6LWE5Lqn5pu05pawIC8g5q+P5ZGoIEVURiDotYTph5HmtYE="
-    trigger = U "R0xEL1NMViDotovlir/lkowgRVRGIOi1hOmHkea1geWQjOaXtuehruiupO+8m+WGjeivhOS8sCBHRFjjgIFTSUzjgIHph5Hnn7/ogqHlkoznmb3pk7bkuqfkuJrpk74="
-    relatedSymbols = @("GLD", "SLV")
+    window = U "5q+P5pel5a6P6KeC6LWE5Lqn5pu05pawIC8g5q+P5ZGoIEVURiDotYTph5HmtYEgLyBMQk1BIOWumuS7t+WPguiAgw=="
+    trigger = U "57q957qm5pyf6LSn6LaL5Yq/44CB5Lym5pWm546w6LSn5Y+j5b6E5ZKMIEVURiDotYTph5HmtYHlkIzml7bnoa7orqTvvJvlho3or4TkvLAgR0RY44CBU0lM44CB6YeR55+/6IKh5ZKM55m96ZO25Lqn5Lia6ZO+"
+    relatedSymbols = @("GC=F", "SI=F", "GLD", "SLV")
     lastCheck = (Get-Date).ToString("yyyy-MM-dd")
     events = @(
       [ordered]@{
         date = (Get-Date).ToString("yyyy-MM-dd")
         from = U "5pyq57qz5YWl"
         to = U "6KeC5a+f"
-        reason = U "5YWI5oqK6buE6YeR5ZKM55m96ZO25L2c5Li65a6P6KeC6LWE5Lqn5Yqg5YWlIEheM++8jOS4jeaApeedgOaJqeWxleWIsOefv+iCoeWSjOeZvemTtuS6p+S4mumTvg=="
-        evidence = U "R0xEL1NMViDmiqXku7fjgIHph5Hpk7bmr5TjgIHlrp7pmYXliKnnjofjgIHnvo7lhYPlkowgRVRGIOi1hOmHkea1gQ=="
-        source = "Nasdaq / WGC / Silver Institute / FRED"
+        reason = U "5YWI5oqK6buE6YeR5ZKM55m96ZO25L2c5Li65a6P6KeC6LWE5Lqn5Yqg5YWlIEheM++8mkNPTUVYIOe7meS6pOaYk+S7t+agvO+8jOS8puaVpueOsOi0p+e7meWumuS7t+WPo+W+hO+8jEVURiDotYTph5HmtYHnu5nmi6XmjKTluqbpqozor4E="
+        evidence = U "Q09NRVggR0MvU0njgIHkvKbmlabnjrDotKflj4LogIPjgIFHTEQvU0xWIOaKpeS7t+OAgeWunumZheWIqeeOh+OAgee+juWFg+WSjCBFVEYg6LWE6YeR5rWB"
+        source = U "WWFob28gRmluYW5jZSAvIExCTUEgLyBXR0MgLyBTaWx2ZXIgSW5zdGl0dXRlIC8gRlJFRA=="
       }
     )
   }
