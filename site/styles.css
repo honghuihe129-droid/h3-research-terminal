@@ -1525,6 +1525,129 @@ h1 {
   color: var(--text);
 }
 
+.watch-metals-panel {
+  margin-bottom: 18px;
+}
+
+.watch-metals {
+  display: grid;
+  gap: 11px;
+}
+
+.watch-metals-summary {
+  display: grid;
+  gap: 7px;
+  border: 1px solid rgba(255, 205, 91, 0.2);
+  border-left: 3px solid #ffcd5b;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(255, 205, 91, 0.1), transparent 70%),
+    rgba(0, 0, 0, 0.22);
+  padding: 11px 13px;
+}
+
+.watch-metals-summary.up {
+  border-color: rgba(0, 255, 35, 0.24);
+  border-left-color: var(--tertiary);
+  background:
+    linear-gradient(90deg, rgba(0, 255, 35, 0.08), transparent 70%),
+    rgba(0, 0, 0, 0.22);
+}
+
+.watch-metals-summary span,
+.watch-metals-grid span,
+.watch-metals-footer span,
+.watch-metals-footer small {
+  color: #ffcd5b;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.watch-metals-summary.up span {
+  color: var(--tertiary);
+}
+
+.watch-metals-summary strong {
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.watch-metals-summary p {
+  margin: 0;
+  color: rgba(226, 226, 226, 0.72);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.watch-metals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.watch-metals-grid article {
+  display: grid;
+  gap: 7px;
+  min-height: 104px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.24);
+  padding: 12px;
+}
+
+.watch-metals-grid strong {
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.watch-metals-grid article.up strong {
+  color: var(--tertiary);
+}
+
+.watch-metals-grid article.down strong {
+  color: var(--primary);
+}
+
+.watch-metals-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.watch-metals-footer {
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  align-items: center;
+  gap: 8px 14px;
+  border: 1px solid rgba(130, 207, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(130, 207, 255, 0.05);
+  padding: 10px 12px;
+}
+
+.watch-metals-footer strong {
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: right;
+}
+
+.watch-metals-footer small {
+  grid-column: 1 / -1;
+  color: rgba(226, 226, 226, 0.52);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
 .watch-radar {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2930,6 +3053,7 @@ td strong {
   .macro-regime-metrics,
   .valuation-temp-grid,
   .precious-signal-grid,
+  .watch-metals-grid,
   .research-core-grid,
   .framework-read-grid,
   .verdict-grid,
@@ -2999,6 +3123,7 @@ td strong {
   .macro-card-grid,
   .macro-regime-metrics,
   .precious-signal-grid,
+  .watch-metals-grid,
   .precious-watch-grid,
   .valuation-temp-grid,
   .research-core-grid,
@@ -3020,6 +3145,14 @@ td strong {
   .status-footer {
     justify-content: start;
     overflow-x: auto;
+  }
+
+  .watch-metals-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .watch-metals-footer strong {
+    text-align: left;
   }
 
   .about-hero {
@@ -3088,6 +3221,10 @@ html:lang(zh-CN) .about-chain > header span,
 html:lang(zh-CN) .macro-regime-head span,
 html:lang(zh-CN) .macro-regime-next span,
 html:lang(zh-CN) .macro-regime-metrics span,
+html:lang(zh-CN) .watch-metals-summary span,
+html:lang(zh-CN) .watch-metals-grid span,
+html:lang(zh-CN) .watch-metals-footer span,
+html:lang(zh-CN) .watch-metals-footer small,
 html:lang(zh-CN) .precious-watch-head span,
 html:lang(zh-CN) .precious-watch-takeaway span,
 html:lang(zh-CN) .precious-signal-panel header span,
@@ -3109,6 +3246,8 @@ html:lang(zh-CN) .about-step p,
 html:lang(zh-CN) .about-meta p,
 html:lang(zh-CN) .macro-regime-head p,
 html:lang(zh-CN) .macro-regime-next p,
+html:lang(zh-CN) .watch-metals-summary p,
+html:lang(zh-CN) .watch-metals-grid p,
 html:lang(zh-CN) .precious-watch-head p,
 html:lang(zh-CN) .precious-watch-takeaway p,
 html:lang(zh-CN) .precious-watch-takeaway small,
@@ -3133,6 +3272,9 @@ html:lang(zh-CN) .about-card.wide p {
 
 html:lang(zh-CN) .about-meta .contact p,
 html:lang(zh-CN) .macro-regime-metrics strong,
+html:lang(zh-CN) .watch-metals-summary strong,
+html:lang(zh-CN) .watch-metals-grid strong,
+html:lang(zh-CN) .watch-metals-footer strong,
 html:lang(zh-CN) .precious-watch-takeaway strong,
 html:lang(zh-CN) .precious-signal-grid strong,
 html:lang(zh-CN) .precious-signal-grid b,

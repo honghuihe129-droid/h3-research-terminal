@@ -39,6 +39,10 @@ const i18n = {
     dataFeedReady: "DATA_FEED_READY",
     heatmapTitle: "Theme Heatmap",
     heatmapSub: "A-share sectors + US industry ETFs",
+    watchMetalsTitle: "Precious Metals",
+    watchMetalsSub: "gold / silver / macro asset reference",
+    watchMetalsRead: "Delayed price reference only; judgment comes from FRED, WGC, and Silver Institute factors",
+    watchMetalsBoundary: "Trend reference, not official redistributable quote data",
     validationTitle: "Validation Queue",
     validationSub: "heat to next checks",
     qualityTitle: "Data Quality",
@@ -336,6 +340,10 @@ const i18n = {
     dataFeedReady: "DATA_FEED_READY",
     heatmapTitle: "Theme Heatmap",
     heatmapSub: "A-share sectors + US industry ETFs",
+    watchMetalsTitle: "\u8d35\u91d1\u5c5e",
+    watchMetalsSub: "\u9ec4\u91d1 / \u767d\u94f6 / \u5b8f\u89c2\u8d44\u4ea7\u53c2\u8003",
+    watchMetalsRead: "\u4ef7\u683c\u4ec5\u4f5c\u5ef6\u8fdf\u8d8b\u52bf\u53c2\u8003\uff1b\u5224\u65ad\u6765\u81ea FRED\u3001WGC \u548c Silver Institute \u56e0\u5b50",
+    watchMetalsBoundary: "\u8d8b\u52bf\u53c2\u8003\uff0c\u4e0d\u662f\u5b98\u65b9\u53ef\u518d\u5206\u53d1\u62a5\u4ef7\u6570\u636e",
     validationTitle: "\u9a8c\u8bc1\u961f\u5217",
     validationSub: "\u4ece\u70ed\u5ea6\u5230\u4e0b\u4e00\u68c0\u67e5",
     qualityTitle: "\u6570\u636e\u8d28\u68c0",
@@ -1886,7 +1894,6 @@ function renderMacro(data) {
   const macro = data.macro || [];
   document.getElementById("macroGrid").innerHTML = `
     ${renderMacroRegime(data)}
-    ${renderPreciousMetals(data)}
     ${renderValuationTemperature(data)}
     <div class="macro-card-grid">
       ${macro.map((item) => `
@@ -1898,6 +1905,41 @@ function renderMacro(data) {
           <a class="macro-source" href="${item.url}" target="_blank" rel="noreferrer">${trValue(item.source)}</a>
         </div>
       `).join("")}
+    </div>
+  `;
+}
+
+function renderWatchMetals(data) {
+  const target = document.getElementById("watchMetals");
+  if (!target) return;
+  const metals = data.preciousMetals || [];
+  const signals = data.preciousSignals || [];
+  if (!metals.length) {
+    target.innerHTML = `<p>${t("unknown")}</p>`;
+    return;
+  }
+  const conclusion = getPreciousConclusion(metals);
+  const signal = signals.find((item) => item.key === "fred_macro") || signals[0];
+
+  target.innerHTML = `
+    <div class="watch-metals-summary ${conclusion.tone}">
+      <span>${t("preciousTakeaway")}</span>
+      <strong>${conclusion.title}</strong>
+      <p>${conclusion.body}</p>
+    </div>
+    <div class="watch-metals-grid">
+      ${metals.map((item) => `
+        <article class="${isRatioAsset(item) ? "neutral" : pctClass(item.changePct)}">
+          <span>${trValue(item.proxy)}</span>
+          <strong>${trValue(item.name)} ${formatAssetPrice(item)}</strong>
+          <p>${fmtPct(item.changePct)} / ${trValue(item.role)}</p>
+        </article>
+      `).join("")}
+    </div>
+    <div class="watch-metals-footer">
+      <span>${t("watchMetalsRead")}</span>
+      <strong>${signal ? trValue(signal.value) : t("unknown")}</strong>
+      <small>${t("watchMetalsBoundary")}</small>
     </div>
   `;
 }
@@ -2251,6 +2293,7 @@ function render(data) {
   renderResearchRows(data.companies);
   renderCompanyDetail();
   renderMacro(data);
+  renderWatchMetals(data);
   renderWatchItems(data);
   renderMacroSignals(data);
   renderResearchLog(data);
