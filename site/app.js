@@ -160,7 +160,7 @@ const i18n = {
     aboutLogicTitle: "Our logic",
     aboutLogicBody: "Start with market soil, find the industrial clue, test the evidence, map it to financial statements, then define what would change the judgment",
     aboutFocusTitle: "What we focus on",
-    aboutFocusBody: "We focus on AI infrastructure, cloud capex, GPU, ASIC, HBM, optical modules, AI networking, domestic compute, advanced packaging, liquidity, and valuation pressure",
+    aboutFocusBody: "We focus on AI infrastructure, cloud capex, GPU, ASIC, HBM, optical modules, AI networking, domestic compute, advanced packaging, precious metals, liquidity, and valuation pressure",
     aboutUseTitle: "How to use it",
     aboutUseBody: "Read Daily Verdict for the action, Research for the evidence, Macro for the market soil, and Log for how judgments evolve",
     aboutWhyTitle: "Why we do this",
@@ -205,6 +205,14 @@ const i18n = {
     valuationDiscountLow: "Limited",
     valuationTrapRead: "Low price is not enough; require revenue, margin, and cash-flow validation",
     valuationNextRead: "Bubble cools when price falls toward DMA or earnings catch up; discount upgrades only after financial evidence improves",
+    preciousTitle: "Precious Metals Watch",
+    preciousStatus: "Macro assets first",
+    preciousRead: "Gold and silver enter H^3 as macro assets, not as a rush into miners. Confirm trend and fund flow before extending to GDX, SIL, gold miners, or the silver chain",
+    preciousGoldGate: "Gold gate",
+    preciousSilverGate: "Silver gate",
+    preciousRatioGate: "Gold/silver ratio",
+    preciousNext: "Expansion rule",
+    preciousNextRead: "Only expand from GLD/SLV to GDX, SIL, miners, or the silver industrial chain after trend, real-rate, ETF-flow, and demand signals confirm together",
     watchTitle: "Watch Items",
     watchSub: "next validation round",
     radarPriority: "Priority mix",
@@ -429,7 +437,7 @@ const i18n = {
     aboutLogicTitle: "\u6211\u4eec\u7684\u903b\u8f91",
     aboutLogicBody: "\u5148\u770b\u5e02\u573a\u571f\u58e4\uff0c\u518d\u627e\u4ea7\u4e1a\u7ebf\u7d22\uff1b\u628a\u70ed\u5ea6\u548c\u8bc1\u636e\u5206\u5f00\uff0c\u518d\u6620\u5c04\u5230\u8d22\u52a1\u62a5\u8868\u548c\u5224\u65ad\u6761\u4ef6",
     aboutFocusTitle: "\u6211\u4eec\u5173\u6ce8\u4ec0\u4e48",
-    aboutFocusBody: "\u6211\u4eec\u5173\u6ce8 AI \u57fa\u7840\u8bbe\u65bd\u3001\u4e91\u5382\u5546 Capex\u3001GPU\u3001ASIC\u3001HBM\u3001\u5149\u6a21\u5757\u3001AI \u7f51\u7edc\u3001\u56fd\u4ea7\u7b97\u529b\u3001\u5148\u8fdb\u5c01\u88c5\u3001\u6d41\u52a8\u6027\u548c\u4f30\u503c\u538b\u529b",
+    aboutFocusBody: "\u6211\u4eec\u5173\u6ce8 AI \u57fa\u7840\u8bbe\u65bd\u3001\u4e91\u5382\u5546 Capex\u3001GPU\u3001ASIC\u3001HBM\u3001\u5149\u6a21\u5757\u3001AI \u7f51\u7edc\u3001\u56fd\u4ea7\u7b97\u529b\u3001\u5148\u8fdb\u5c01\u88c5\u3001\u8d35\u91d1\u5c5e\u3001\u6d41\u52a8\u6027\u548c\u4f30\u503c\u538b\u529b",
     aboutUseTitle: "\u7528\u6237\u53ef\u4ee5\u600e\u4e48\u7528",
     aboutUseBody: "\u7528 Daily Verdict \u770b\u4eca\u5929\u7684\u52a8\u4f5c\uff0c\u7528 Research \u770b\u8bc1\u636e\uff0c\u7528 Macro \u770b\u5e02\u573a\u571f\u58e4\uff0c\u7528 Log \u770b\u5224\u65ad\u5982\u4f55\u53d8\u5316",
     aboutWhyTitle: "\u6211\u4eec\u4e3a\u4ec0\u4e48\u8fd9\u4e48\u505a",
@@ -474,6 +482,14 @@ const i18n = {
     valuationDiscountLow: "\u6709\u9650",
     valuationTrapRead: "\u4f4e\u4ef7\u4e0d\u591f\uff0c\u9700\u8981\u6536\u5165\u3001\u6bdb\u5229\u7387\u548c\u73b0\u91d1\u6d41\u9a8c\u8bc1",
     valuationNextRead: "\u6ce1\u6cab\u51b7\u5374\u6765\u81ea\u4ef7\u683c\u56de\u5230 DMA \u9644\u8fd1\u6216\u76c8\u5229\u8ffd\u4e0a\uff1b\u4f4e\u4f30\u5347\u7ea7\u53ea\u6765\u81ea\u8d22\u52a1\u8bc1\u636e\u6539\u5584",
+    preciousTitle: "\u8d35\u91d1\u5c5e\u89c2\u5bdf",
+    preciousStatus: "\u5148\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7",
+    preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\uff0c\u4e0d\u6025\u7740\u6269\u5c55\u5230\u77ff\u80a1\u3002\u7b49\u8d8b\u52bf\u548c\u8d44\u91d1\u6d41\u786e\u8ba4\u540e\uff0c\u518d\u8003\u8651 GDX\u3001SIL\u3001\u91d1\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
+    preciousGoldGate: "\u9ec4\u91d1\u95f8\u95e8",
+    preciousSilverGate: "\u767d\u94f6\u95f8\u95e8",
+    preciousRatioGate: "\u91d1\u94f6\u6bd4",
+    preciousNext: "\u6269\u5c55\u89c4\u5219",
+    preciousNextRead: "\u53ea\u6709\u5728\u8d8b\u52bf\u3001\u5b9e\u9645\u5229\u7387\u3001ETF \u8d44\u91d1\u6d41\u548c\u9700\u6c42\u4fe1\u53f7\u5171\u632f\u540e\uff0c\u624d\u4ece GLD/SLV \u6269\u5c55\u5230 GDX\u3001SIL\u3001\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
     watchTitle: "Watch Items",
     watchSub: "next validation round",
     radarPriority: "\u4f18\u5148\u7ea7\u5206\u5e03",
@@ -611,6 +627,14 @@ const valueTranslations = {
   "利率和需求仍决定成长股估值上限": "Rates and demand still define the valuation ceiling for growth stocks",
   "\u5f00\u653e": "Open",
   "\u89c2\u5bdf": "Watch",
+  "\u672a\u7eb3\u5165": "Not included",
+  "\u8d35\u91d1\u5c5e\u5b8f\u89c2\u8d44\u4ea7": "Precious metals macro assets",
+  "GLD/SLV \u4ef7\u683c\u3001\u91d1\u94f6\u6bd4\u3001\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u548c ETF \u8d44\u91d1\u6d41": "GLD/SLV price, gold/silver ratio, real rates, US dollar, and ETF flows",
+  "\u6bcf\u65e5\u5b8f\u89c2\u8d44\u4ea7\u66f4\u65b0 / \u6bcf\u5468 ETF \u8d44\u91d1\u6d41": "Daily macro-asset update / weekly ETF flows",
+  "GLD/SLV \u8d8b\u52bf\u548c ETF \u8d44\u91d1\u6d41\u540c\u65f6\u786e\u8ba4\uff1b\u518d\u8bc4\u4f30 GDX\u3001SIL\u3001\u91d1\u77ff\u80a1\u548c\u767d\u94f6\u4ea7\u4e1a\u94fe": "GLD/SLV trend and ETF flows confirm together; then reassess GDX, SIL, gold miners, and the silver chain",
+  "\u5148\u628a\u9ec4\u91d1\u548c\u767d\u94f6\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7\u52a0\u5165 H^3\uff0c\u4e0d\u6025\u7740\u6269\u5c55\u5230\u77ff\u80a1\u548c\u767d\u94f6\u4ea7\u4e1a\u94fe": "Add gold and silver to H^3 as macro assets first; do not rush into miners or the silver chain",
+  "GLD/SLV \u62a5\u4ef7\u3001\u91d1\u94f6\u6bd4\u3001\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u548c ETF \u8d44\u91d1\u6d41": "GLD/SLV quotes, gold/silver ratio, real rates, US dollar, and ETF flows",
+  "Nasdaq / WGC / Silver Institute / FRED": "Nasdaq / WGC / Silver Institute / FRED",
   "\u6838\u5fc3\u951a": "Core anchor",
   "\u9ad8\u5f39\u6027\u8ddf\u8e2a": "High-elasticity tracking",
   "\u4e3b\u7ebf\u8ddf\u8e2a": "Mainline tracking",
@@ -747,6 +771,23 @@ const zhValueTranslations = {
   "Daily 15:30 Beijing time": "\u6bcf\u65e5\u5317\u4eac\u65f6\u95f4 15:30",
   "China": "\u4e2d\u56fd",
   "United States": "\u7f8e\u56fd",
+  "Gold": "\u9ec4\u91d1",
+  "Silver": "\u767d\u94f6",
+  "Gold/Silver ratio": "\u91d1\u94f6\u6bd4",
+  "SPDR Gold Shares": "SPDR \u9ec4\u91d1 ETF",
+  "iShares Silver Trust": "iShares \u767d\u94f6 ETF",
+  "ETF proxy ratio": "ETF \u4ee3\u7406\u6bd4\u503c",
+  "Macro hedge": "\u5b8f\u89c2\u5bf9\u51b2",
+  "High-beta precious metal": "\u9ad8 beta \u8d35\u91d1\u5c5e",
+  "Relative confirmation": "\u76f8\u5bf9\u5f3a\u5f31\u9a8c\u8bc1",
+  "Watch": "\u89c2\u5bdf",
+  "Gate": "\u95f8\u95e8",
+  "Gold is a macro hedge, not an equity-chain signal yet": "\u9ec4\u91d1\u5148\u662f\u5b8f\u89c2\u5bf9\u51b2\u8d44\u4ea7\uff0c\u8fd8\u4e0d\u662f\u6743\u76ca\u4ea7\u4e1a\u94fe\u4fe1\u53f7",
+  "Silver is gold beta plus industrial demand, so confirmation must be stricter": "\u767d\u94f6\u662f\u9ec4\u91d1 beta + \u5de5\u4e1a\u9700\u6c42\uff0c\u56e0\u6b64\u9a8c\u8bc1\u8981\u66f4\u4e25",
+  "Ratio repair decides whether silver is confirming or merely lagging gold": "\u91d1\u94f6\u6bd4\u4fee\u590d\u51b3\u5b9a\u767d\u94f6\u662f\u5426\u771f\u6b63\u786e\u8ba4\u9ec4\u91d1\u884c\u60c5",
+  "Confirm with real rates, US dollar, central-bank demand, and ETF flows before mapping to miners": "\u5148\u7528\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u3001\u592e\u884c\u9700\u6c42\u548c ETF \u8d44\u91d1\u6d41\u9a8c\u8bc1\uff0c\u518d\u6620\u5c04\u5230\u77ff\u80a1",
+  "Confirm with gold trend, industrial demand, supply deficit, and gold/silver ratio repair": "\u7528\u9ec4\u91d1\u8d8b\u52bf\u3001\u5de5\u4e1a\u9700\u6c42\u3001\u4f9b\u9700\u7f3a\u53e3\u548c\u91d1\u94f6\u6bd4\u4fee\u590d\u9a8c\u8bc1",
+  "Silver leadership requires the ratio to fall while both metals stay above trend": "\u767d\u94f6\u9886\u6da8\u9700\u8981\u91d1\u94f6\u6bd4\u4e0b\u884c\uff0c\u4e14\u4e24\u8005\u90fd\u4fdd\u6301\u8d8b\u52bf\u4e0a\u65b9",
   "GDP growth": "GDP \u589e\u901f",
   "Manufacturing PMI": "\u5236\u9020\u4e1a PMI",
   "Industrial output": "\u5de5\u4e1a\u589e\u52a0\u503c",
@@ -1615,10 +1656,52 @@ function renderValuationTemperature(data) {
   `;
 }
 
+function formatAssetPrice(item) {
+  const value = Number(item.price);
+  if (!Number.isFinite(value) || value <= 0) return "n/a";
+  if (String(item.symbol || "").includes("/")) return value.toFixed(2);
+  return `$${value.toFixed(2)}`;
+}
+
+function renderPreciousMetals(data) {
+  const metals = data.preciousMetals || [];
+  if (!metals.length) return "";
+  const cards = metals.map((item, index) => {
+    const gateLabels = [t("preciousGoldGate"), t("preciousSilverGate"), t("preciousRatioGate")];
+    const tone = item.symbol === "GLD/SLV" ? "neutral" : pctClass(item.changePct);
+    return `
+      <article class="${tone}">
+        <span>${gateLabels[index] || trValue(item.role)}</span>
+        <strong>${trValue(item.name)} ${formatAssetPrice(item)}</strong>
+        <small>${trValue(item.proxy)} / ${fmtPct(item.changePct)}</small>
+        <p>${trValue(item.validation)}</p>
+      </article>
+    `;
+  }).join("");
+
+  return `
+    <section class="precious-watch">
+      <div class="precious-watch-head">
+        <span>${t("preciousTitle")}</span>
+        <strong>${t("preciousStatus")}</strong>
+        <p>${t("preciousRead")}</p>
+      </div>
+      <div class="precious-watch-grid">
+        ${cards}
+      </div>
+      <div class="precious-watch-next">
+        <span>${t("preciousNext")}</span>
+        <p>${t("preciousNextRead")}</p>
+      </div>
+    </section>
+  `;
+}
+
 function renderMacro(data) {
   const macro = data.macro || [];
   document.getElementById("macroGrid").innerHTML = `
     ${renderMacroRegime(data)}
+    ${renderPreciousMetals(data)}
     ${renderValuationTemperature(data)}
     <div class="macro-card-grid">
       ${macro.map((item) => `
@@ -1665,6 +1748,7 @@ function renderWatchItems(data) {
 
   const topA = topByChange(data.sectors);
   const topUs = topByChange(data.usSectors);
+  const topMetal = topByChange(data.preciousMetals);
   const chinaPmi = pickMacro(data, ["Manufacturing PMI", "\u5236\u9020\u4e1a PMI"]);
   const usRate = pickMacro(data, ["Fed funds target range", "\u8054\u90a6\u57fa\u91d1\u76ee\u6807\u533a\u95f4"]);
   const radarCards = [
@@ -1694,6 +1778,12 @@ function renderWatchItems(data) {
       ].filter(Boolean).join(" / ") || t("unknown"),
       detail: t("radarMacroGateDetail"),
       tone: "neutral"
+    },
+    {
+      label: t("preciousTitle"),
+      value: topMetal ? `${trValue(topMetal.name)} ${fmtPct(topMetal.changePct)}` : t("unknown"),
+      detail: topMetal ? trValue(topMetal.role) : t("preciousStatus"),
+      tone: topMetal ? pctClass(topMetal.changePct) : "neutral"
     }
   ];
 

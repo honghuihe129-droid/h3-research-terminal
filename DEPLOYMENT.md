@@ -53,19 +53,9 @@ powershell.exe -ExecutionPolicy Bypass -File scripts\install_daily_update.ps1 -P
 
 ## GitHub Pages Mirror
 
-The repository includes two backup routes:
+The repository uses the `gh-pages` branch as the static mirror route. This keeps the backup simple and avoids requiring GitHub Actions Pages setup.
 
-- `gh-pages` branch: static mirror already pushed from `dist`
-- `.github/workflows/pages.yml`: GitHub Actions mirror once Pages is enabled with `GitHub Actions` as the source
-
-If the GitHub Actions route fails at `Configure Pages`, open repository settings and enable Pages first:
-
-```text
-Settings -> Pages -> Build and deployment
-Source: GitHub Actions
-```
-
-For the branch route:
+GitHub repository settings:
 
 ```text
 Settings -> Pages -> Build and deployment

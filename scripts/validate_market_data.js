@@ -108,6 +108,20 @@ function validateMacro(row, index) {
   assertUrl(row.url, `${label}.url`);
 }
 
+function validatePreciousMetal(row, index) {
+  const label = `preciousMetals[${index}]`;
+  ["name", "symbol", "proxy", "role", "status", "thesis", "validation", "nextStep", "source", "url"].forEach((key) => {
+    if (!row[key]) addError(`Missing ${label}.${key}`);
+  });
+  if (!isFiniteNumber(row.price) || row.price < 0) {
+    addError(`Invalid ${label}.price`, `${row.symbol || row.name || "unknown"}=${row.price}`);
+  }
+  if (!isFiniteNumber(row.changePct) || Math.abs(row.changePct) > 25) {
+    addError(`Suspicious ${label}.changePct`, `${row.symbol || row.name || "unknown"}=${row.changePct}`);
+  }
+  assertUrl(row.url, `${label}.url`);
+}
+
 function validate() {
   if (!fs.existsSync(target)) addError("Data file does not exist", target);
   if (errors.length) return null;
@@ -138,6 +152,10 @@ function validate() {
   requireArray(data, "hypothesisFlow", 4);
   requireArray(data, "watchItems", 4);
   requireArray(data, "sources", 3);
+  const preciousMetals = Array.isArray(data.preciousMetals) ? data.preciousMetals : [];
+  if (preciousMetals.length && preciousMetals.length < 2) {
+    addError("Array preciousMetals has too few rows", `${preciousMetals.length} < 2`);
+  }
 
   const requiredSymbols = ["sh000001", "sz399001", "sz399006", "SPY", "QQQ", "SOXX"];
   const symbolSet = new Set(indices.map((row) => row.symbol));
@@ -155,6 +173,7 @@ function validate() {
   usSectors.forEach((row, index) => validateHeatRow(row, `usSectors[${index}]`, false));
   companies.forEach(validateCompany);
   macro.forEach(validateMacro);
+  preciousMetals.forEach(validatePreciousMetal);
   (data.sources || []).forEach((row, index) => assertUrl(row.url, `sources[${index}].url`));
 
   const mojibakePattern = /(?:�|鍥|涓|缇|鑲|闂|绉|鐨|妯|湪|槸|锛|浠|瀹|犻|娴|鐪|鍏|骞|獙|搴|叕)/;
@@ -177,6 +196,7 @@ const report = {
     usSectors: data.usSectors?.length || 0,
     companies: data.companies?.length || 0,
     macro: data.macro?.length || 0,
+    preciousMetals: data.preciousMetals?.length || 0,
     sources: data.sources?.length || 0
   } : {},
   errors,

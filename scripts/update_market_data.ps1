@@ -228,6 +228,114 @@ function Get-FredRows {
   })
 }
 
+function Get-PreciousMetals {
+  param($ExistingPreciousMetals)
+
+  try {
+    $gold = Get-NasdaqQuote "GLD" "etf"
+    $silver = Get-NasdaqQuote "SLV" "etf"
+    $ratio = if ($silver.price -gt 0) { [Math]::Round(($gold.price / $silver.price), 2) } else { $null }
+
+    return @(
+      [ordered]@{
+        name = "Gold"
+        symbol = "GLD"
+        proxy = "SPDR Gold Shares"
+        price = $gold.price
+        changePct = $gold.changePct
+        role = "Macro hedge"
+        status = "Watch"
+        thesis = "Gold is a macro hedge, not an equity-chain signal yet"
+        validation = "Confirm with real rates, US dollar, central-bank demand, and ETF flows before mapping to miners"
+        nextStep = "Track gold first; consider GDX only after trend and fund flow confirmation"
+        source = "Nasdaq / GLD"
+        url = "https://www.nasdaq.com/market-activity/etf/gld"
+      },
+      [ordered]@{
+        name = "Silver"
+        symbol = "SLV"
+        proxy = "iShares Silver Trust"
+        price = $silver.price
+        changePct = $silver.changePct
+        role = "High-beta precious metal"
+        status = "Watch"
+        thesis = "Silver is gold beta plus industrial demand, so confirmation must be stricter"
+        validation = "Confirm with gold trend, industrial demand, supply deficit, and gold/silver ratio repair"
+        nextStep = "Track silver as a macro asset; consider SIL or the silver chain only after demand confirmation"
+        source = "Nasdaq / SLV"
+        url = "https://www.nasdaq.com/market-activity/etf/slv"
+      },
+      [ordered]@{
+        name = "Gold/Silver ratio"
+        symbol = "GLD/SLV"
+        proxy = "ETF proxy ratio"
+        price = $ratio
+        changePct = [Math]::Round($gold.changePct - $silver.changePct, 2)
+        role = "Relative confirmation"
+        status = "Gate"
+        thesis = "Ratio repair decides whether silver is confirming or merely lagging gold"
+        validation = "Silver leadership requires the ratio to fall while both metals stay above trend"
+        nextStep = "Use ratio repair as the bridge from macro asset to miners or industrial-chain research"
+        source = "Nasdaq / GLD + SLV"
+        url = "https://www.nasdaq.com/market-activity/etf/gld"
+      }
+    )
+  } catch {
+    $fallback = @($ExistingPreciousMetals)
+    if ($fallback.Count -gt 0) { return $fallback }
+    return @(
+      [ordered]@{
+        name = "Gold"; symbol = "GLD"; proxy = "SPDR Gold Shares"; price = 0; changePct = 0
+        role = "Macro hedge"; status = "Watch"
+        thesis = "Gold is a macro hedge, not an equity-chain signal yet"
+        validation = "Confirm with real rates, US dollar, central-bank demand, and ETF flows before mapping to miners"
+        nextStep = "Track gold first; consider GDX only after trend and fund flow confirmation"
+        source = "Fallback"; url = "https://www.nasdaq.com/market-activity/etf/gld"
+      },
+      [ordered]@{
+        name = "Silver"; symbol = "SLV"; proxy = "iShares Silver Trust"; price = 0; changePct = 0
+        role = "High-beta precious metal"; status = "Watch"
+        thesis = "Silver is gold beta plus industrial demand, so confirmation must be stricter"
+        validation = "Confirm with gold trend, industrial demand, supply deficit, and gold/silver ratio repair"
+        nextStep = "Track silver as a macro asset; consider SIL or the silver chain only after demand confirmation"
+        source = "Fallback"; url = "https://www.nasdaq.com/market-activity/etf/slv"
+      }
+    )
+  }
+}
+
+function Ensure-PreciousMetalsWatchItem {
+  param($ExistingWatchItems)
+
+  function U {
+    param([string]$Base64)
+    [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($Base64))
+  }
+
+  $itemName = U "6LS16YeR5bGe5a6P6KeC6LWE5Lqn"
+  $items = @($ExistingWatchItems | Where-Object { $_.item -ne $itemName })
+  $items += [ordered]@{
+    item = $itemName
+    metric = U "R0xEL1NMViDku7fmoLzjgIHph5Hpk7bmr5TjgIHlrp7pmYXliKnnjofjgIHnvo7lhYPlkowgRVRGIOi1hOmHkea1gQ=="
+    priority = U "5Lit6auY"
+    status = U "6KeC5a+f"
+    window = U "5q+P5pel5a6P6KeC6LWE5Lqn5pu05pawIC8g5q+P5ZGoIEVURiDotYTph5HmtYE="
+    trigger = U "R0xEL1NMViDotovlir/lkowgRVRGIOi1hOmHkea1geWQjOaXtuehruiupO+8m+WGjeivhOS8sCBHRFjjgIFTSUzjgIHph5Hnn7/ogqHlkoznmb3pk7bkuqfkuJrpk74="
+    relatedSymbols = @("GLD", "SLV")
+    lastCheck = (Get-Date).ToString("yyyy-MM-dd")
+    events = @(
+      [ordered]@{
+        date = (Get-Date).ToString("yyyy-MM-dd")
+        from = U "5pyq57qz5YWl"
+        to = U "6KeC5a+f"
+        reason = U "5YWI5oqK6buE6YeR5ZKM55m96ZO25L2c5Li65a6P6KeC6LWE5Lqn5Yqg5YWlIEheM++8jOS4jeaApeedgOaJqeWxleWIsOefv+iCoeWSjOeZvemTtuS6p+S4mumTvg=="
+        evidence = U "R0xEL1NMViDmiqXku7fjgIHph5Hpk7bmr5TjgIHlrp7pmYXliKnnjofjgIHnvo7lhYPlkowgRVRGIOi1hOmHkea1gQ=="
+        source = "Nasdaq / WGC / Silver Institute / FRED"
+      }
+    )
+  }
+  return $items
+}
 function Get-FredLatest {
   param([string]$Series)
   $rows = @(Get-FredRows $Series)
@@ -348,19 +456,22 @@ try {
 } catch {
   $macro += Get-DefaultUsMacroData
 }
+$preciousMetals = @(Get-PreciousMetals $existing.preciousMetals)
+$watchItems = @(Ensure-PreciousMetalsWatchItem $existing.watchItems)
 
 $updated = [ordered]@{
   generatedAt = (Get-Date).ToString("yyyy-MM-ddTHH:mm:sszzz")
   nextScheduledUpdate = "Daily 15:30 Beijing time"
   sourcePolicy = $existing.sourcePolicy
   macro = $macro
+  preciousMetals = $preciousMetals
   indices = $indices
   sectors = $sectors
   usSectors = $usSectors
   companies = $existing.companies
   passList = $existing.passList
   hypothesisFlow = $existing.hypothesisFlow
-  watchItems = $existing.watchItems
+  watchItems = $watchItems
   sources = $existing.sources
 }
 

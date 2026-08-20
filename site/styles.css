@@ -2400,6 +2400,89 @@ td strong {
   padding-top: 12px;
 }
 
+.precious-watch {
+  display: grid;
+  gap: 13px;
+  border: 1px solid rgba(255, 205, 91, 0.24);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(255, 205, 91, 0.12), transparent 42%),
+    linear-gradient(270deg, rgba(130, 207, 255, 0.08), transparent 40%),
+    rgba(13, 13, 14, 0.48);
+  padding: 15px;
+}
+
+.precious-watch-head {
+  display: grid;
+  gap: 8px;
+}
+
+.precious-watch-head span,
+.precious-watch-grid span,
+.precious-watch-next span {
+  color: #ffcd5b;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.precious-watch-head strong {
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.precious-watch-head p,
+.precious-watch-grid p,
+.precious-watch-next p,
+.precious-watch-grid small {
+  margin: 0;
+  color: rgba(226, 226, 226, 0.7);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.precious-watch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.precious-watch-grid article {
+  display: grid;
+  gap: 7px;
+  min-height: 126px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.26);
+  padding: 11px;
+}
+
+.precious-watch-grid strong {
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.precious-watch-grid article.up strong {
+  color: var(--tertiary);
+}
+
+.precious-watch-grid article.down strong {
+  color: var(--primary);
+}
+
+.precious-watch-next {
+  display: grid;
+  gap: 7px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 12px;
+}
+
 .macro-card-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2784,6 +2867,7 @@ td strong {
   .macro-grid,
   .macro-card-grid,
   .macro-regime-metrics,
+  .precious-watch-grid,
   .valuation-temp-grid,
   .research-core-grid,
   .verdict-grid,
@@ -2872,6 +2956,9 @@ html:lang(zh-CN) .about-chain > header span,
 html:lang(zh-CN) .macro-regime-head span,
 html:lang(zh-CN) .macro-regime-next span,
 html:lang(zh-CN) .macro-regime-metrics span,
+html:lang(zh-CN) .precious-watch-head span,
+html:lang(zh-CN) .precious-watch-grid span,
+html:lang(zh-CN) .precious-watch-next span,
 html:lang(zh-CN) .valuation-temp-head span,
 html:lang(zh-CN) .valuation-temp-grid span,
 html:lang(zh-CN) .valuation-temp-next span {
@@ -2886,6 +2973,9 @@ html:lang(zh-CN) .about-step p,
 html:lang(zh-CN) .about-meta p,
 html:lang(zh-CN) .macro-regime-head p,
 html:lang(zh-CN) .macro-regime-next p,
+html:lang(zh-CN) .precious-watch-head p,
+html:lang(zh-CN) .precious-watch-grid p,
+html:lang(zh-CN) .precious-watch-next p,
 html:lang(zh-CN) .valuation-temp-head p,
 html:lang(zh-CN) .valuation-temp-grid p,
 html:lang(zh-CN) .valuation-temp-next p {
@@ -2901,6 +2991,7 @@ html:lang(zh-CN) .about-card.wide p {
 
 html:lang(zh-CN) .about-meta .contact p,
 html:lang(zh-CN) .macro-regime-metrics strong,
+html:lang(zh-CN) .precious-watch-grid strong,
 html:lang(zh-CN) .valuation-temp-grid strong {
   font-family: var(--font-zh-mono);
 }

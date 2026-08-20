@@ -1,5 +1,5 @@
 {
-    "generatedAt":  "2026-08-19T15:31:05+08:00",
+    "generatedAt":  "2026-08-20T11:21:35+08:00",
     "nextScheduledUpdate":  "Daily 15:30 Beijing time",
     "sourcePolicy":  "公司公告/官方文件 \u003e 交易所披露 \u003e 官方产业数据 \u003e 权威媒体 \u003e 研报 \u003e 互动平台 \u003e 市场传闻",
     "macro":  [
@@ -148,13 +148,57 @@
                       "url":  "https://fred.stlouisfed.org/series/PAYEMS"
                   }
               ],
+    "preciousMetals":  [
+                           {
+                               "name":  "Gold",
+                               "symbol":  "GLD",
+                               "proxy":  "SPDR Gold Shares",
+                               "price":  413.84,
+                               "changePct":  3.84,
+                               "role":  "Macro hedge",
+                               "status":  "Watch",
+                               "thesis":  "Gold is a macro hedge, not an equity-chain signal yet",
+                               "validation":  "Confirm with real rates, US dollar, central-bank demand, and ETF flows before mapping to miners",
+                               "nextStep":  "Track gold first; consider GDX only after trend and fund flow confirmation",
+                               "source":  "Nasdaq / GLD",
+                               "url":  "https://www.nasdaq.com/market-activity/etf/gld"
+                           },
+                           {
+                               "name":  "Silver",
+                               "symbol":  "SLV",
+                               "proxy":  "iShares Silver Trust",
+                               "price":  60.01,
+                               "changePct":  4.47,
+                               "role":  "High-beta precious metal",
+                               "status":  "Watch",
+                               "thesis":  "Silver is gold beta plus industrial demand, so confirmation must be stricter",
+                               "validation":  "Confirm with gold trend, industrial demand, supply deficit, and gold/silver ratio repair",
+                               "nextStep":  "Track silver as a macro asset; consider SIL or the silver chain only after demand confirmation",
+                               "source":  "Nasdaq / SLV",
+                               "url":  "https://www.nasdaq.com/market-activity/etf/slv"
+                           },
+                           {
+                               "name":  "Gold/Silver ratio",
+                               "symbol":  "GLD/SLV",
+                               "proxy":  "ETF proxy ratio",
+                               "price":  6.9,
+                               "changePct":  -0.63,
+                               "role":  "Relative confirmation",
+                               "status":  "Gate",
+                               "thesis":  "Ratio repair decides whether silver is confirming or merely lagging gold",
+                               "validation":  "Silver leadership requires the ratio to fall while both metals stay above trend",
+                               "nextStep":  "Use ratio repair as the bridge from macro asset to miners or industrial-chain research",
+                               "source":  "Nasdaq / GLD + SLV",
+                               "url":  "https://www.nasdaq.com/market-activity/etf/gld"
+                           }
+                       ],
     "indices":  [
                     {
                         "market":  "A-share",
                         "name":  "SSE Composite",
                         "symbol":  "sh000001",
-                        "price":  3894.42,
-                        "changePct":  -2.4,
+                        "price":  3901.13,
+                        "changePct":  0.17,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -167,8 +211,8 @@
                         "market":  "A-share",
                         "name":  "SZSE Component",
                         "symbol":  "sz399001",
-                        "price":  13890.15,
-                        "changePct":  -5.01,
+                        "price":  13996.13,
+                        "changePct":  0.76,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -181,8 +225,8 @@
                         "market":  "A-share",
                         "name":  "ChiNext",
                         "symbol":  "sz399006",
-                        "price":  3473.49,
-                        "changePct":  -6.26,
+                        "price":  3501.98,
+                        "changePct":  0.82,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -195,8 +239,8 @@
                         "market":  "A-share",
                         "name":  "CSI 300",
                         "symbol":  "sh000300",
-                        "price":  4588.7,
-                        "changePct":  -2.9,
+                        "price":  4594.44,
+                        "changePct":  0.13,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -209,8 +253,8 @@
                         "market":  "A-share",
                         "name":  "CSI 500",
                         "symbol":  "sh000905",
-                        "price":  7783.46,
-                        "changePct":  -4.81,
+                        "price":  7859.19,
+                        "changePct":  0.97,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -223,8 +267,8 @@
                         "market":  "A-share",
                         "name":  "CSI 1000",
                         "symbol":  "sh000852",
-                        "price":  7517.77,
-                        "changePct":  -5.39,
+                        "price":  7608.17,
+                        "changePct":  1.2,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -237,8 +281,8 @@
                         "market":  "US",
                         "name":  "SPY",
                         "symbol":  "SPY",
-                        "price":  767.45,
-                        "changePct":  -0.68,
+                        "price":  769.06,
+                        "changePct":  0.21,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -251,8 +295,8 @@
                         "market":  "US",
                         "name":  "QQQ",
                         "symbol":  "QQQ",
-                        "price":  717.51,
-                        "changePct":  -1.69,
+                        "price":  716.08,
+                        "changePct":  -0.2,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -265,8 +309,8 @@
                         "market":  "US",
                         "name":  "SOXX",
                         "symbol":  "SOXX",
-                        "price":  531.39,
-                        "changePct":  -4.96,
+                        "price":  519.67,
+                        "changePct":  -2.21,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -278,184 +322,184 @@
                 ],
     "sectors":  [
                     {
-                        "name":  "昨日连板",
-                        "changePct":  0.9,
-                        "inflowCnyBn":  -6.23,
-                        "leader":  "金健米业",
+                        "name":  "CAR-T细胞疗法",
+                        "changePct":  9.16,
+                        "inflowCnyBn":  25.79,
+                        "leader":  "智飞生物",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "红利破净股",
-                        "changePct":  0.84,
-                        "inflowCnyBn":  -1.53,
-                        "leader":  "中信银行",
+                        "name":  "重组蛋白",
+                        "changePct":  7.36,
+                        "inflowCnyBn":  9.2,
+                        "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "红利股",
-                        "changePct":  0.11,
-                        "inflowCnyBn":  -0.91,
-                        "leader":  "中谷物流",
+                        "name":  "基因测序",
+                        "changePct":  7.26,
+                        "inflowCnyBn":  12.15,
+                        "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "价值股",
-                        "changePct":  -0.27,
-                        "inflowCnyBn":  -3.41,
-                        "leader":  "中谷物流",
+                        "name":  "CRO",
+                        "changePct":  7.02,
+                        "inflowCnyBn":  30.67,
+                        "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "大盘价值",
-                        "changePct":  -0.32,
-                        "inflowCnyBn":  -56.61,
-                        "leader":  "恒力石化",
+                        "name":  "精准诊断",
+                        "changePct":  6.89,
+                        "inflowCnyBn":  13.68,
+                        "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "金融地产风格",
-                        "changePct":  -0.43,
-                        "inflowCnyBn":  -41.53,
-                        "leader":  "中信银行",
+                        "name":  "单抗概念",
+                        "changePct":  6.64,
+                        "inflowCnyBn":  15.09,
+                        "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "B股",
-                        "changePct":  -0.72,
-                        "inflowCnyBn":  -0.12,
-                        "leader":  "中毅达B",
+                        "name":  "体外诊断概念",
+                        "changePct":  6.28,
+                        "inflowCnyBn":  14.04,
+                        "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "长期破净",
-                        "changePct":  -0.73,
-                        "inflowCnyBn":  -11.29,
-                        "leader":  "我爱我家",
+                        "name":  "生物疫苗",
+                        "changePct":  6.26,
+                        "inflowCnyBn":  19.53,
+                        "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "低市净率",
-                        "changePct":  -0.74,
-                        "inflowCnyBn":  -9.86,
-                        "leader":  "我爱我家",
+                        "name":  "免疫治疗",
+                        "changePct":  6.1,
+                        "inflowCnyBn":  10.58,
+                        "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "中特估",
-                        "changePct":  -0.88,
-                        "inflowCnyBn":  -41.66,
-                        "leader":  "华锦股份",
+                        "name":  "精准医疗",
+                        "changePct":  5.98,
+                        "inflowCnyBn":  14.59,
+                        "leader":  "智飞生物",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "租售同权",
-                        "changePct":  -1.06,
-                        "inflowCnyBn":  1,
-                        "leader":  "我爱我家",
+                        "name":  "创新药",
+                        "changePct":  5.74,
+                        "inflowCnyBn":  60.36,
+                        "leader":  "中 关 村",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "破净股",
-                        "changePct":  -1.09,
-                        "inflowCnyBn":  -25.96,
-                        "leader":  "宝泰隆",
+                        "name":  "肝炎概念",
+                        "changePct":  5.68,
+                        "inflowCnyBn":  16.52,
+                        "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     }
                 ],
     "usSectors":  [
                       {
-                          "name":  "Energy",
-                          "symbol":  "XLE",
-                          "changePct":  1.76,
-                          "price":  63.68,
-                          "leader":  "XLE",
-                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
-                      },
-                      {
                           "name":  "Healthcare",
                           "symbol":  "XLV",
-                          "changePct":  1.6,
-                          "price":  169.73,
+                          "changePct":  3.51,
+                          "price":  175.68,
                           "leader":  "XLV",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
-                          "name":  "Financials",
-                          "symbol":  "XLF",
-                          "changePct":  0.45,
-                          "price":  57.84,
-                          "leader":  "XLF",
+                          "name":  "Consumer Discretionary",
+                          "symbol":  "XLY",
+                          "changePct":  1.92,
+                          "price":  118.59,
+                          "leader":  "XLY",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
                           "name":  "Software",
                           "symbol":  "IGV",
-                          "changePct":  -0.03,
-                          "price":  101.96,
+                          "changePct":  0.83,
+                          "price":  102.81,
                           "leader":  "IGV",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
                           "name":  "Communication",
                           "symbol":  "XLC",
-                          "changePct":  -0.31,
-                          "price":  110.48,
+                          "changePct":  0.76,
+                          "price":  111.32,
                           "leader":  "XLC",
-                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
-                      },
-                      {
-                          "name":  "Consumer Discretionary",
-                          "symbol":  "XLY",
-                          "changePct":  -0.33,
-                          "price":  116.36,
-                          "leader":  "XLY",
-                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
-                      },
-                      {
-                          "name":  "Cybersecurity",
-                          "symbol":  "CIBR",
-                          "changePct":  -0.36,
-                          "price":  97.44,
-                          "leader":  "CIBR",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
                           "name":  "Cloud",
                           "symbol":  "SKYY",
-                          "changePct":  -0.54,
-                          "price":  161.37,
+                          "changePct":  -0.12,
+                          "price":  161.17,
                           "leader":  "SKYY",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Energy",
+                          "symbol":  "XLE",
+                          "changePct":  -0.16,
+                          "price":  63.58,
+                          "leader":  "XLE",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Robotics",
+                          "symbol":  "BOTZ",
+                          "changePct":  -0.47,
+                          "price":  36.38,
+                          "leader":  "BOTZ",
+                          "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
+                      },
+                      {
+                          "name":  "Financials",
+                          "symbol":  "XLF",
+                          "changePct":  -0.62,
+                          "price":  57.48,
+                          "leader":  "XLF",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
                           "name":  "Industrials",
                           "symbol":  "XLI",
-                          "changePct":  -1.48,
-                          "price":  183.57,
+                          "changePct":  -0.88,
+                          "price":  181.95,
                           "leader":  "XLI",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
                           "name":  "Technology",
                           "symbol":  "XLK",
-                          "changePct":  -2.47,
-                          "price":  185.62,
+                          "changePct":  -1.07,
+                          "price":  183.64,
                           "leader":  "XLK",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
-                          "name":  "Robotics",
-                          "symbol":  "BOTZ",
-                          "changePct":  -3.36,
-                          "price":  36.55,
-                          "leader":  "BOTZ",
+                          "name":  "Cybersecurity",
+                          "symbol":  "CIBR",
+                          "changePct":  -1.95,
+                          "price":  95.54,
+                          "leader":  "CIBR",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       },
                       {
                           "name":  "Semiconductors",
                           "symbol":  "SOXX",
-                          "changePct":  -4.96,
-                          "price":  531.39,
+                          "changePct":  -2.21,
+                          "price":  519.67,
                           "leader":  "SOXX",
                           "evidence":  "Nasdaq ETF quote; use as industry heat, not direct company order evidence"
                       }
@@ -1014,6 +1058,29 @@
                                               "reason":  "利率和需求仍决定成长股估值上限",
                                               "evidence":  "CPI/FOMC/PMI",
                                               "source":  "FRED / NBS"
+                                          }
+                                      ]
+                       },
+                       {
+                           "item":  "贵金属宏观资产",
+                           "metric":  "GLD/SLV 价格、金银比、实际利率、美元和 ETF 资金流",
+                           "priority":  "中高",
+                           "status":  "观察",
+                           "window":  "每日宏观资产更新 / 每周 ETF 资金流",
+                           "trigger":  "GLD/SLV 趋势和 ETF 资金流同时确认；再评估 GDX、SIL、金矿股和白银产业链",
+                           "relatedSymbols":  [
+                                                  "GLD",
+                                                  "SLV"
+                                              ],
+                           "lastCheck":  "2026-08-20",
+                           "events":  [
+                                          {
+                                              "date":  "2026-08-20",
+                                              "from":  "未纳入",
+                                              "to":  "观察",
+                                              "reason":  "先把黄金和白银作为宏观资产加入 H^3，不急着扩展到矿股和白银产业链",
+                                              "evidence":  "GLD/SLV 报价、金银比、实际利率、美元和 ETF 资金流",
+                                              "source":  "Nasdaq / WGC / Silver Institute / FRED"
                                           }
                                       ]
                        }
