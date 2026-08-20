@@ -228,6 +228,19 @@ const i18n = {
     valuationDiscountLow: "Limited",
     valuationTrapRead: "Low price is not enough; require revenue, margin, and cash-flow validation",
     valuationNextRead: "Bubble cools when price falls toward DMA or earnings catch up; discount upgrades only after financial evidence improves",
+    transmissionTitle: "Macro Transmission Map",
+    transmissionStatus: "What macro changes next",
+    transmissionRead: "Convert macro soil into research action: growth repairs support risk assets, high rates cap duration, breadth confirms theme heat, and metals test hedge demand",
+    transmissionGrowth: "Growth repair",
+    transmissionRates: "Rate pressure",
+    transmissionRisk: "Risk breadth",
+    transmissionMetals: "Gold hedge",
+    transmissionGrowthRead: "PMI and retail repair decide whether A-share heat can move from theme to earnings",
+    transmissionRatesRead: "Fed range and 10Y yield decide how much valuation duration the market can carry",
+    transmissionRiskRead: "CSI 300 and QQQ breadth decide whether the tape is broad risk appetite or narrow theme heat",
+    transmissionMetalsRead: "Gold strength plus the gold/silver ratio decides whether this is macro hedge or broader precious-metals expansion",
+    transmissionNextTitle: "Next action",
+    transmissionNextRead: "Upgrade only when price heat, official data, and financial transmission confirm in the same direction",
     preciousTitle: "Precious Metals Watch",
     preciousStatus: "Macro assets first",
     preciousRead: "Gold and silver enter H^3 as macro assets first. The judgment uses FRED, WGC, and Silver Institute factors; price is only a delayed trend reference, not an official redistributable quote source",
@@ -548,6 +561,19 @@ const i18n = {
     valuationDiscountLow: "\u6709\u9650",
     valuationTrapRead: "\u4f4e\u4ef7\u4e0d\u591f\uff0c\u9700\u8981\u6536\u5165\u3001\u6bdb\u5229\u7387\u548c\u73b0\u91d1\u6d41\u9a8c\u8bc1",
     valuationNextRead: "\u6ce1\u6cab\u51b7\u5374\u6765\u81ea\u4ef7\u683c\u56de\u5230 DMA \u9644\u8fd1\u6216\u76c8\u5229\u8ffd\u4e0a\uff1b\u4f4e\u4f30\u5347\u7ea7\u53ea\u6765\u81ea\u8d22\u52a1\u8bc1\u636e\u6539\u5584",
+    transmissionTitle: "\u5b8f\u89c2\u4f20\u5bfc\u5730\u56fe",
+    transmissionStatus: "\u63a5\u4e0b\u6765\u770b\u4ec0\u4e48",
+    transmissionRead: "\u628a\u5b8f\u89c2\u571f\u58e4\u8f6c\u6210\u7814\u7a76\u52a8\u4f5c\uff1a\u589e\u957f\u4fee\u590d\u652f\u6491\u98ce\u9669\u8d44\u4ea7\uff0c\u9ad8\u5229\u7387\u538b\u5236\u957f\u4e45\u671f\u4f30\u503c\uff0c\u5e7f\u5ea6\u786e\u8ba4\u4e3b\u7ebf\u70ed\u5ea6\uff0c\u8d35\u91d1\u5c5e\u68c0\u9a8c\u907f\u9669\u9700\u6c42",
+    transmissionGrowth: "\u589e\u957f\u4fee\u590d",
+    transmissionRates: "\u5229\u7387\u538b\u529b",
+    transmissionRisk: "\u98ce\u9669\u5e7f\u5ea6",
+    transmissionMetals: "\u9ec4\u91d1\u5bf9\u51b2",
+    transmissionGrowthRead: "PMI \u548c\u96f6\u552e\u4fee\u590d\u51b3\u5b9a A \u80a1\u70ed\u5ea6\u80fd\u5426\u4ece\u4e3b\u9898\u8fdb\u5165\u76c8\u5229",
+    transmissionRatesRead: "\u8054\u50a8\u5229\u7387\u533a\u95f4\u548c 10Y \u7f8e\u503a\u5229\u7387\u51b3\u5b9a\u5e02\u573a\u80fd\u627f\u53d7\u591a\u5c11\u957f\u4e45\u671f\u4f30\u503c",
+    transmissionRiskRead: "CSI 300 \u548c QQQ \u7684\u5e7f\u5ea6\u51b3\u5b9a\u5f53\u524d\u662f\u5168\u5c40\u98ce\u9669\u504f\u597d\uff0c\u8fd8\u662f\u5c40\u90e8\u4e3b\u7ebf\u70ed\u5ea6",
+    transmissionMetalsRead: "\u9ec4\u91d1\u5f3a\u52bf\u548c\u91d1\u94f6\u6bd4\u51b3\u5b9a\u8fd9\u662f\u5b8f\u89c2\u5bf9\u51b2\uff0c\u8fd8\u662f\u8d35\u91d1\u5c5e\u677f\u5757\u6269\u6563",
+    transmissionNextTitle: "\u4e0b\u4e00\u52a8\u4f5c",
+    transmissionNextRead: "\u53ea\u6709\u5f53\u4ef7\u683c\u70ed\u5ea6\u3001\u5b98\u65b9\u6570\u636e\u548c\u8d22\u52a1\u4f20\u5bfc\u540c\u65b9\u5411\u786e\u8ba4\u65f6\uff0c\u624d\u5347\u7ea7\u7814\u7a76\u5047\u8bbe",
     preciousTitle: "\u8d35\u91d1\u5c5e\u89c2\u5bdf",
     preciousStatus: "\u5148\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7",
     preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\u3002\u5224\u65ad\u6838\u5fc3\u6765\u81ea FRED\u3001WGC \u548c Silver Institute \u56e0\u5b50\uff1b\u4ef7\u683c\u53ea\u4f5c\u4e3a\u5ef6\u8fdf\u8d8b\u52bf\u53c2\u8003\uff0c\u4e0d\u4f5c\u4e3a\u53ef\u518d\u5206\u53d1\u7684\u5b98\u65b9\u62a5\u4ef7\u6e90",
@@ -1791,6 +1817,72 @@ function renderValuationTemperature(data) {
   `;
 }
 
+function renderMacroTransmission(data) {
+  const chinaPmi = pickMacro(data, ["Manufacturing PMI", "\u5236\u9020\u4e1a PMI"]);
+  const chinaRetail = pickMacro(data, ["Retail sales", "\u793e\u4f1a\u6d88\u8d39\u54c1\u96f6\u552e"]);
+  const usRate = pickMacro(data, ["Fed funds target range", "\u8054\u90a6\u57fa\u91d1\u76ee\u6807\u533a\u95f4"]);
+  const usTenYear = pickMacro(data, ["10Y Treasury yield"]);
+  const csi300 = pickIndex(data, ["sh000300"]);
+  const qqq = pickIndex(data, ["QQQ"]);
+  const gold = (data.preciousMetals || []).find((item) => item.name === "Gold");
+  const ratio = (data.preciousMetals || []).find((item) => isRatioAsset(item));
+  const cards = [
+    {
+      label: t("transmissionGrowth"),
+      value: [chinaPmi ? `PMI ${chinaPmi.value}` : "", chinaRetail ? `${trValue(chinaRetail.metric)} ${chinaRetail.value}` : ""].filter(Boolean).join(" / ") || t("unknown"),
+      read: t("transmissionGrowthRead"),
+      tone: "neutral"
+    },
+    {
+      label: t("transmissionRates"),
+      value: [usRate ? `Fed ${usRate.value}` : "", usTenYear ? `10Y ${usTenYear.value}` : ""].filter(Boolean).join(" / ") || t("unknown"),
+      read: t("transmissionRatesRead"),
+      tone: "down"
+    },
+    {
+      label: t("transmissionRisk"),
+      value: [
+        csi300 ? `CSI 300 ${fmtPct(csi300.changePct)}` : "",
+        qqq ? `QQQ ${fmtPct(qqq.changePct)}` : ""
+      ].filter(Boolean).join(" / ") || t("unknown"),
+      read: t("transmissionRiskRead"),
+      tone: csi300 && qqq && Number(csi300.changePct) >= 0 && Number(qqq.changePct) >= 0 ? "up" : "neutral"
+    },
+    {
+      label: t("transmissionMetals"),
+      value: [
+        gold ? `${trValue(gold.name)} ${fmtPct(gold.changePct)}` : "",
+        ratio ? `${trValue(ratio.name)} ${formatAssetPrice(ratio)}` : ""
+      ].filter(Boolean).join(" / ") || t("unknown"),
+      read: t("transmissionMetalsRead"),
+      tone: gold && Number(gold.changePct) > 0 ? "up" : "neutral"
+    }
+  ];
+
+  return `
+    <section class="macro-transmission">
+      <div class="macro-transmission-head">
+        <span>${t("transmissionTitle")}</span>
+        <strong>${t("transmissionStatus")}</strong>
+        <p>${t("transmissionRead")}</p>
+      </div>
+      <div class="macro-transmission-grid">
+        ${cards.map((item) => `
+          <article class="${item.tone}">
+            <span>${item.label}</span>
+            <strong>${item.value}</strong>
+            <p>${item.read}</p>
+          </article>
+        `).join("")}
+      </div>
+      <div class="macro-transmission-next">
+        <span>${t("transmissionNextTitle")}</span>
+        <p>${t("transmissionNextRead")}</p>
+      </div>
+    </section>
+  `;
+}
+
 function formatAssetPrice(item) {
   const value = Number(item.price);
   if (!Number.isFinite(value) || value <= 0) return "n/a";
@@ -2006,6 +2098,7 @@ function renderMacro(data) {
   document.getElementById("macroGrid").innerHTML = `
     ${renderMacroRegime(data)}
     ${renderValuationTemperature(data)}
+    ${renderMacroTransmission(data)}
     <div class="macro-card-grid">
       ${macro.map((item) => `
         <div class="macro-card">

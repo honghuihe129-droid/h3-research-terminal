@@ -2632,6 +2632,90 @@ td strong {
   padding-top: 12px;
 }
 
+.macro-transmission {
+  display: grid;
+  gap: 13px;
+  border: 1px solid rgba(130, 207, 255, 0.2);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(130, 207, 255, 0.08), transparent 34%),
+    linear-gradient(315deg, rgba(255, 81, 104, 0.08), transparent 42%),
+    rgba(13, 13, 14, 0.5);
+  padding: 15px;
+}
+
+.macro-transmission-head {
+  display: grid;
+  gap: 8px;
+}
+
+.macro-transmission-head span,
+.macro-transmission-grid span,
+.macro-transmission-next span {
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.macro-transmission-head strong {
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.macro-transmission-head p,
+.macro-transmission-grid p,
+.macro-transmission-next p {
+  margin: 0;
+  color: rgba(226, 226, 226, 0.7);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.macro-transmission-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.macro-transmission-grid article {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 126px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.24);
+  padding: 11px;
+}
+
+.macro-transmission-grid strong {
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.38;
+  overflow-wrap: anywhere;
+}
+
+.macro-transmission-grid article.up strong {
+  color: var(--tertiary);
+}
+
+.macro-transmission-grid article.down strong {
+  color: var(--primary);
+}
+
+.macro-transmission-next {
+  display: grid;
+  gap: 7px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 12px;
+}
+
 .precious-watch {
   display: grid;
   gap: 13px;
@@ -3142,6 +3226,7 @@ td strong {
   .evidence-grid,
   .macro-card-grid,
   .macro-regime-metrics,
+  .macro-transmission-grid,
   .precious-signal-grid,
   .valuation-temp-grid,
   .detail-summary,
@@ -3161,6 +3246,7 @@ td strong {
   .macro-card-grid,
   .macro-regime-metrics,
   .valuation-temp-grid,
+  .macro-transmission-grid,
   .precious-signal-grid,
   .gold-trade-grid,
   .watch-metals-grid,
@@ -3233,6 +3319,7 @@ td strong {
   .macro-card-grid,
   .macro-regime-metrics,
   .precious-signal-grid,
+  .macro-transmission-grid,
   .watch-metals-grid,
   .gold-trade-grid,
   .precious-watch-grid,
@@ -3332,6 +3419,9 @@ html:lang(zh-CN) .about-chain > header span,
 html:lang(zh-CN) .macro-regime-head span,
 html:lang(zh-CN) .macro-regime-next span,
 html:lang(zh-CN) .macro-regime-metrics span,
+html:lang(zh-CN) .macro-transmission-head span,
+html:lang(zh-CN) .macro-transmission-grid span,
+html:lang(zh-CN) .macro-transmission-next span,
 html:lang(zh-CN) .watch-metals-summary span,
 html:lang(zh-CN) .watch-metals-grid span,
 html:lang(zh-CN) .watch-metals-footer span,
@@ -3360,6 +3450,9 @@ html:lang(zh-CN) .about-step p,
 html:lang(zh-CN) .about-meta p,
 html:lang(zh-CN) .macro-regime-head p,
 html:lang(zh-CN) .macro-regime-next p,
+html:lang(zh-CN) .macro-transmission-head p,
+html:lang(zh-CN) .macro-transmission-grid p,
+html:lang(zh-CN) .macro-transmission-next p,
 html:lang(zh-CN) .watch-metals-summary p,
 html:lang(zh-CN) .watch-metals-grid p,
 html:lang(zh-CN) .gold-trade-card p,
@@ -3387,6 +3480,8 @@ html:lang(zh-CN) .about-card.wide p {
 
 html:lang(zh-CN) .about-meta .contact p,
 html:lang(zh-CN) .macro-regime-metrics strong,
+html:lang(zh-CN) .macro-transmission-head strong,
+html:lang(zh-CN) .macro-transmission-grid strong,
 html:lang(zh-CN) .watch-metals-summary strong,
 html:lang(zh-CN) .watch-metals-grid strong,
 html:lang(zh-CN) .watch-metals-footer strong,
