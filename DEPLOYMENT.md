@@ -6,7 +6,8 @@ H3 now keeps Netlify as the existing public site and adds Cloudflare Pages as th
 
 - Netlify: `https://h3-research-terminal.netlify.app`
 - Cloudflare Pages: `https://h3-research-terminal.pages.dev`
-- GitHub Pages mirror: enabled by `.github/workflows/pages.yml` after the repo is pushed and Pages is enabled for the repository
+- GitHub repository: `https://github.com/honghuihe129-droid/h3-research-terminal`
+- GitHub Pages mirror: `https://honghuihe129-droid.github.io/h3-research-terminal`
 
 ## Cloudflare Pages
 
@@ -52,9 +53,25 @@ powershell.exe -ExecutionPolicy Bypass -File scripts\install_daily_update.ps1 -P
 
 ## GitHub Pages Mirror
 
-Push this repository to GitHub, then enable Pages with `GitHub Actions` as the source. The workflow builds the same `dist` artifact after checking `site/app.js` and `site/data/market-data.json`.
+The repository includes two backup routes:
 
-The mirror updates on pushes to `main` or `master`, and can also be triggered manually from the Actions tab.
+- `gh-pages` branch: static mirror already pushed from `dist`
+- `.github/workflows/pages.yml`: GitHub Actions mirror once Pages is enabled with `GitHub Actions` as the source
+
+If the GitHub Actions route fails at `Configure Pages`, open repository settings and enable Pages first:
+
+```text
+Settings -> Pages -> Build and deployment
+Source: GitHub Actions
+```
+
+For the branch route:
+
+```text
+Settings -> Pages -> Build and deployment
+Source: Deploy from a branch
+Branch: gh-pages / root
+```
 
 ## Netlify
 

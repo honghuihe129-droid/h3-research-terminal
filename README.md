@@ -8,7 +8,8 @@ It is not a direct stock recommendation page.
 
 - Cloudflare Pages: https://h3-research-terminal.pages.dev
 - Netlify fallback: https://h3-research-terminal.netlify.app
-- GitHub Pages mirror: configured through `.github/workflows/pages.yml`
+- GitHub repository: https://github.com/honghuihe129-droid/h3-research-terminal
+- GitHub Pages mirror: https://honghuihe129-droid.github.io/h3-research-terminal
 
 ## Local Workflow
 
