@@ -1648,6 +1648,115 @@ h1 {
   letter-spacing: 0.04em;
 }
 
+.gold-trade-monitor {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 12px;
+}
+
+.gold-trade-monitor header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+}
+
+.gold-trade-monitor header span {
+  color: #ffcd5b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gold-trade-monitor header small {
+  color: rgba(226, 226, 226, 0.48);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gold-trade-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.gold-trade-card {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-height: 138px;
+  border: 1px solid rgba(255, 205, 91, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 205, 91, 0.07), transparent 74%),
+    rgba(0, 0, 0, 0.24);
+  padding: 11px;
+}
+
+.gold-trade-card.up {
+  border-color: rgba(2, 230, 0, 0.18);
+  background:
+    linear-gradient(180deg, rgba(2, 230, 0, 0.07), transparent 74%),
+    rgba(0, 0, 0, 0.24);
+}
+
+.gold-trade-card.down {
+  border-color: rgba(255, 81, 104, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 81, 104, 0.07), transparent 74%),
+    rgba(0, 0, 0, 0.24);
+}
+
+.gold-trade-card span {
+  color: rgba(255, 205, 91, 0.88);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.gold-trade-card b {
+  width: fit-content;
+  border: 1px solid rgba(255, 205, 91, 0.24);
+  border-radius: 999px;
+  color: #ffcd5b;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  line-height: 1;
+  padding: 5px 7px;
+}
+
+.gold-trade-card.up b {
+  border-color: rgba(2, 230, 0, 0.26);
+  color: var(--tertiary);
+}
+
+.gold-trade-card.down b {
+  border-color: rgba(255, 81, 104, 0.28);
+  color: var(--primary);
+}
+
+.gold-trade-card strong {
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.38;
+}
+
+.gold-trade-card p {
+  margin: 0;
+  color: rgba(226, 226, 226, 0.64);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
 .watch-radar {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3053,6 +3162,7 @@ td strong {
   .macro-regime-metrics,
   .valuation-temp-grid,
   .precious-signal-grid,
+  .gold-trade-grid,
   .watch-metals-grid,
   .research-core-grid,
   .framework-read-grid,
@@ -3124,6 +3234,7 @@ td strong {
   .macro-regime-metrics,
   .precious-signal-grid,
   .watch-metals-grid,
+  .gold-trade-grid,
   .precious-watch-grid,
   .valuation-temp-grid,
   .research-core-grid,
@@ -3225,6 +3336,9 @@ html:lang(zh-CN) .watch-metals-summary span,
 html:lang(zh-CN) .watch-metals-grid span,
 html:lang(zh-CN) .watch-metals-footer span,
 html:lang(zh-CN) .watch-metals-footer small,
+html:lang(zh-CN) .gold-trade-monitor header span,
+html:lang(zh-CN) .gold-trade-monitor header small,
+html:lang(zh-CN) .gold-trade-card span,
 html:lang(zh-CN) .precious-watch-head span,
 html:lang(zh-CN) .precious-watch-takeaway span,
 html:lang(zh-CN) .precious-signal-panel header span,
@@ -3248,6 +3362,7 @@ html:lang(zh-CN) .macro-regime-head p,
 html:lang(zh-CN) .macro-regime-next p,
 html:lang(zh-CN) .watch-metals-summary p,
 html:lang(zh-CN) .watch-metals-grid p,
+html:lang(zh-CN) .gold-trade-card p,
 html:lang(zh-CN) .precious-watch-head p,
 html:lang(zh-CN) .precious-watch-takeaway p,
 html:lang(zh-CN) .precious-watch-takeaway small,
@@ -3275,6 +3390,8 @@ html:lang(zh-CN) .macro-regime-metrics strong,
 html:lang(zh-CN) .watch-metals-summary strong,
 html:lang(zh-CN) .watch-metals-grid strong,
 html:lang(zh-CN) .watch-metals-footer strong,
+html:lang(zh-CN) .gold-trade-card strong,
+html:lang(zh-CN) .gold-trade-card b,
 html:lang(zh-CN) .precious-watch-takeaway strong,
 html:lang(zh-CN) .precious-signal-grid strong,
 html:lang(zh-CN) .precious-signal-grid b,

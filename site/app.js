@@ -43,6 +43,25 @@ const i18n = {
     watchMetalsSub: "gold / silver / macro asset reference",
     watchMetalsRead: "Delayed price reference only; judgment comes from FRED, WGC, and Silver Institute factors",
     watchMetalsBoundary: "Trend reference, not official redistributable quote data",
+    goldMonitorTitle: "Gold Trade Monitor",
+    goldMonitorSub: "main-trade gates",
+    goldMonitorMacroGate: "Macro gate",
+    goldMonitorFlowGate: "Flow gate",
+    goldMonitorCentralBankGate: "Central-bank gate",
+    goldMonitorExpansionGate: "Expansion gate",
+    goldMonitorInvalidationGate: "Invalidation gate",
+    goldMonitorMacroRead: "Real rates, the dollar, and long yields decide whether gold strength is macro-supported",
+    goldMonitorFlowRead: "ETF flow confirms whether price strength has fund-flow support",
+    goldMonitorCentralBankRead: "Central-bank demand is the durable reserve-demand floor",
+    goldMonitorExpansionWait: "Silver and miners stay second-layer until the ratio repairs or silver leads",
+    goldMonitorExpansionImproving: "Ratio repair is improving; start reviewing silver beta and miners",
+    goldMonitorInvalidationRead: "Watch a real-rate rebound, dollar squeeze, ETF outflows, or continued ratio rise",
+    goldMonitorTrack: "TRACK",
+    goldMonitorConfirm: "CONFIRM",
+    goldMonitorWait: "WAIT",
+    goldMonitorRisk: "RISK",
+    goldMonitorCentralBankValue: "WGC central-bank demand",
+    goldMonitorInvalidationValue: "Rates up / dollar up / flows out",
     validationTitle: "Validation Queue",
     validationSub: "heat to next checks",
     qualityTitle: "Data Quality",
@@ -344,6 +363,25 @@ const i18n = {
     watchMetalsSub: "\u9ec4\u91d1 / \u767d\u94f6 / \u5b8f\u89c2\u8d44\u4ea7\u53c2\u8003",
     watchMetalsRead: "\u4ef7\u683c\u4ec5\u4f5c\u5ef6\u8fdf\u8d8b\u52bf\u53c2\u8003\uff1b\u5224\u65ad\u6765\u81ea FRED\u3001WGC \u548c Silver Institute \u56e0\u5b50",
     watchMetalsBoundary: "\u8d8b\u52bf\u53c2\u8003\uff0c\u4e0d\u662f\u5b98\u65b9\u53ef\u518d\u5206\u53d1\u62a5\u4ef7\u6570\u636e",
+    goldMonitorTitle: "\u9ec4\u91d1\u4e3b\u7ebf\u76d1\u63a7",
+    goldMonitorSub: "\u4e3b\u7ebf\u4ea4\u6613\u9a8c\u8bc1\u95e8",
+    goldMonitorMacroGate: "\u5b8f\u89c2\u95e8",
+    goldMonitorFlowGate: "\u8d44\u91d1\u6d41\u95e8",
+    goldMonitorCentralBankGate: "\u592e\u884c\u9700\u6c42\u95e8",
+    goldMonitorExpansionGate: "\u6269\u6563\u95e8",
+    goldMonitorInvalidationGate: "\u5931\u6548\u95e8",
+    goldMonitorMacroRead: "\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u548c\u957f\u503a\u5229\u7387\u51b3\u5b9a\u9ec4\u91d1\u5f3a\u52bf\u662f\u5426\u6709\u5b8f\u89c2\u652f\u6491",
+    goldMonitorFlowRead: "ETF \u8d44\u91d1\u6d41\u9a8c\u8bc1\u4ef7\u683c\u5f3a\u52bf\u662f\u5426\u6709\u8d44\u91d1\u652f\u6491",
+    goldMonitorCentralBankRead: "\u592e\u884c\u9700\u6c42\u662f\u50a8\u5907\u914d\u7f6e\u7684\u957f\u5468\u671f\u5e95\u5ea7",
+    goldMonitorExpansionWait: "\u767d\u94f6\u548c\u77ff\u80a1\u5148\u653e\u5728\u7b2c\u4e8c\u5c42\uff0c\u7b49\u91d1\u94f6\u6bd4\u4fee\u590d\u6216\u767d\u94f6\u9886\u6da8",
+    goldMonitorExpansionImproving: "\u91d1\u94f6\u6bd4\u6b63\u5728\u4fee\u590d\uff0c\u53ef\u5f00\u59cb\u68c0\u67e5\u767d\u94f6\u5f39\u6027\u548c\u77ff\u80a1",
+    goldMonitorInvalidationRead: "\u91cd\u70b9\u770b\u5b9e\u9645\u5229\u7387\u53cd\u5f39\u3001\u7f8e\u5143\u6324\u538b\u3001ETF \u6d41\u51fa\u6216\u91d1\u94f6\u6bd4\u7ee7\u7eed\u4e0a\u884c",
+    goldMonitorTrack: "\u8ddf\u8e2a",
+    goldMonitorConfirm: "\u786e\u8ba4",
+    goldMonitorWait: "\u7b49\u5f85",
+    goldMonitorRisk: "\u98ce\u9669",
+    goldMonitorCentralBankValue: "WGC \u592e\u884c\u9700\u6c42",
+    goldMonitorInvalidationValue: "\u5229\u7387\u4e0a\u884c / \u7f8e\u5143\u8d70\u5f3a / \u8d44\u91d1\u6d41\u51fa",
     validationTitle: "\u9a8c\u8bc1\u961f\u5217",
     validationSub: "\u4ece\u70ed\u5ea6\u5230\u4e0b\u4e00\u68c0\u67e5",
     qualityTitle: "\u6570\u636e\u8d28\u68c0",
@@ -1522,6 +1560,8 @@ function renderValidationQueue(data) {
 }
 
 function renderDataQuality(data) {
+  const target = document.getElementById("dataQuality");
+  if (!target) return;
   const rows = [
     { label: t("qualityUpdated"), value: data.generatedAt || t("unknown") },
     { label: t("qualityIndices"), value: data.indices?.length || 0 },
@@ -1529,7 +1569,7 @@ function renderDataQuality(data) {
     { label: t("qualityUsSectors"), value: data.usSectors?.length || 0 },
     { label: t("qualityCompanies"), value: data.companies?.length || 0 }
   ];
-  document.getElementById("dataQuality").innerHTML = rows.map((item) => `
+  target.innerHTML = rows.map((item) => `
     <div class="quality-metric">
       <span>${item.label}</span>
       <strong>${item.value}</strong>
@@ -1890,6 +1930,77 @@ function renderPreciousMetals(data) {
   `;
 }
 
+function preciousSignal(signals, key) {
+  return (signals || []).find((item) => item.key === key);
+}
+
+function renderGoldTradeMonitor(metals, signals) {
+  const fred = preciousSignal(signals, "fred_macro");
+  const wgc = preciousSignal(signals, "wgc_gold");
+  const ratio = (metals || []).find((item) => isRatioAsset(item));
+  const ratioChange = Number(ratio?.changePct);
+  const ratioRepair = Number.isFinite(ratioChange) && ratioChange < 0;
+  const ratioValue = ratio
+    ? `${trValue(ratio.name)} ${formatAssetPrice(ratio)} / ${fmtPct(ratio.changePct)}`
+    : t("unknown");
+  const gates = [
+    {
+      label: t("goldMonitorMacroGate"),
+      status: t("goldMonitorTrack"),
+      value: fred ? trValue(fred.value) : t("unknown"),
+      read: t("goldMonitorMacroRead"),
+      tone: "neutral"
+    },
+    {
+      label: t("goldMonitorFlowGate"),
+      status: t("goldMonitorTrack"),
+      value: wgc ? trValue(wgc.value) : t("unknown"),
+      read: t("goldMonitorFlowRead"),
+      tone: "neutral"
+    },
+    {
+      label: t("goldMonitorCentralBankGate"),
+      status: t("goldMonitorConfirm"),
+      value: t("goldMonitorCentralBankValue"),
+      read: t("goldMonitorCentralBankRead"),
+      tone: "up"
+    },
+    {
+      label: t("goldMonitorExpansionGate"),
+      status: ratioRepair ? t("goldMonitorConfirm") : t("goldMonitorWait"),
+      value: ratioValue,
+      read: ratioRepair ? t("goldMonitorExpansionImproving") : t("goldMonitorExpansionWait"),
+      tone: ratioRepair ? "up" : "watch"
+    },
+    {
+      label: t("goldMonitorInvalidationGate"),
+      status: t("goldMonitorRisk"),
+      value: t("goldMonitorInvalidationValue"),
+      read: t("goldMonitorInvalidationRead"),
+      tone: "down"
+    }
+  ];
+
+  return `
+    <section class="gold-trade-monitor">
+      <header>
+        <span>${t("goldMonitorTitle")}</span>
+        <small>${t("goldMonitorSub")}</small>
+      </header>
+      <div class="gold-trade-grid">
+        ${gates.map((item) => `
+          <article class="gold-trade-card ${item.tone}">
+            <span>${item.label}</span>
+            <b>${item.status}</b>
+            <strong>${item.value}</strong>
+            <p>${item.read}</p>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderMacro(data) {
   const macro = data.macro || [];
   document.getElementById("macroGrid").innerHTML = `
@@ -1941,6 +2052,7 @@ function renderWatchMetals(data) {
       <strong>${signal ? trValue(signal.value) : t("unknown")}</strong>
       <small>${t("watchMetalsBoundary")}</small>
     </div>
+    ${renderGoldTradeMonitor(metals, signals)}
   `;
 }
 
