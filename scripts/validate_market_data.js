@@ -132,6 +132,14 @@ function validatePreciousMetal(row, index) {
   assertUrl(row.url, `${label}.url`);
 }
 
+function validatePreciousSignal(row, index) {
+  const label = `preciousSignals[${index}]`;
+  ["key", "label", "value", "status", "role", "cadence", "read", "source", "url"].forEach((key) => {
+    if (!row[key]) addError(`Missing ${label}.${key}`);
+  });
+  assertUrl(row.url, `${label}.url`);
+}
+
 function validate() {
   if (!fs.existsSync(target)) addError("Data file does not exist", target);
   if (errors.length) return null;
@@ -166,6 +174,10 @@ function validate() {
   if (preciousMetals.length && preciousMetals.length < 2) {
     addError("Array preciousMetals has too few rows", `${preciousMetals.length} < 2`);
   }
+  const preciousSignals = Array.isArray(data.preciousSignals) ? data.preciousSignals : [];
+  if (preciousSignals.length && preciousSignals.length < 4) {
+    addError("Array preciousSignals has too few rows", `${preciousSignals.length} < 4`);
+  }
 
   const requiredSymbols = ["sh000001", "sz399001", "sz399006", "SPY", "QQQ", "SOXX"];
   const symbolSet = new Set(indices.map((row) => row.symbol));
@@ -184,6 +196,7 @@ function validate() {
   companies.forEach(validateCompany);
   macro.forEach(validateMacro);
   preciousMetals.forEach(validatePreciousMetal);
+  preciousSignals.forEach(validatePreciousSignal);
   (data.sources || []).forEach((row, index) => assertUrl(row.url, `sources[${index}].url`));
 
   const mojibakePattern = /(?:�|鍥|涓|缇|鑲|闂|绉|鐨|妯|湪|槸|锛|浠|瀹|犻|娴|鐪|鍏|骞|獙|搴|叕)/;
@@ -207,6 +220,7 @@ const report = {
     companies: data.companies?.length || 0,
     macro: data.macro?.length || 0,
     preciousMetals: data.preciousMetals?.length || 0,
+    preciousSignals: data.preciousSignals?.length || 0,
     sources: data.sources?.length || 0
   } : {},
   errors,

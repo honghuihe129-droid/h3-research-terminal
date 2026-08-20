@@ -1,5 +1,5 @@
 {
-    "generatedAt":  "2026-08-20T11:49:35+08:00",
+    "generatedAt":  "2026-08-20T14:48:14+08:00",
     "nextScheduledUpdate":  "Daily 15:30 Beijing time",
     "sourcePolicy":  "公司公告/官方文件 \u003e 交易所披露 \u003e 官方产业数据 \u003e 权威媒体 \u003e 研报 \u003e 互动平台 \u003e 市场传闻",
     "macro":  [
@@ -153,8 +153,8 @@
                                "name":  "Gold",
                                "symbol":  "GC=F",
                                "proxy":  "COMEX gold futures",
-                               "price":  4555.1,
-                               "changePct":  3.99,
+                               "price":  4552.8,
+                               "changePct":  3.06,
                                "pricingAnchor":  "LBMA London spot gold reference",
                                "flowSymbol":  "GLD",
                                "flowPrice":  413.84,
@@ -171,8 +171,8 @@
                                "name":  "Silver",
                                "symbol":  "SI=F",
                                "proxy":  "COMEX silver futures",
-                               "price":  67.19,
-                               "changePct":  3.39,
+                               "price":  67.2,
+                               "changePct":  1.64,
                                "pricingAnchor":  "LBMA London spot silver reference",
                                "flowSymbol":  "SLV",
                                "flowPrice":  60.01,
@@ -189,8 +189,8 @@
                                "name":  "Gold/Silver ratio",
                                "symbol":  "GC/SI",
                                "proxy":  "COMEX futures ratio",
-                               "price":  67.79,
-                               "changePct":  0.6,
+                               "price":  67.75,
+                               "changePct":  1.42,
                                "role":  "Relative confirmation",
                                "status":  "Gate",
                                "thesis":  "Ratio repair decides whether silver is confirming or merely lagging gold",
@@ -200,13 +200,59 @@
                                "url":  "https://finance.yahoo.com/quote/GC%3DF"
                            }
                        ],
+    "preciousSignals":  [
+                            {
+                                "key":  "fred_macro",
+                                "label":  "FRED macro pressure",
+                                "value":  "Real rate 2.41% / Dollar 118.9",
+                                "status":  "Official data",
+                                "role":  "Core judgment factor",
+                                "cadence":  "Daily / weekly",
+                                "read":  "FRED confirms the rate and dollar backdrop; use this as the first gate before treating metals strength as more than price momentum",
+                                "source":  "FRED API",
+                                "url":  "https://fred.stlouisfed.org/legal/"
+                            },
+                            {
+                                "key":  "wgc_gold",
+                                "label":  "WGC gold flows",
+                                "value":  "Gold ETF flows / central-bank demand",
+                                "status":  "Official research factor",
+                                "role":  "Core judgment factor",
+                                "cadence":  "Weekly / monthly",
+                                "read":  "ETF flows and central-bank demand decide whether gold strength has fund-flow and reserve-demand support",
+                                "source":  "World Gold Council",
+                                "url":  "https://www.gold.org/goldhub/data/gold-etfs-holdings-and-flows"
+                            },
+                            {
+                                "key":  "silver_institute",
+                                "label":  "Silver Institute demand",
+                                "value":  "Supply deficit / industrial demand",
+                                "status":  "Official research factor",
+                                "role":  "Core judgment factor",
+                                "cadence":  "Annual / periodic",
+                                "read":  "Supply deficit and industrial demand decide whether silver can move from gold beta into an industrial-chain thesis",
+                                "source":  "Silver Institute",
+                                "url":  "https://silverinstitute.org/silver-supply-demand/"
+                            },
+                            {
+                                "key":  "price_reference",
+                                "label":  "Price trend reference",
+                                "value":  "Delayed public market reference",
+                                "status":  "Reference only",
+                                "role":  "Trend reference",
+                                "cadence":  "Daily",
+                                "read":  "COMEX/Yahoo delayed prices are trend references only; they are not redistributed as official CME or LBMA quote data",
+                                "source":  "Delayed public market reference",
+                                "url":  "https://finance.yahoo.com/quote/GC%3DF"
+                            }
+                        ],
     "indices":  [
                     {
                         "market":  "A-share",
                         "name":  "SSE Composite",
                         "symbol":  "sh000001",
-                        "price":  3905.23,
-                        "changePct":  0.28,
+                        "price":  3903.46,
+                        "changePct":  0.23,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -219,8 +265,8 @@
                         "market":  "A-share",
                         "name":  "SZSE Component",
                         "symbol":  "sz399001",
-                        "price":  14024.41,
-                        "changePct":  0.97,
+                        "price":  13961.06,
+                        "changePct":  0.51,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -233,8 +279,8 @@
                         "market":  "A-share",
                         "name":  "ChiNext",
                         "symbol":  "sz399006",
-                        "price":  3509.44,
-                        "changePct":  1.03,
+                        "price":  3488.12,
+                        "changePct":  0.42,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -247,8 +293,8 @@
                         "market":  "A-share",
                         "name":  "CSI 300",
                         "symbol":  "sh000300",
-                        "price":  4598.14,
-                        "changePct":  0.21,
+                        "price":  4589.76,
+                        "changePct":  0.02,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -261,8 +307,8 @@
                         "market":  "A-share",
                         "name":  "CSI 500",
                         "symbol":  "sh000905",
-                        "price":  7880.34,
-                        "changePct":  1.24,
+                        "price":  7849.03,
+                        "changePct":  0.84,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -275,8 +321,8 @@
                         "market":  "A-share",
                         "name":  "CSI 1000",
                         "symbol":  "sh000852",
-                        "price":  7629.99,
-                        "changePct":  1.49,
+                        "price":  7594.66,
+                        "changePct":  1.02,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -331,85 +377,85 @@
     "sectors":  [
                     {
                         "name":  "CAR-T细胞疗法",
-                        "changePct":  10,
-                        "inflowCnyBn":  26.19,
+                        "changePct":  8.89,
+                        "inflowCnyBn":  28.32,
                         "leader":  "智飞生物",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "重组蛋白",
-                        "changePct":  8.25,
-                        "inflowCnyBn":  10.25,
-                        "leader":  "近岸蛋白",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
-                        "name":  "CRO",
-                        "changePct":  8.06,
-                        "inflowCnyBn":  32.81,
+                        "changePct":  6.8,
+                        "inflowCnyBn":  13.29,
                         "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "基因测序",
-                        "changePct":  7.88,
-                        "inflowCnyBn":  13,
+                        "changePct":  6.58,
+                        "inflowCnyBn":  14.14,
+                        "leader":  "双鹭药业",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "单抗概念",
+                        "changePct":  6.32,
+                        "inflowCnyBn":  14.43,
+                        "leader":  "双鹭药业",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "生物疫苗",
+                        "changePct":  6.11,
+                        "inflowCnyBn":  21.71,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "精准诊断",
-                        "changePct":  7.35,
-                        "inflowCnyBn":  14.37,
+                        "changePct":  6.11,
+                        "inflowCnyBn":  13.86,
                         "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "单抗概念",
-                        "changePct":  7.15,
-                        "inflowCnyBn":  15.45,
+                        "name":  "昨日打二板以上表现",
+                        "changePct":  5.92,
+                        "inflowCnyBn":  1.7,
+                        "leader":  "神奇制药",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "精准医疗",
+                        "changePct":  5.86,
+                        "inflowCnyBn":  19.73,
+                        "leader":  "智飞生物",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "CRO",
+                        "changePct":  5.84,
+                        "inflowCnyBn":  34.15,
+                        "leader":  "近岸蛋白",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "免疫治疗",
+                        "changePct":  5.77,
+                        "inflowCnyBn":  15.46,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "体外诊断概念",
-                        "changePct":  6.75,
-                        "inflowCnyBn":  14.69,
+                        "changePct":  5.7,
+                        "inflowCnyBn":  14.23,
                         "leader":  "近岸蛋白",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "生物疫苗",
-                        "changePct":  6.71,
-                        "inflowCnyBn":  20.13,
-                        "leader":  "双鹭药业",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
-                        "name":  "免疫治疗",
-                        "changePct":  6.67,
-                        "inflowCnyBn":  10.72,
-                        "leader":  "双鹭药业",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
-                        "name":  "精准医疗",
-                        "changePct":  6.5,
-                        "inflowCnyBn":  15.41,
-                        "leader":  "智飞生物",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
-                        "name":  "创新药",
-                        "changePct":  6.42,
-                        "inflowCnyBn":  63.64,
-                        "leader":  "中 关 村",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
-                        "name":  "肝炎概念",
-                        "changePct":  6.27,
-                        "inflowCnyBn":  16.95,
+                        "name":  "阿兹海默",
+                        "changePct":  5.37,
+                        "inflowCnyBn":  3.87,
                         "leader":  "双鹭药业",
                         "evidence":  "Sector heat, verify with filings and financials"
                     }

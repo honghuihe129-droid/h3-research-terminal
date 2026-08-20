@@ -207,12 +207,16 @@ const i18n = {
     valuationNextRead: "Bubble cools when price falls toward DMA or earnings catch up; discount upgrades only after financial evidence improves",
     preciousTitle: "Precious Metals Watch",
     preciousStatus: "Macro assets first",
-    preciousRead: "Gold and silver enter H^3 as macro assets first. COMEX futures provide the refreshable price signal, London spot is the pricing reference, and GLD/SLV only confirm fund flow",
+    preciousRead: "Gold and silver enter H^3 as macro assets first. The judgment uses FRED, WGC, and Silver Institute factors; price is only a delayed trend reference, not an official redistributable quote source",
     preciousGoldGate: "Gold gate",
     preciousSilverGate: "Silver gate",
     preciousRatioGate: "Gold/silver ratio",
     pricingReference: "Pricing reference",
     flowProxy: "ETF flow proxy",
+    preciousFactorsTitle: "Core factors",
+    preciousFactorsRead: "Judgment is driven by macro pressure, gold flows, central-bank demand, silver supply deficit, and industrial demand",
+    preciousBoundaryTitle: "Legal data boundary",
+    preciousBoundaryRead: "Price data is displayed as delayed public trend reference only. H^3 does not redistribute CME or LBMA official quote data",
     preciousTakeaway: "Takeaway",
     preciousAction: "Action",
     preciousConclusionMacroHedgeTitle: "Macro hedge bid, not silver-led expansion",
@@ -228,7 +232,7 @@ const i18n = {
     preciousConclusionWeakBody: "The metals signal is not broad enough. Price action does not yet justify expanding the research map beyond macro monitoring",
     preciousConclusionWeakAction: "Stay in observation mode until either gold reclaims momentum or silver confirms with ratio repair",
     preciousNext: "Expansion rule",
-    preciousNextRead: "Only expand toward GDX, SIL, miners, or the silver industrial chain after futures trend, London-spot reference, real rates, ETF flow, and demand signals confirm together",
+    preciousNextRead: "Only expand toward GDX, SIL, miners, or the silver industrial chain after FRED macro pressure, WGC gold flows, and Silver Institute demand signals confirm together",
     watchTitle: "Watch Items",
     watchSub: "next validation round",
     radarPriority: "Priority mix",
@@ -500,12 +504,16 @@ const i18n = {
     valuationNextRead: "\u6ce1\u6cab\u51b7\u5374\u6765\u81ea\u4ef7\u683c\u56de\u5230 DMA \u9644\u8fd1\u6216\u76c8\u5229\u8ffd\u4e0a\uff1b\u4f4e\u4f30\u5347\u7ea7\u53ea\u6765\u81ea\u8d22\u52a1\u8bc1\u636e\u6539\u5584",
     preciousTitle: "\u8d35\u91d1\u5c5e\u89c2\u5bdf",
     preciousStatus: "\u5148\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7",
-    preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\u3002COMEX \u671f\u8d27\u63d0\u4f9b\u53ef\u6bcf\u65e5\u66f4\u65b0\u7684\u4ef7\u683c\u4fe1\u53f7\uff0c\u4f26\u6566\u73b0\u8d27\u4f5c\u4e3a\u5b9a\u4ef7\u53c2\u8003\uff0cGLD/SLV \u53ea\u7528\u6765\u786e\u8ba4\u8d44\u91d1\u6d41",
+    preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\u3002\u5224\u65ad\u6838\u5fc3\u6765\u81ea FRED\u3001WGC \u548c Silver Institute \u56e0\u5b50\uff1b\u4ef7\u683c\u53ea\u4f5c\u4e3a\u5ef6\u8fdf\u8d8b\u52bf\u53c2\u8003\uff0c\u4e0d\u4f5c\u4e3a\u53ef\u518d\u5206\u53d1\u7684\u5b98\u65b9\u62a5\u4ef7\u6e90",
     preciousGoldGate: "\u9ec4\u91d1\u95f8\u95e8",
     preciousSilverGate: "\u767d\u94f6\u95f8\u95e8",
     preciousRatioGate: "\u91d1\u94f6\u6bd4",
     pricingReference: "\u5b9a\u4ef7\u53c2\u8003",
     flowProxy: "ETF \u8d44\u91d1\u6d41\u4ee3\u7406",
+    preciousFactorsTitle: "\u6838\u5fc3\u56e0\u5b50",
+    preciousFactorsRead: "\u5224\u65ad\u6765\u81ea\u5b8f\u89c2\u538b\u529b\u3001\u9ec4\u91d1\u8d44\u91d1\u6d41\u3001\u592e\u884c\u9700\u6c42\u3001\u767d\u94f6\u4f9b\u9700\u7f3a\u53e3\u548c\u5de5\u4e1a\u9700\u6c42",
+    preciousBoundaryTitle: "\u5408\u6cd5\u6570\u636e\u8fb9\u754c",
+    preciousBoundaryRead: "\u4ef7\u683c\u6570\u636e\u53ea\u4f5c\u4e3a\u5ef6\u8fdf\u516c\u5f00\u8d8b\u52bf\u53c2\u8003\u3002H^3 \u4e0d\u518d\u5206\u53d1 CME \u6216 LBMA \u5b98\u65b9\u62a5\u4ef7\u6570\u636e",
     preciousTakeaway: "\u6838\u5fc3\u7ed3\u8bba",
     preciousAction: "\u4e0b\u4e00\u6b65",
     preciousConclusionMacroHedgeTitle: "\u5b8f\u89c2\u5bf9\u51b2\u4e3b\u5bfc\uff0c\u8fd8\u4e0d\u662f\u767d\u94f6\u6269\u6563",
@@ -521,7 +529,7 @@ const i18n = {
     preciousConclusionWeakBody: "\u91d1\u5c5e\u4fe1\u53f7\u4e0d\u591f\u5bbd\uff0c\u4ef7\u683c\u8868\u73b0\u8fd8\u4e0d\u652f\u6301\u628a\u7814\u7a76\u5730\u56fe\u4ece\u5b8f\u89c2\u89c2\u5bdf\u6269\u5230\u4ea7\u4e1a\u94fe",
     preciousConclusionWeakAction: "\u7ee7\u7eed\u89c2\u5bdf\uff0c\u7b49\u9ec4\u91d1\u91cd\u65b0\u8d70\u5f3a\u6216\u767d\u94f6\u901a\u8fc7\u91d1\u94f6\u6bd4\u4fee\u590d\u6765\u786e\u8ba4",
     preciousNext: "\u6269\u5c55\u89c4\u5219",
-    preciousNextRead: "\u53ea\u6709\u5728\u671f\u8d27\u8d8b\u52bf\u3001\u4f26\u6566\u73b0\u8d27\u53c2\u8003\u3001\u5b9e\u9645\u5229\u7387\u3001ETF \u8d44\u91d1\u6d41\u548c\u9700\u6c42\u4fe1\u53f7\u5171\u632f\u540e\uff0c\u624d\u6269\u5c55\u5230 GDX\u3001SIL\u3001\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
+    preciousNextRead: "\u53ea\u6709\u5728 FRED \u5b8f\u89c2\u538b\u529b\u3001WGC \u9ec4\u91d1\u8d44\u91d1\u6d41\u548c Silver Institute \u9700\u6c42\u4fe1\u53f7\u5171\u632f\u540e\uff0c\u624d\u6269\u5c55\u5230 GDX\u3001SIL\u3001\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
     watchTitle: "Watch Items",
     watchSub: "next validation round",
     radarPriority: "\u4f18\u5148\u7ea7\u5206\u5e03",
@@ -835,6 +843,32 @@ const zhValueTranslations = {
   "Yahoo Finance / COMEX GC + GLD; LBMA reference": "Yahoo Finance / COMEX GC + GLD\uff1bLBMA \u53c2\u8003",
   "Yahoo Finance / COMEX SI + SLV; LBMA reference": "Yahoo Finance / COMEX SI + SLV\uff1bLBMA \u53c2\u8003",
   "Yahoo Finance / COMEX GC + SI": "Yahoo Finance / COMEX GC + SI",
+  "FRED macro pressure": "FRED \u5b8f\u89c2\u538b\u529b",
+  "WGC gold flows": "WGC \u9ec4\u91d1\u8d44\u91d1\u6d41",
+  "Silver Institute demand": "Silver Institute \u767d\u94f6\u9700\u6c42",
+  "Price trend reference": "\u4ef7\u683c\u8d8b\u52bf\u53c2\u8003",
+  "Real rates / dollar / policy": "\u5b9e\u9645\u5229\u7387 / \u7f8e\u5143 / \u653f\u7b56\u5229\u7387",
+  "Gold ETF flows / central-bank demand": "\u9ec4\u91d1 ETF \u8d44\u91d1\u6d41 / \u592e\u884c\u9700\u6c42",
+  "Supply deficit / industrial demand": "\u4f9b\u9700\u7f3a\u53e3 / \u5de5\u4e1a\u9700\u6c42",
+  "Delayed public market reference": "\u5ef6\u8fdf\u516c\u5f00\u5e02\u573a\u53c2\u8003",
+  "Official data": "\u5b98\u65b9\u6570\u636e",
+  "Official research factor": "\u5b98\u65b9\u7814\u7a76\u56e0\u5b50",
+  "Reference only": "\u4ec5\u4f5c\u53c2\u8003",
+  "Core judgment factor": "\u6838\u5fc3\u5224\u65ad\u56e0\u5b50",
+  "Trend reference": "\u8d8b\u52bf\u53c2\u8003",
+  "Daily / weekly": "\u6bcf\u65e5 / \u6bcf\u5468",
+  "Weekly / monthly": "\u6bcf\u5468 / \u6bcf\u6708",
+  "Annual / periodic": "\u5e74\u5ea6 / \u9636\u6bb5\u6027",
+  "Daily": "\u6bcf\u65e5",
+  "FRED API": "FRED API",
+  "World Gold Council": "\u4e16\u754c\u9ec4\u91d1\u534f\u4f1a",
+  "Silver Institute": "\u767d\u94f6\u534f\u4f1a",
+  "Delayed public market reference": "\u5ef6\u8fdf\u516c\u5f00\u5e02\u573a\u53c2\u8003",
+  "Real rates and the dollar decide the macro tailwind or headwind; price strength needs flow or safe-haven demand when rates stay high": "\u5b9e\u9645\u5229\u7387\u548c\u7f8e\u5143\u51b3\u5b9a\u5b8f\u89c2\u987a\u98ce\u6216\u9006\u98ce\uff1b\u5229\u7387\u7ef4\u6301\u9ad8\u4f4d\u65f6\uff0c\u4ef7\u683c\u8d70\u5f3a\u9700\u8981\u8d44\u91d1\u6d41\u6216\u907f\u9669\u9700\u6c42\u8865\u507f",
+  "FRED confirms the rate and dollar backdrop; use this as the first gate before treating metals strength as more than price momentum": "FRED \u786e\u8ba4\u5229\u7387\u548c\u7f8e\u5143\u80cc\u666f\uff1b\u5728\u628a\u8d35\u91d1\u5c5e\u8d70\u5f3a\u89e3\u91ca\u4e3a\u8d85\u8d8a\u4ef7\u683c\u52a8\u91cf\u524d\uff0c\u5148\u8fc7\u8fd9\u4e00\u5173",
+  "ETF flows and central-bank demand decide whether gold strength has fund-flow and reserve-demand support": "ETF \u8d44\u91d1\u6d41\u548c\u592e\u884c\u9700\u6c42\u51b3\u5b9a\u9ec4\u91d1\u4e0a\u6da8\u662f\u5426\u6709\u8d44\u91d1\u4e0e\u50a8\u5907\u9700\u6c42\u652f\u6491",
+  "Supply deficit and industrial demand decide whether silver can move from gold beta into an industrial-chain thesis": "\u4f9b\u9700\u7f3a\u53e3\u548c\u5de5\u4e1a\u9700\u6c42\u51b3\u5b9a\u767d\u94f6\u80fd\u5426\u4ece\u9ec4\u91d1 beta \u6269\u5c55\u4e3a\u4ea7\u4e1a\u94fe\u5047\u8bbe",
+  "COMEX/Yahoo delayed prices are trend references only; they are not redistributed as official CME or LBMA quote data": "COMEX/Yahoo \u5ef6\u8fdf\u4ef7\u683c\u53ea\u4f5c\u4e3a\u8d8b\u52bf\u53c2\u8003\uff1b\u4e0d\u4f5c\u4e3a CME \u6216 LBMA \u5b98\u65b9\u62a5\u4ef7\u518d\u5206\u53d1",
   "Gold is a macro hedge, not an equity-chain signal yet": "\u9ec4\u91d1\u5148\u662f\u5b8f\u89c2\u5bf9\u51b2\u8d44\u4ea7\uff0c\u8fd8\u4e0d\u662f\u6743\u76ca\u4ea7\u4e1a\u94fe\u4fe1\u53f7",
   "Silver is gold beta plus industrial demand, so confirmation must be stricter": "\u767d\u94f6\u662f\u9ec4\u91d1 beta + \u5de5\u4e1a\u9700\u6c42\uff0c\u56e0\u6b64\u9a8c\u8bc1\u8981\u66f4\u4e25",
   "Ratio repair decides whether silver is confirming or merely lagging gold": "\u91d1\u94f6\u6bd4\u4fee\u590d\u51b3\u5b9a\u767d\u94f6\u662f\u5426\u771f\u6b63\u786e\u8ba4\u9ec4\u91d1\u884c\u60c5",
@@ -1770,6 +1804,34 @@ function getPreciousConclusion(metals) {
   };
 }
 
+function renderPreciousSignals(data) {
+  const signals = data.preciousSignals || [];
+  if (!signals.length) return "";
+  return `
+    <div class="precious-signal-panel">
+      <header>
+        <span>${t("preciousFactorsTitle")}</span>
+        <p>${t("preciousFactorsRead")}</p>
+      </header>
+      <div class="precious-signal-grid">
+        ${signals.map((item) => `
+          <article class="${item.key === "price_reference" ? "reference" : "factor"}">
+            <span>${trValue(item.status)}</span>
+            <strong>${trValue(item.label)}</strong>
+            <b>${trValue(item.value)}</b>
+            <p>${trValue(item.read)}</p>
+            <small>${trValue(item.source)} / ${trValue(item.cadence)}</small>
+          </article>
+        `).join("")}
+      </div>
+      <footer>
+        <span>${t("preciousBoundaryTitle")}</span>
+        <p>${t("preciousBoundaryRead")}</p>
+      </footer>
+    </div>
+  `;
+}
+
 function renderPreciousMetals(data) {
   const metals = data.preciousMetals || [];
   if (!metals.length) return "";
@@ -1808,6 +1870,7 @@ function renderPreciousMetals(data) {
         <p>${conclusion.body}</p>
         <small>${t("preciousAction")}: ${conclusion.action}</small>
       </div>
+      ${renderPreciousSignals(data)}
       <div class="precious-watch-grid">
         ${cards}
       </div>

@@ -257,8 +257,20 @@ function Get-ChinaMacroData {
 function Get-FredRows {
   param([string]$Series)
   $url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=$Series"
-  $response = Invoke-WebRequest -Uri $url -UseBasicParsing -TimeoutSec 20 -Headers @{ "User-Agent" = "Mozilla/5.0" }
-  $text = [string]$response.Content
+  $request = [System.Net.WebRequest]::Create($url)
+  $request.Method = "GET"
+  $request.Timeout = 15000
+  $request.ReadWriteTimeout = 15000
+  $request.UserAgent = "Mozilla/5.0"
+  $response = $request.GetResponse()
+  try {
+    $stream = $response.GetResponseStream()
+    $reader = New-Object System.IO.StreamReader($stream, [System.Text.Encoding]::UTF8)
+    $text = $reader.ReadToEnd()
+  } finally {
+    if ($reader) { $reader.Dispose() }
+    if ($response) { $response.Dispose() }
+  }
   $lines = @($text -split "\r?\n" | Where-Object { $_ -and $_.Trim().Length -gt 0 })
   @($lines | ConvertFrom-Csv | Where-Object {
     $value = $_.PSObject.Properties[$Series].Value
@@ -354,6 +366,72 @@ function Get-PreciousMetals {
   }
 }
 
+function Get-PreciousSignals {
+  param($ExistingPreciousSignals)
+
+  $fredValue = "Real rates / dollar / policy"
+  $fredRead = "Real rates and the dollar decide the macro tailwind or headwind; price strength needs flow or safe-haven demand when rates stay high"
+  try {
+    $realRate = Get-FredLatest "DFII10"
+    $dollar = Get-FredLatest "DTWEXBGS"
+    $fredValue = "Real rate $([Math]::Round($realRate.value, 2).ToString("0.00"))% / Dollar $([Math]::Round($dollar.value, 1))"
+    $fredRead = "FRED confirms the rate and dollar backdrop; use this as the first gate before treating metals strength as more than price momentum"
+  } catch {
+    $fallback = @($ExistingPreciousSignals | Where-Object { $_.key -eq "fred_macro" })[0]
+    if ($fallback) {
+      $fredValue = $fallback.value
+      $fredRead = $fallback.read
+    }
+  }
+
+  @(
+    [ordered]@{
+      key = "fred_macro"
+      label = "FRED macro pressure"
+      value = $fredValue
+      status = "Official data"
+      role = "Core judgment factor"
+      cadence = "Daily / weekly"
+      read = $fredRead
+      source = "FRED API"
+      url = "https://fred.stlouisfed.org/legal/"
+    },
+    [ordered]@{
+      key = "wgc_gold"
+      label = "WGC gold flows"
+      value = "Gold ETF flows / central-bank demand"
+      status = "Official research factor"
+      role = "Core judgment factor"
+      cadence = "Weekly / monthly"
+      read = "ETF flows and central-bank demand decide whether gold strength has fund-flow and reserve-demand support"
+      source = "World Gold Council"
+      url = "https://www.gold.org/goldhub/data/gold-etfs-holdings-and-flows"
+    },
+    [ordered]@{
+      key = "silver_institute"
+      label = "Silver Institute demand"
+      value = "Supply deficit / industrial demand"
+      status = "Official research factor"
+      role = "Core judgment factor"
+      cadence = "Annual / periodic"
+      read = "Supply deficit and industrial demand decide whether silver can move from gold beta into an industrial-chain thesis"
+      source = "Silver Institute"
+      url = "https://silverinstitute.org/silver-supply-demand/"
+    },
+    [ordered]@{
+      key = "price_reference"
+      label = "Price trend reference"
+      value = "Delayed public market reference"
+      status = "Reference only"
+      role = "Trend reference"
+      cadence = "Daily"
+      read = "COMEX/Yahoo delayed prices are trend references only; they are not redistributed as official CME or LBMA quote data"
+      source = "Delayed public market reference"
+      url = "https://finance.yahoo.com/quote/GC%3DF"
+    }
+  )
+}
+
 function Ensure-PreciousMetalsWatchItem {
   param($ExistingWatchItems)
 
@@ -388,13 +466,25 @@ function Ensure-PreciousMetalsWatchItem {
 }
 function Get-FredLatest {
   param([string]$Series)
-  $rows = @(Get-FredRows $Series)
-  if ($rows.Count -eq 0) { throw "No FRED rows for $Series" }
-  $row = $rows[$rows.Count - 1]
-  [ordered]@{
-    date = $row.observation_date
-    value = [double]$row.PSObject.Properties[$Series].Value
-    rows = $rows
+  try {
+    $rows = @(Get-FredRows $Series)
+    if ($rows.Count -eq 0) { throw "No FRED rows for $Series" }
+    $row = $rows[$rows.Count - 1]
+    [ordered]@{
+      date = $row.observation_date
+      value = [double]$row.PSObject.Properties[$Series].Value
+      rows = $rows
+    }
+  } catch {
+    $helper = Join-Path $PSScriptRoot "fetch_fred_latest.mjs"
+    $json = & node $helper $Series
+    if ($LASTEXITCODE -ne 0 -or -not $json) { throw "No FRED fallback value for $Series" }
+    $latest = $json | ConvertFrom-Json
+    [ordered]@{
+      date = $latest.date
+      value = [double]$latest.value
+      rows = @()
+    }
   }
 }
 
@@ -507,6 +597,7 @@ try {
   $macro += Get-DefaultUsMacroData
 }
 $preciousMetals = @(Get-PreciousMetals $existing.preciousMetals)
+$preciousSignals = @(Get-PreciousSignals $existing.preciousSignals)
 $watchItems = @(Ensure-PreciousMetalsWatchItem $existing.watchItems)
 
 $updated = [ordered]@{
@@ -515,6 +606,7 @@ $updated = [ordered]@{
   sourcePolicy = $existing.sourcePolicy
   macro = $macro
   preciousMetals = $preciousMetals
+  preciousSignals = $preciousSignals
   indices = $indices
   sectors = $sectors
   usSectors = $usSectors
