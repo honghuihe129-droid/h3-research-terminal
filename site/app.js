@@ -213,6 +213,20 @@ const i18n = {
     preciousRatioGate: "Gold/silver ratio",
     pricingReference: "Pricing reference",
     flowProxy: "ETF flow proxy",
+    preciousTakeaway: "Takeaway",
+    preciousAction: "Action",
+    preciousConclusionMacroHedgeTitle: "Macro hedge bid, not silver-led expansion",
+    preciousConclusionMacroHedgeBody: "Gold and silver are both positive, but the gold/silver ratio is still rising. This points to a gold-led macro hedge, not yet a broad precious-metals risk-on trade",
+    preciousConclusionMacroHedgeAction: "Keep gold and silver on the macro board; wait for silver leadership or ratio repair before adding miners",
+    preciousConclusionSilverLeadTitle: "Silver beta is confirming",
+    preciousConclusionSilverLeadBody: "Both metals are positive and the gold/silver ratio is falling. That is the first signal that silver beta and industrial demand may be joining the gold move",
+    preciousConclusionSilverLeadAction: "Start a second-layer review of SIL, GDX, miners, and the silver industrial chain, but require flow and demand confirmation",
+    preciousConclusionGoldOnlyTitle: "Gold-only defensive bid",
+    preciousConclusionGoldOnlyBody: "Gold is positive while silver is not confirming. The signal is defensive and macro-led, with weak evidence for industrial beta",
+    preciousConclusionGoldOnlyAction: "Track real rates, dollar pressure, and central-bank demand; do not extend into silver beta or miners yet",
+    preciousConclusionWeakTitle: "No metals confirmation yet",
+    preciousConclusionWeakBody: "The metals signal is not broad enough. Price action does not yet justify expanding the research map beyond macro monitoring",
+    preciousConclusionWeakAction: "Stay in observation mode until either gold reclaims momentum or silver confirms with ratio repair",
     preciousNext: "Expansion rule",
     preciousNextRead: "Only expand toward GDX, SIL, miners, or the silver industrial chain after futures trend, London-spot reference, real rates, ETF flow, and demand signals confirm together",
     watchTitle: "Watch Items",
@@ -492,6 +506,20 @@ const i18n = {
     preciousRatioGate: "\u91d1\u94f6\u6bd4",
     pricingReference: "\u5b9a\u4ef7\u53c2\u8003",
     flowProxy: "ETF \u8d44\u91d1\u6d41\u4ee3\u7406",
+    preciousTakeaway: "\u6838\u5fc3\u7ed3\u8bba",
+    preciousAction: "\u4e0b\u4e00\u6b65",
+    preciousConclusionMacroHedgeTitle: "\u5b8f\u89c2\u5bf9\u51b2\u4e3b\u5bfc\uff0c\u8fd8\u4e0d\u662f\u767d\u94f6\u6269\u6563",
+    preciousConclusionMacroHedgeBody: "\u9ec4\u91d1\u548c\u767d\u94f6\u90fd\u4e3a\u6b63\uff0c\u4f46\u91d1\u94f6\u6bd4\u4ecd\u5728\u4e0a\u884c\u3002\u8fd9\u66f4\u50cf\u9ec4\u91d1\u4e3b\u5bfc\u7684\u5b8f\u89c2\u5bf9\u51b2\uff0c\u8fd8\u4e0d\u662f\u8d35\u91d1\u5c5e\u5168\u9762 risk-on",
+    preciousConclusionMacroHedgeAction: "\u9ec4\u91d1\u548c\u767d\u94f6\u7ee7\u7eed\u653e\u5728\u5b8f\u89c2\u677f\u5757\u89c2\u5bdf\uff1b\u7b49\u767d\u94f6\u9886\u6da8\u6216\u91d1\u94f6\u6bd4\u4fee\u590d\u540e\u518d\u52a0\u77ff\u80a1",
+    preciousConclusionSilverLeadTitle: "\u767d\u94f6 beta \u5f00\u59cb\u786e\u8ba4",
+    preciousConclusionSilverLeadBody: "\u4e24\u79cd\u91d1\u5c5e\u90fd\u4e3a\u6b63\uff0c\u4e14\u91d1\u94f6\u6bd4\u4e0b\u884c\u3002\u8fd9\u662f\u767d\u94f6 beta \u548c\u5de5\u4e1a\u9700\u6c42\u53ef\u80fd\u52a0\u5165\u9ec4\u91d1\u884c\u60c5\u7684\u7b2c\u4e00\u4e2a\u4fe1\u53f7",
+    preciousConclusionSilverLeadAction: "\u53ef\u4ee5\u542f\u52a8 SIL\u3001GDX\u3001\u77ff\u80a1\u548c\u767d\u94f6\u4ea7\u4e1a\u94fe\u7684\u4e8c\u5c42\u7814\u7a76\uff0c\u4f46\u4ecd\u9700\u8d44\u91d1\u6d41\u548c\u9700\u6c42\u786e\u8ba4",
+    preciousConclusionGoldOnlyTitle: "\u53ea\u662f\u9ec4\u91d1\u9632\u5fa1\u6027\u4e70\u76d8",
+    preciousConclusionGoldOnlyBody: "\u9ec4\u91d1\u4e3a\u6b63\uff0c\u4f46\u767d\u94f6\u6ca1\u6709\u786e\u8ba4\u3002\u4fe1\u53f7\u504f\u9632\u5fa1\u548c\u5b8f\u89c2\uff0c\u5de5\u4e1a beta \u8bc1\u636e\u8fd8\u5f31",
+    preciousConclusionGoldOnlyAction: "\u7ee7\u7eed\u8ddf\u8e2a\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u538b\u529b\u548c\u592e\u884c\u9700\u6c42\uff1b\u6682\u4e0d\u6269\u5c55\u5230\u767d\u94f6 beta \u6216\u77ff\u80a1",
+    preciousConclusionWeakTitle: "\u8d35\u91d1\u5c5e\u4fe1\u53f7\u8fd8\u4e0d\u6210\u7acb",
+    preciousConclusionWeakBody: "\u91d1\u5c5e\u4fe1\u53f7\u4e0d\u591f\u5bbd\uff0c\u4ef7\u683c\u8868\u73b0\u8fd8\u4e0d\u652f\u6301\u628a\u7814\u7a76\u5730\u56fe\u4ece\u5b8f\u89c2\u89c2\u5bdf\u6269\u5230\u4ea7\u4e1a\u94fe",
+    preciousConclusionWeakAction: "\u7ee7\u7eed\u89c2\u5bdf\uff0c\u7b49\u9ec4\u91d1\u91cd\u65b0\u8d70\u5f3a\u6216\u767d\u94f6\u901a\u8fc7\u91d1\u94f6\u6bd4\u4fee\u590d\u6765\u786e\u8ba4",
     preciousNext: "\u6269\u5c55\u89c4\u5219",
     preciousNextRead: "\u53ea\u6709\u5728\u671f\u8d27\u8d8b\u52bf\u3001\u4f26\u6566\u73b0\u8d27\u53c2\u8003\u3001\u5b9e\u9645\u5229\u7387\u3001ETF \u8d44\u91d1\u6d41\u548c\u9700\u6c42\u4fe1\u53f7\u5171\u632f\u540e\uff0c\u624d\u6269\u5c55\u5230 GDX\u3001SIL\u3001\u77ff\u80a1\u6216\u767d\u94f6\u4ea7\u4e1a\u94fe",
     watchTitle: "Watch Items",
@@ -1699,9 +1727,53 @@ function formatSecondaryPrice(value) {
   return `$${number.toFixed(2)}`;
 }
 
+function getPreciousConclusion(metals) {
+  const gold = metals.find((item) => item.name === "Gold");
+  const silver = metals.find((item) => item.name === "Silver");
+  const ratio = metals.find((item) => isRatioAsset(item));
+  const goldChange = Number(gold?.changePct);
+  const silverChange = Number(silver?.changePct);
+  const ratioChange = Number(ratio?.changePct);
+
+  if (goldChange > 0 && silverChange > 0 && ratioChange < 0) {
+    return {
+      tone: "up",
+      title: t("preciousConclusionSilverLeadTitle"),
+      body: t("preciousConclusionSilverLeadBody"),
+      action: t("preciousConclusionSilverLeadAction")
+    };
+  }
+
+  if (goldChange > 0 && silverChange > 0) {
+    return {
+      tone: "watch",
+      title: t("preciousConclusionMacroHedgeTitle"),
+      body: t("preciousConclusionMacroHedgeBody"),
+      action: t("preciousConclusionMacroHedgeAction")
+    };
+  }
+
+  if (goldChange > 0 && !(silverChange > 0)) {
+    return {
+      tone: "watch",
+      title: t("preciousConclusionGoldOnlyTitle"),
+      body: t("preciousConclusionGoldOnlyBody"),
+      action: t("preciousConclusionGoldOnlyAction")
+    };
+  }
+
+  return {
+    tone: "neutral",
+    title: t("preciousConclusionWeakTitle"),
+    body: t("preciousConclusionWeakBody"),
+    action: t("preciousConclusionWeakAction")
+  };
+}
+
 function renderPreciousMetals(data) {
   const metals = data.preciousMetals || [];
   if (!metals.length) return "";
+  const conclusion = getPreciousConclusion(metals);
   const cards = metals.map((item, index) => {
     const gateLabels = [t("preciousGoldGate"), t("preciousSilverGate"), t("preciousRatioGate")];
     const tone = isRatioAsset(item) ? "neutral" : pctClass(item.changePct);
@@ -1729,6 +1801,12 @@ function renderPreciousMetals(data) {
         <span>${t("preciousTitle")}</span>
         <strong>${t("preciousStatus")}</strong>
         <p>${t("preciousRead")}</p>
+      </div>
+      <div class="precious-watch-takeaway ${conclusion.tone}">
+        <span>${t("preciousTakeaway")}</span>
+        <strong>${conclusion.title}</strong>
+        <p>${conclusion.body}</p>
+        <small>${t("preciousAction")}: ${conclusion.action}</small>
       </div>
       <div class="precious-watch-grid">
         ${cards}
