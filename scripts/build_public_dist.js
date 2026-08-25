@@ -12,7 +12,9 @@ for (const item of ["index.html", "styles.css", "app.js"]) {
   fs.copyFileSync(path.join(site, item), path.join(dist, item));
 }
 
-fs.cpSync(path.join(site, "data"), path.join(dist, "data"), { recursive: true });
+const distData = path.join(dist, "data");
+fs.mkdirSync(distData, { recursive: true });
+fs.copyFileSync(path.join(site, "data", "market-data.json"), path.join(distData, "market-data.json"));
 
 for (const item of ["_redirects", "_headers", ".nojekyll"]) {
   const source = path.join(site, item);

@@ -39,10 +39,16 @@ Production URL: https://h3-research-terminal.pages.dev
 Latest verified data: 2026-08-18T15:30:54+08:00
 ```
 
-To make Cloudflare the daily 15:30 Beijing-time publish target, install the scheduled task after the token is available as a persistent machine/user environment variable:
+Cloudflare is the daily 15:30 Beijing-time publish target. The scheduled task refreshes data, validates the candidate file, deploys Cloudflare Pages, then force-publishes the `gh-pages` static mirror:
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File scripts\install_daily_update.ps1 -Provider Cloudflare
+```
+
+Task logs are written to:
+
+```text
+logs\H3DailyUpdate.log
 ```
 
 Netlify remains available:
@@ -53,7 +59,7 @@ powershell.exe -ExecutionPolicy Bypass -File scripts\install_daily_update.ps1 -P
 
 ## GitHub Pages Mirror
 
-The repository uses the `gh-pages` branch as the static mirror route. This keeps the backup simple and avoids requiring GitHub Actions Pages setup.
+The repository uses the `gh-pages` branch as the static mirror route. This keeps the backup simple and avoids requiring GitHub Actions Pages setup. The Cloudflare daily update script now syncs this mirror automatically after the primary deployment succeeds.
 
 GitHub repository settings:
 

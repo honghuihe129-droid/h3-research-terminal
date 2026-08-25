@@ -1,7 +1,9 @@
 param(
   [string]$ProjectName = "h3-research-terminal",
   [string]$Branch = "main",
-  [string]$AccountId = $env:CLOUDFLARE_ACCOUNT_ID
+  [string]$AccountId = $env:CLOUDFLARE_ACCOUNT_ID,
+  [string]$GithubPagesRepo = "https://github.com/honghuihe129-droid/h3-research-terminal.git",
+  [switch]$SkipGithubPagesMirror
 )
 
 $ErrorActionPreference = "Stop"
@@ -43,3 +45,13 @@ try {
 }
 
 & (Join-Path $scriptDir "deploy_cloudflare_pages.ps1") -ProjectName $ProjectName -Branch $Branch -AccountId $AccountId
+if ($LASTEXITCODE -ne 0) {
+  throw "Cloudflare Pages publish failed with exit code $LASTEXITCODE"
+}
+
+if (-not $SkipGithubPagesMirror) {
+  & (Join-Path $scriptDir "deploy_github_pages_mirror.ps1") -RepoUrl $GithubPagesRepo
+  if ($LASTEXITCODE -ne 0) {
+    throw "GitHub Pages mirror publish failed with exit code $LASTEXITCODE"
+  }
+}

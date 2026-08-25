@@ -12,10 +12,24 @@ $candidatePath = Join-Path $root "site\data\market-data.candidate.json"
 
 Set-Location $root
 
+function Invoke-Checked {
+  param(
+    [Parameter(Mandatory = $true)]
+    [ScriptBlock]$Command,
+    [Parameter(Mandatory = $true)]
+    [string]$Label
+  )
+
+  & $Command
+  if ($LASTEXITCODE -ne 0) {
+    throw "$Label failed with exit code $LASTEXITCODE"
+  }
+}
+
 Copy-Item -LiteralPath $dataPath -Destination $candidatePath -Force
 try {
-  & (Join-Path $scriptDir "update_market_data.ps1") -OutputPath $candidatePath
-  & node.exe "scripts\validate_market_data.js" "site\data\market-data.candidate.json"
+  Invoke-Checked { & (Join-Path $scriptDir "update_market_data.ps1") -OutputPath $candidatePath } "Market data refresh"
+  Invoke-Checked { node.exe "scripts\validate_market_data.js" "site\data\market-data.candidate.json" } "Candidate market data validation"
   Copy-Item -LiteralPath $candidatePath -Destination $dataPath -Force
 } finally {
   if (Test-Path -LiteralPath $candidatePath) {
@@ -23,7 +37,7 @@ try {
   }
 }
 
-& npm.cmd run build
+Invoke-Checked { npm.cmd run build } "Static build"
 
 $env:NODE_OPTIONS = "--require=$patchPath"
-& npx.cmd netlify deploy --prod --dir=dist --site $SiteId
+Invoke-Checked { npx.cmd netlify deploy --prod --dir=dist --site $SiteId } "Netlify deploy"

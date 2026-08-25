@@ -16,8 +16,13 @@ if (-not $ScriptPath) {
 }
 
 $resolvedScript = Resolve-Path $ScriptPath
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$($resolvedScript.Path)`""
+$root = Split-Path -Parent $PSScriptRoot
+$logDir = Join-Path $root "logs"
+New-Item -ItemType Directory -Path $logDir -Force | Out-Null
+$logPath = Join-Path $logDir "$TaskName.log"
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$($resolvedScript.Path)`" *> `"$logPath`"" -WorkingDirectory $root
 $trigger = New-ScheduledTaskTrigger -Daily -At "15:30"
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries
 Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Description "Update and publish H^3 market research data at Beijing market close." -Force | Out-Null
 Write-Output "Installed scheduled task: $TaskName ($Provider)"
+Write-Output "Log file: $logPath"

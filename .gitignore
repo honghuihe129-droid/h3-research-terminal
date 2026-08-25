@@ -11,3 +11,5 @@ skills/
 .env.*
 npm-debug.log*
 *.zip
+site/data/market-data.candidate.json
+site/data/market-data.precheck.json
