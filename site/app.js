@@ -241,6 +241,25 @@ const i18n = {
     transmissionMetalsRead: "Gold strength plus the gold/silver ratio decides whether this is macro hedge or broader precious-metals expansion",
     transmissionNextTitle: "Next action",
     transmissionNextRead: "Upgrade only when price heat, official data, and financial transmission confirm in the same direction",
+    policyTitle: "Fed & Yen Monitor",
+    policyStatus: "Next macro focus",
+    policyRead: "The next H^3 macro gate is Fed language and USD/JPY: one sets real-rate pressure, the other tests carry-trade and safe-haven stress",
+    policyFomcGate: "FOMC gate",
+    policyJpyGate: "Yen gate",
+    policyGoldGate: "Gold macro gate",
+    policyOutcomeGate: "Decision path",
+    policyMainGate: "Main event",
+    policyCarryGate: "Carry signal",
+    policyGoldStatus: "Gold driver",
+    policyScenario: "Scenario map",
+    policyFomcRead: "Focus on the statement, dot plot, and Powell press conference; gold needs a lower real-rate or dollar path, or stronger safe-haven demand",
+    policyJpyWeakRead: "USD/JPY rising means yen weakness and carry pressure remain; this is not yet a clean risk-off reversal",
+    policyJpyStrongRead: "USD/JPY falling means yen strength is improving; watch whether it comes from US-yield decline, BOJ pressure, or risk aversion",
+    policyGoldRead: "Gold confirmation improves when real rates, long yields, or the dollar soften while ETF and central-bank demand stay firm",
+    policyOutcomeValue: "Dovish hold vs hawkish hold",
+    policyOutcomeRead: "Dovish hold supports gold and duration; hawkish hold or hike risks dollar strength, yen pressure, and gold volatility",
+    policyNextTitle: "What changes the read",
+    policyNextRead: "Upgrade gold only if FOMC, real rates, dollar, yen, and fund-flow signals stop fighting each other",
     preciousTitle: "Precious Metals Watch",
     preciousStatus: "Macro assets first",
     preciousRead: "Gold and silver enter H^3 as macro assets first. The judgment uses FRED, WGC, and Silver Institute factors; price is only a delayed trend reference, not an official redistributable quote source",
@@ -574,6 +593,25 @@ const i18n = {
     transmissionMetalsRead: "\u9ec4\u91d1\u5f3a\u52bf\u548c\u91d1\u94f6\u6bd4\u51b3\u5b9a\u8fd9\u662f\u5b8f\u89c2\u5bf9\u51b2\uff0c\u8fd8\u662f\u8d35\u91d1\u5c5e\u677f\u5757\u6269\u6563",
     transmissionNextTitle: "\u4e0b\u4e00\u52a8\u4f5c",
     transmissionNextRead: "\u53ea\u6709\u5f53\u4ef7\u683c\u70ed\u5ea6\u3001\u5b98\u65b9\u6570\u636e\u548c\u8d22\u52a1\u4f20\u5bfc\u540c\u65b9\u5411\u786e\u8ba4\u65f6\uff0c\u624d\u5347\u7ea7\u7814\u7a76\u5047\u8bbe",
+    policyTitle: "\u7f8e\u8054\u50a8\u4e0e\u65e5\u5143\u76d1\u63a7",
+    policyStatus: "\u4e0b\u4e00\u5b8f\u89c2\u91cd\u70b9",
+    policyRead: "\u63a5\u4e0b\u6765 H^3 \u7684\u5b8f\u89c2\u95f8\u95e8\u662f FOMC \u8868\u8ff0\u548c USD/JPY\uff1a\u524d\u8005\u51b3\u5b9a\u5b9e\u9645\u5229\u7387\u538b\u529b\uff0c\u540e\u8005\u9a8c\u8bc1\u5957\u606f\u4ea4\u6613\u548c\u907f\u9669\u538b\u529b",
+    policyFomcGate: "FOMC \u95f8\u95e8",
+    policyJpyGate: "\u65e5\u5143\u95f8\u95e8",
+    policyGoldGate: "\u9ec4\u91d1\u5b8f\u89c2\u95f8\u95e8",
+    policyOutcomeGate: "\u51b3\u7b56\u8def\u5f84",
+    policyMainGate: "\u4e3b\u8981\u4e8b\u4ef6",
+    policyCarryGate: "\u5957\u606f\u4fe1\u53f7",
+    policyGoldStatus: "\u9ec4\u91d1\u9a71\u52a8",
+    policyScenario: "\u60c5\u666f\u5730\u56fe",
+    policyFomcRead: "\u91cd\u70b9\u770b\u58f0\u660e\u3001\u70b9\u9635\u56fe\u548c Powell \u53d1\u5e03\u4f1a\uff1b\u9ec4\u91d1\u9700\u8981\u5b9e\u9645\u5229\u7387\u6216\u7f8e\u5143\u8def\u5f84\u4e0b\u884c\uff0c\u6216\u907f\u9669\u9700\u6c42\u589e\u5f3a",
+    policyJpyWeakRead: "USD/JPY \u4e0a\u884c\u4ee3\u8868\u65e5\u5143\u504f\u5f31\u3001\u5957\u606f\u538b\u529b\u4ecd\u5728\uff1b\u8fd8\u4e0d\u662f\u6e05\u6670\u7684 risk-off \u53cd\u8f6c",
+    policyJpyStrongRead: "USD/JPY \u4e0b\u884c\u4ee3\u8868\u65e5\u5143\u8f6c\u5f3a\uff1b\u9700\u5206\u8fa8\u662f\u7f8e\u503a\u5229\u7387\u4e0b\u884c\u3001BOJ \u538b\u529b\uff0c\u8fd8\u662f\u98ce\u9669\u538c\u6076",
+    policyGoldRead: "\u5f53\u5b9e\u9645\u5229\u7387\u3001\u957f\u503a\u5229\u7387\u6216\u7f8e\u5143\u8d70\u5f31\uff0c\u4e14 ETF \u548c\u592e\u884c\u9700\u6c42\u4ecd\u7a33\u65f6\uff0c\u9ec4\u91d1\u786e\u8ba4\u5ea6\u63d0\u5347",
+    policyOutcomeValue: "\u9e3d\u6d3e\u6309\u5175\u4e0d\u52a8 vs \u9e70\u6d3e\u6309\u5175\u4e0d\u52a8",
+    policyOutcomeRead: "\u9e3d\u6d3e\u6309\u5175\u4e0d\u52a8\u652f\u6301\u9ec4\u91d1\u548c\u957f\u4e45\u671f\u8d44\u4ea7\uff1b\u9e70\u6d3e\u6309\u5175\u4e0d\u52a8\u6216\u52a0\u606f\u4f1a\u589e\u52a0\u7f8e\u5143\u8d70\u5f3a\u3001\u65e5\u5143\u627f\u538b\u548c\u9ec4\u91d1\u6ce2\u52a8",
+    policyNextTitle: "\u4ec0\u4e48\u4f1a\u6539\u53d8\u8bfb\u6570",
+    policyNextRead: "\u53ea\u6709\u5f53 FOMC\u3001\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u3001\u65e5\u5143\u548c\u8d44\u91d1\u6d41\u4fe1\u53f7\u4e0d\u518d\u4e92\u76f8\u6253\u67b6\u65f6\uff0c\u624d\u5347\u7ea7\u9ec4\u91d1\u4e3b\u7ebf",
     preciousTitle: "\u8d35\u91d1\u5c5e\u89c2\u5bdf",
     preciousStatus: "\u5148\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7",
     preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\u3002\u5224\u65ad\u6838\u5fc3\u6765\u81ea FRED\u3001WGC \u548c Silver Institute \u56e0\u5b50\uff1b\u4ef7\u683c\u53ea\u4f5c\u4e3a\u5ef6\u8fdf\u8d8b\u52bf\u53c2\u8003\uff0c\u4e0d\u4f5c\u4e3a\u53ef\u518d\u5206\u53d1\u7684\u5b98\u65b9\u62a5\u4ef7\u6e90",
@@ -1883,6 +1921,80 @@ function renderMacroTransmission(data) {
   `;
 }
 
+function pickPolicyMonitor(data, key) {
+  return (data.policyMonitors || []).find((item) => item.key === key);
+}
+
+function renderPolicyMonitor(data) {
+  const fomc = pickPolicyMonitor(data, "fomc");
+  const yen = pickPolicyMonitor(data, "usd_jpy");
+  const fred = preciousSignal(data.preciousSignals || [], "fred_macro");
+  const yenChange = Number(yen?.changePct);
+  const yenTone = Number.isFinite(yenChange) ? (yenChange > 0 ? "down" : yenChange < 0 ? "up" : "neutral") : "neutral";
+  const yenValue = yen
+    ? `${trValue(yen.value)}${Number.isFinite(yenChange) ? ` / ${fmtPct(yenChange)}` : ""}`
+    : t("unknown");
+  const cards = [
+    {
+      label: t("policyFomcGate"),
+      status: t("policyMainGate"),
+      value: fomc ? trValue(fomc.value) : "Sep 15-16, 2026",
+      read: t("policyFomcRead"),
+      source: fomc?.source || "Federal Reserve",
+      tone: "watch"
+    },
+    {
+      label: t("policyJpyGate"),
+      status: t("policyCarryGate"),
+      value: yenValue,
+      read: yenTone === "down" ? t("policyJpyWeakRead") : t("policyJpyStrongRead"),
+      source: yen?.source || "Market reference",
+      tone: yenTone
+    },
+    {
+      label: t("policyGoldGate"),
+      status: t("policyGoldStatus"),
+      value: fred ? trValue(fred.value) : t("unknown"),
+      read: t("policyGoldRead"),
+      source: fred?.source || "FRED",
+      tone: "neutral"
+    },
+    {
+      label: t("policyOutcomeGate"),
+      status: t("policyScenario"),
+      value: t("policyOutcomeValue"),
+      read: t("policyOutcomeRead"),
+      source: "H^3",
+      tone: "neutral"
+    }
+  ];
+
+  return `
+    <section class="policy-monitor">
+      <div class="policy-monitor-head">
+        <span>${t("policyTitle")}</span>
+        <strong>${t("policyStatus")}</strong>
+        <p>${t("policyRead")}</p>
+      </div>
+      <div class="policy-monitor-grid">
+        ${cards.map((item) => `
+          <article class="${item.tone}">
+            <span>${item.label}</span>
+            <b>${item.status}</b>
+            <strong>${item.value}</strong>
+            <p>${item.read}</p>
+            <small>${trValue(item.source)}</small>
+          </article>
+        `).join("")}
+      </div>
+      <div class="policy-monitor-next">
+        <span>${t("policyNextTitle")}</span>
+        <p>${t("policyNextRead")}</p>
+      </div>
+    </section>
+  `;
+}
+
 function formatAssetPrice(item) {
   const value = Number(item.price);
   if (!Number.isFinite(value) || value <= 0) return "n/a";
@@ -2098,6 +2210,7 @@ function renderMacro(data) {
   document.getElementById("macroGrid").innerHTML = `
     ${renderMacroRegime(data)}
     ${renderValuationTemperature(data)}
+    ${renderPolicyMonitor(data)}
     ${renderMacroTransmission(data)}
     <div class="macro-card-grid">
       ${macro.map((item) => `

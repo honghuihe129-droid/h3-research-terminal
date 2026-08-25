@@ -464,6 +464,69 @@ function Ensure-PreciousMetalsWatchItem {
   }
   return $items
 }
+
+function Get-PolicyMonitors {
+  param($ExistingPolicyMonitors)
+
+  $usdJpyValue = "USD/JPY"
+  $usdJpyChange = 0
+  $usdJpyRead = "USD/JPY is the carry and safe-haven stress gate; yen strength matters if it comes with lower US yields or risk aversion"
+  $usdJpySource = "Fallback"
+  $usdJpyUrl = "https://finance.yahoo.com/quote/JPY%3DX"
+  try {
+    $usdJpy = Get-YahooChartQuote "JPY=X"
+    $usdJpyValue = "$([Math]::Round($usdJpy.price, 2))"
+    $usdJpyChange = $usdJpy.changePct
+    $usdJpySource = "Yahoo Finance / delayed FX reference"
+    $usdJpyUrl = $usdJpy.url
+    if ($usdJpy.changePct -gt 0) {
+      $usdJpyRead = "USD/JPY rising means yen weakness and carry pressure remain; watch whether high US yields keep supporting dollar-yen"
+    } elseif ($usdJpy.changePct -lt 0) {
+      $usdJpyRead = "USD/JPY falling means yen strength is improving; verify whether it comes from US-yield decline, BOJ pressure, or risk aversion"
+    }
+  } catch {
+    $fallback = @($ExistingPolicyMonitors | Where-Object { $_.key -eq "usd_jpy" })[0]
+    if ($fallback) {
+      $usdJpyValue = $fallback.value
+      $usdJpyChange = if ($fallback.changePct -ne $null) { [double]$fallback.changePct } else { 0 }
+      $usdJpyRead = $fallback.read
+      $usdJpySource = $fallback.source
+      $usdJpyUrl = $fallback.url
+    }
+  }
+
+  @(
+    [ordered]@{
+      key = "fomc"
+      label = "Fed meeting"
+      value = "Sep 15-16, 2026"
+      status = "Main macro gate"
+      read = "Watch the statement, SEP dots, and Powell press conference; gold needs a lower real-rate or dollar path, or stronger safe-haven demand"
+      source = "Federal Reserve"
+      url = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    [ordered]@{
+      key = "usd_jpy"
+      label = "USD/JPY"
+      value = $usdJpyValue
+      changePct = [Math]::Round($usdJpyChange, 2)
+      status = "Carry and safe-haven stress gate"
+      read = $usdJpyRead
+      source = $usdJpySource
+      url = $usdJpyUrl
+    },
+    [ordered]@{
+      key = "fomc_gold"
+      label = "FOMC to gold"
+      value = "Real rates / dollar / ETF flows"
+      status = "Gold confirmation gate"
+      read = "Dovish hold supports gold if real rates or the dollar soften; hawkish hold or hike can create short-term gold volatility"
+      source = "H^3 framework"
+      url = "https://fred.stlouisfed.org/series/DFII10"
+    }
+  )
+}
+
 function Get-FredLatest {
   param([string]$Series)
   try {
@@ -598,6 +661,7 @@ try {
 }
 $preciousMetals = @(Get-PreciousMetals $existing.preciousMetals)
 $preciousSignals = @(Get-PreciousSignals $existing.preciousSignals)
+$policyMonitors = @(Get-PolicyMonitors $existing.policyMonitors)
 $watchItems = @(Ensure-PreciousMetalsWatchItem $existing.watchItems)
 
 $updated = [ordered]@{
@@ -607,6 +671,7 @@ $updated = [ordered]@{
   macro = $macro
   preciousMetals = $preciousMetals
   preciousSignals = $preciousSignals
+  policyMonitors = $policyMonitors
   indices = $indices
   sectors = $sectors
   usSectors = $usSectors

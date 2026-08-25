@@ -140,6 +140,17 @@ function validatePreciousSignal(row, index) {
   assertUrl(row.url, `${label}.url`);
 }
 
+function validatePolicyMonitor(row, index) {
+  const label = `policyMonitors[${index}]`;
+  ["key", "label", "value", "status", "read", "source", "url"].forEach((key) => {
+    if (!row[key]) addError(`Missing ${label}.${key}`);
+  });
+  if (row.changePct !== undefined && (!isFiniteNumber(row.changePct) || Math.abs(row.changePct) > 10)) {
+    addError(`Suspicious ${label}.changePct`, `${row.key || row.label || "unknown"}=${row.changePct}`);
+  }
+  assertUrl(row.url, `${label}.url`);
+}
+
 function validate() {
   if (!fs.existsSync(target)) addError("Data file does not exist", target);
   if (errors.length) return null;
@@ -178,6 +189,10 @@ function validate() {
   if (preciousSignals.length && preciousSignals.length < 4) {
     addError("Array preciousSignals has too few rows", `${preciousSignals.length} < 4`);
   }
+  const policyMonitors = Array.isArray(data.policyMonitors) ? data.policyMonitors : [];
+  if (policyMonitors.length && policyMonitors.length < 2) {
+    addError("Array policyMonitors has too few rows", `${policyMonitors.length} < 2`);
+  }
 
   const requiredSymbols = ["sh000001", "sz399001", "sz399006", "SPY", "QQQ", "SOXX"];
   const symbolSet = new Set(indices.map((row) => row.symbol));
@@ -197,6 +212,7 @@ function validate() {
   macro.forEach(validateMacro);
   preciousMetals.forEach(validatePreciousMetal);
   preciousSignals.forEach(validatePreciousSignal);
+  policyMonitors.forEach(validatePolicyMonitor);
   (data.sources || []).forEach((row, index) => assertUrl(row.url, `sources[${index}].url`));
 
   const mojibakePattern = /(?:�|鍥|涓|缇|鑲|闂|绉|鐨|妯|湪|槸|锛|浠|瀹|犻|娴|鐪|鍏|骞|獙|搴|叕)/;
@@ -221,6 +237,7 @@ const report = {
     macro: data.macro?.length || 0,
     preciousMetals: data.preciousMetals?.length || 0,
     preciousSignals: data.preciousSignals?.length || 0,
+    policyMonitors: data.policyMonitors?.length || 0,
     sources: data.sources?.length || 0
   } : {},
   errors,
