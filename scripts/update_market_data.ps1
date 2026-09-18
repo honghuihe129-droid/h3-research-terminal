@@ -498,12 +498,12 @@ function Get-PolicyMonitors {
   @(
     [ordered]@{
       key = "fomc"
-      label = "Fed meeting"
-      value = "Sep 15-16, 2026"
-      status = "Main macro gate"
-      read = "Watch the statement, SEP dots, and Powell press conference; gold needs a lower real-rate or dollar path, or stronger safe-haven demand"
+      label = "FOMC decision"
+      value = "+25bp to 3.75%-4.00%"
+      status = "Completed Sep 16, 2026"
+      read = "FOMC raised the target range by 25bp; next read is whether 2Y/10Y yields, the dollar, USD/JPY, and gold absorb the hawkish rate path"
       source = "Federal Reserve"
-      url = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+      url = "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
     },
     [ordered]@{
       key = "usd_jpy"
@@ -518,9 +518,9 @@ function Get-PolicyMonitors {
     [ordered]@{
       key = "fomc_gold"
       label = "FOMC to gold"
-      value = "Real rates / dollar / ETF flows"
+      value = "Post-hike real rates / dollar / flows"
       status = "Gold confirmation gate"
-      read = "Dovish hold supports gold if real rates or the dollar soften; hawkish hold or hike can create short-term gold volatility"
+      read = "After the Sep 16 hike, gold confirmation requires price strength to survive high real yields, dollar pressure, and ETF-flow checks"
       source = "H^3 framework"
       url = "https://fred.stlouisfed.org/series/DFII10"
     }
@@ -559,7 +559,7 @@ function Format-SignedPct {
 
 function Get-DefaultUsMacroData {
   @(
-    [ordered]@{ region = "United States"; metric = "Fed funds target range"; value = "3.50%-3.75%"; delta = "Latest FOMC range"; read = "Policy rate still caps valuation expansion"; source = "Federal Reserve"; url = "https://fred.stlouisfed.org/series/DFEDTARU" },
+    [ordered]@{ region = "United States"; metric = "Fed funds target range"; value = "3.75%-4.00%"; delta = "2026-09-17"; read = "Policy rate still caps valuation expansion"; source = "FRED / Federal Reserve"; url = "https://fred.stlouisfed.org/series/DFEDTARU" },
     [ordered]@{ region = "United States"; metric = "CPI YoY"; value = "+2.2%"; delta = "FRED latest"; read = "Inflation is the rate-cut gatekeeper"; source = "FRED / BLS"; url = "https://fred.stlouisfed.org/series/CPIAUCSL" },
     [ordered]@{ region = "United States"; metric = "Unemployment rate"; value = "4.2%"; delta = "FRED latest"; read = "Labor market still orderly"; source = "FRED / BLS"; url = "https://fred.stlouisfed.org/series/UNRATE" },
     [ordered]@{ region = "United States"; metric = "Real GDP"; value = "+2.1%"; delta = "QoQ SAAR"; read = "Growth remains positive"; source = "FRED / BEA"; url = "https://fred.stlouisfed.org/series/A191RL1Q225SBEA" },
