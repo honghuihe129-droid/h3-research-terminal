@@ -527,6 +527,90 @@ function Get-PolicyMonitors {
   )
 }
 
+function Ensure-GoldResearchObject {
+  param($ExistingCompanies, $PreciousMetals, $Macro)
+
+  function Format-AssetChange {
+    param([string]$Label, $Item)
+    if ($null -eq $Item -or $null -eq $Item.changePct) { return "$Label trend pending" }
+    $value = [double]$Item.changePct
+    return "$Label $(("{0:+0.00;-0.00;0.00}%" -f $value))"
+  }
+
+  $today = (Get-Date).ToString("yyyy-MM-dd")
+  $gold = @($PreciousMetals | Where-Object { $_.name -eq "Gold" })[0]
+  $silver = @($PreciousMetals | Where-Object { $_.name -eq "Silver" })[0]
+  $ratio = @($PreciousMetals | Where-Object { $_.name -match "ratio" })[0]
+  $realYield = @($Macro | Where-Object { $_.metric -eq "10Y real yield" })[0]
+  $fedRange = @($Macro | Where-Object { $_.metric -eq "Fed funds target range" })[0]
+  $latestParts = @(
+    (Format-AssetChange "Gold" $gold),
+    (Format-AssetChange "Silver" $silver),
+    (Format-AssetChange "gold/silver ratio" $ratio),
+    $(if ($realYield) { "10Y real yield $($realYield.value)" } else { "real yield pending" }),
+    $(if ($fedRange) { "Fed $($fedRange.value)" } else { "Fed path pending" })
+  )
+  $latest = ($latestParts -join " / ")
+  $companies = @($ExistingCompanies | Where-Object { $_.symbol -ne "GC=F" })
+  $goldObject = [ordered]@{
+    market = "Macro asset"
+    name = "Gold Macro Thesis"
+    symbol = "GC=F"
+    chain = "Gold / real rates / dollar / central-bank demand"
+    evidenceType = "Macro asset confirmation"
+    latest = $latest
+    growth = 76
+    quality = 86
+    dmaHealth = 78
+    pricingRisk = "Real-rate and dollar squeeze"
+    classification = "Macro mainline / evidence-gated"
+    action = "Keep as active mainline; confirm with real yields, dollar, USD/JPY, WGC ETF flows, and central-bank demand"
+    status = "Macro mainline"
+    lastDecision = "Upgrade to active research"
+    nextCatalyst = "Next FRED real-yield, USD/JPY, WGC ETF-flow, and central-bank-demand update"
+    evidenceScore = 88
+    valuationScore = 62
+    researchUpdatedAt = $today
+    framework = [ordered]@{
+      serenity = [ordered]@{
+        score = 88
+        read = "Gold has moved from a price clue into a macro thesis: rate pressure, dollar pressure, central-bank demand, and ETF flow decide confirmation"
+      }
+      tamAdjPeg = [ordered]@{
+        score = 58
+        read = "Not an equity TAM story yet; miners and GDX/SIL only enter after macro and flow signals broaden"
+      }
+      gfDma = [ordered]@{
+        score = 78
+        read = "Trend signal is healthy, but high real yields keep the position vulnerable to rate and dollar rebounds"
+      }
+      bayesian = [ordered]@{
+        score = 82
+        read = "Post-FOMC gold and silver strength raises the probability that precious metals are becoming a second H^3 mainline"
+      }
+    }
+    source = "FRED / WGC / Silver Institute / H^3 precious-metals monitor"
+    url = "https://www.gold.org/goldhub/data/gold-etfs-holdings-and-flows"
+    upgradeCondition = "Gold holds trend while real yields or the dollar stop rising, WGC flows and central-bank demand confirm, and silver or ratio repair broadens the move"
+    downgradeCondition = "Real yields and the dollar keep rising while GLD flows weaken, or gold fails to hold trend after the FOMC hike"
+    invalidationCondition = "Gold strength cannot survive high real yields, ETF outflows, and renewed dollar/yen stress; then it returns to watch-only status"
+    events = @(
+      [ordered]@{
+        date = $today
+        from = "Macro watch"
+        to = "Macro mainline"
+        reason = "Post-FOMC precious-metals strength improved: gold is positive, silver beta is confirming, and the gold/silver ratio is repairing"
+        evidence = $latest
+        source = "FRED / WGC / H^3 precious-metals monitor"
+      }
+    )
+  }
+  if ($companies.Count -ge 2) {
+    return @($companies[0], $companies[1], $goldObject) + @($companies | Select-Object -Skip 2)
+  }
+  return @($companies) + @($goldObject)
+}
+
 function Get-FredLatest {
   param([string]$Series)
   try {
@@ -719,6 +803,7 @@ $preciousMetals = @(Get-PreciousMetals $existing.preciousMetals)
 $preciousSignals = @(Get-PreciousSignals $existing.preciousSignals)
 $policyMonitors = @(Get-PolicyMonitors $existing.policyMonitors)
 $watchItems = @(Ensure-PreciousMetalsWatchItem $existing.watchItems)
+$companies = @(Ensure-GoldResearchObject $existing.companies $preciousMetals $macro)
 
 $updated = [ordered]@{
   generatedAt = (Get-Date).ToString("yyyy-MM-ddTHH:mm:sszzz")
@@ -731,7 +816,7 @@ $updated = [ordered]@{
   indices = $indices
   sectors = $sectors
   usSectors = $usSectors
-  companies = $existing.companies
+  companies = $companies
   passList = $existing.passList
   hypothesisFlow = $existing.hypothesisFlow
   watchItems = $watchItems

@@ -1,5 +1,5 @@
 {
-    "generatedAt":  "2026-09-18T14:22:01+08:00",
+    "generatedAt":  "2026-09-18T14:43:13+08:00",
     "nextScheduledUpdate":  "Daily 15:30 Beijing time",
     "sourcePolicy":  "公司公告/官方文件 \u003e 交易所披露 \u003e 官方产业数据 \u003e 权威媒体 \u003e 研报 \u003e 互动平台 \u003e 市场传闻",
     "macro":  [
@@ -180,8 +180,8 @@
                                "name":  "Gold",
                                "symbol":  "GC=F",
                                "proxy":  "COMEX gold futures",
-                               "price":  4426.1,
-                               "changePct":  1.71,
+                               "price":  4431.5,
+                               "changePct":  1.83,
                                "pricingAnchor":  "LBMA London spot gold reference",
                                "flowSymbol":  "GLD",
                                "flowPrice":  398.36,
@@ -198,8 +198,8 @@
                                "name":  "Silver",
                                "symbol":  "SI=F",
                                "proxy":  "COMEX silver futures",
-                               "price":  67.2,
-                               "changePct":  5.81,
+                               "price":  67.25,
+                               "changePct":  5.88,
                                "pricingAnchor":  "LBMA London spot silver reference",
                                "flowSymbol":  "SLV",
                                "flowPrice":  58.97,
@@ -216,8 +216,8 @@
                                "name":  "Gold/Silver ratio",
                                "symbol":  "GC/SI",
                                "proxy":  "COMEX futures ratio",
-                               "price":  65.86,
-                               "changePct":  -4.1,
+                               "price":  65.9,
+                               "changePct":  -4.05,
                                "role":  "Relative confirmation",
                                "status":  "Gate",
                                "thesis":  "Ratio repair decides whether silver is confirming or merely lagging gold",
@@ -286,8 +286,8 @@
                            {
                                "key":  "usd_jpy",
                                "label":  "USD/JPY",
-                               "value":  "157.11",
-                               "changePct":  2.41,
+                               "value":  "156.86",
+                               "changePct":  2.24,
                                "status":  "Carry and safe-haven stress gate",
                                "read":  "USD/JPY rising means yen weakness and carry pressure remain; watch whether high US yields keep supporting dollar-yen",
                                "source":  "Yahoo Finance / delayed FX reference",
@@ -308,8 +308,8 @@
                         "market":  "A-share",
                         "name":  "SSE Composite",
                         "symbol":  "sh000001",
-                        "price":  3907.8,
-                        "changePct":  0.83,
+                        "price":  3913.23,
+                        "changePct":  0.97,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -322,8 +322,8 @@
                         "market":  "A-share",
                         "name":  "SZSE Component",
                         "symbol":  "sz399001",
-                        "price":  13606.7,
-                        "changePct":  1.47,
+                        "price":  13641.81,
+                        "changePct":  1.73,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -336,8 +336,8 @@
                         "market":  "A-share",
                         "name":  "ChiNext",
                         "symbol":  "sz399006",
-                        "price":  3360.97,
-                        "changePct":  1.9,
+                        "price":  3372.86,
+                        "changePct":  2.26,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -350,8 +350,8 @@
                         "market":  "A-share",
                         "name":  "CSI 300",
                         "symbol":  "sh000300",
-                        "price":  4501.45,
-                        "changePct":  0.93,
+                        "price":  4510.15,
+                        "changePct":  1.12,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -364,8 +364,8 @@
                         "market":  "A-share",
                         "name":  "CSI 500",
                         "symbol":  "sh000905",
-                        "price":  7778.2,
-                        "changePct":  1.61,
+                        "price":  7794.58,
+                        "changePct":  1.82,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -378,8 +378,8 @@
                         "market":  "A-share",
                         "name":  "CSI 1000",
                         "symbol":  "sh000852",
-                        "price":  7665.98,
-                        "changePct":  1.55,
+                        "price":  7685.58,
+                        "changePct":  1.81,
                         "dma":  {
                                     "ma50":  null,
                                     "ma100":  null,
@@ -434,86 +434,86 @@
     "sectors":  [
                     {
                         "name":  "第四代半导体",
-                        "changePct":  4.59,
-                        "inflowCnyBn":  1.04,
+                        "changePct":  4.71,
+                        "inflowCnyBn":  1.17,
                         "leader":  "东微半导",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "次新股",
-                        "changePct":  4.5,
-                        "inflowCnyBn":  34.95,
+                        "changePct":  4.52,
+                        "inflowCnyBn":  35.22,
                         "leader":  "海安集团",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "昨日打二板以上表现",
-                        "changePct":  4.07,
-                        "inflowCnyBn":  -1.67,
-                        "leader":  "锡华科技",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
-                        "name":  "昨日连板_含一字",
-                        "changePct":  3.53,
-                        "inflowCnyBn":  -4.06,
-                        "leader":  "锡华科技",
-                        "evidence":  "Sector heat, verify with filings and financials"
-                    },
-                    {
                         "name":  "汽车芯片",
-                        "changePct":  3.47,
-                        "inflowCnyBn":  54.24,
+                        "changePct":  3.81,
+                        "inflowCnyBn":  53.97,
                         "leader":  "博通集成",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "时空大数据",
-                        "changePct":  3.39,
-                        "inflowCnyBn":  2.93,
-                        "leader":  "经纬股份",
+                        "name":  "昨日打二板以上表现",
+                        "changePct":  3.77,
+                        "inflowCnyBn":  -1.76,
+                        "leader":  "锡华科技",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "AI芯片",
-                        "changePct":  3.31,
-                        "inflowCnyBn":  17.78,
+                        "changePct":  3.67,
+                        "inflowCnyBn":  16.63,
                         "leader":  "云天励飞-U",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "氦气概念",
-                        "changePct":  3.28,
-                        "inflowCnyBn":  12.35,
-                        "leader":  "和远气体",
+                        "name":  "昨日连板_含一字",
+                        "changePct":  3.6,
+                        "inflowCnyBn":  -4.01,
+                        "leader":  "锡华科技",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
+                        "name":  "时空大数据",
+                        "changePct":  3.59,
+                        "inflowCnyBn":  2.91,
+                        "leader":  "经纬股份",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "先进封装",
-                        "changePct":  3.27,
-                        "inflowCnyBn":  81.33,
+                        "changePct":  3.58,
+                        "inflowCnyBn":  87.59,
                         "leader":  "华天科技",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
+                        "name":  "氦气概念",
+                        "changePct":  3.57,
+                        "inflowCnyBn":  12.49,
+                        "leader":  "和远气体",
+                        "evidence":  "Sector heat, verify with filings and financials"
+                    },
+                    {
                         "name":  "华为欧拉",
-                        "changePct":  3.25,
-                        "inflowCnyBn":  3.18,
+                        "changePct":  3.42,
+                        "inflowCnyBn":  3.05,
                         "leader":  "浩瀚深度",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
                         "name":  "光刻机",
-                        "changePct":  3.12,
-                        "inflowCnyBn":  18.3,
+                        "changePct":  3.41,
+                        "inflowCnyBn":  19.59,
                         "leader":  "国林科技",
                         "evidence":  "Sector heat, verify with filings and financials"
                     },
                     {
-                        "name":  "EDA概念",
-                        "changePct":  3.1,
-                        "inflowCnyBn":  1.93,
-                        "leader":  "一博科技",
+                        "name":  "氮化镓",
+                        "changePct":  3.38,
+                        "inflowCnyBn":  44.28,
+                        "leader":  "华天科技",
                         "evidence":  "Sector heat, verify with filings and financials"
                     }
                 ],
@@ -719,6 +719,59 @@
                                              "reason":  "AI 半导体收入已进入财务报表并保持高增",
                                              "evidence":  "FY2026 Q2 AI 半导体收入同比 +143%",
                                              "source":  "Broadcom IR"
+                                         }
+                                     ]
+                      },
+                      {
+                          "market":  "Macro asset",
+                          "name":  "Gold Macro Thesis",
+                          "symbol":  "GC=F",
+                          "chain":  "Gold / real rates / dollar / central-bank demand",
+                          "evidenceType":  "Macro asset confirmation",
+                          "latest":  "Gold +1.83% / Silver +5.88% / gold/silver ratio -4.05% / 10Y real yield 2.68% / Fed 3.75%-4.00%",
+                          "growth":  76,
+                          "quality":  86,
+                          "dmaHealth":  78,
+                          "pricingRisk":  "Real-rate and dollar squeeze",
+                          "classification":  "Macro mainline / evidence-gated",
+                          "action":  "Keep as active mainline; confirm with real yields, dollar, USD/JPY, WGC ETF flows, and central-bank demand",
+                          "status":  "Macro mainline",
+                          "lastDecision":  "Upgrade to active research",
+                          "nextCatalyst":  "Next FRED real-yield, USD/JPY, WGC ETF-flow, and central-bank-demand update",
+                          "evidenceScore":  88,
+                          "valuationScore":  62,
+                          "researchUpdatedAt":  "2026-09-18",
+                          "framework":  {
+                                            "serenity":  {
+                                                             "score":  88,
+                                                             "read":  "Gold has moved from a price clue into a macro thesis: rate pressure, dollar pressure, central-bank demand, and ETF flow decide confirmation"
+                                                         },
+                                            "tamAdjPeg":  {
+                                                              "score":  58,
+                                                              "read":  "Not an equity TAM story yet; miners and GDX/SIL only enter after macro and flow signals broaden"
+                                                          },
+                                            "gfDma":  {
+                                                          "score":  78,
+                                                          "read":  "Trend signal is healthy, but high real yields keep the position vulnerable to rate and dollar rebounds"
+                                                      },
+                                            "bayesian":  {
+                                                             "score":  82,
+                                                             "read":  "Post-FOMC gold and silver strength raises the probability that precious metals are becoming a second H^3 mainline"
+                                                         }
+                                        },
+                          "source":  "FRED / WGC / Silver Institute / H^3 precious-metals monitor",
+                          "url":  "https://www.gold.org/goldhub/data/gold-etfs-holdings-and-flows",
+                          "upgradeCondition":  "Gold holds trend while real yields or the dollar stop rising, WGC flows and central-bank demand confirm, and silver or ratio repair broadens the move",
+                          "downgradeCondition":  "Real yields and the dollar keep rising while GLD flows weaken, or gold fails to hold trend after the FOMC hike",
+                          "invalidationCondition":  "Gold strength cannot survive high real yields, ETF outflows, and renewed dollar/yen stress; then it returns to watch-only status",
+                          "events":  [
+                                         {
+                                             "date":  "2026-09-18",
+                                             "from":  "Macro watch",
+                                             "to":  "Macro mainline",
+                                             "reason":  "Post-FOMC precious-metals strength improved: gold is positive, silver beta is confirming, and the gold/silver ratio is repairing",
+                                             "evidence":  "Gold +1.83% / Silver +5.88% / gold/silver ratio -4.05% / 10Y real yield 2.68% / Fed 3.75%-4.00%",
+                                             "source":  "FRED / WGC / H^3 precious-metals monitor"
                                          }
                                      ]
                       },

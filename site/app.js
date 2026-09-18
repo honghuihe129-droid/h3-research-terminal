@@ -953,6 +953,27 @@ const zhValueTranslations = {
   "Daily 15:30 Beijing time": "\u6bcf\u65e5\u5317\u4eac\u65f6\u95f4 15:30",
   "China": "\u4e2d\u56fd",
   "United States": "\u7f8e\u56fd",
+  "Macro asset": "\u5b8f\u89c2\u8d44\u4ea7",
+  "Gold Macro Thesis": "\u9ec4\u91d1\u5b8f\u89c2\u4e3b\u7ebf",
+  "Gold / real rates / dollar / central-bank demand": "\u9ec4\u91d1 / \u5b9e\u9645\u5229\u7387 / \u7f8e\u5143 / \u592e\u884c\u9700\u6c42",
+  "Macro asset confirmation": "\u5b8f\u89c2\u8d44\u4ea7\u786e\u8ba4",
+  "Real-rate and dollar squeeze": "\u5b9e\u9645\u5229\u7387\u4e0e\u7f8e\u5143\u6324\u538b",
+  "Macro mainline / evidence-gated": "\u5b8f\u89c2\u4e3b\u7ebf / \u8bc1\u636e\u95f8\u95e8",
+  "Keep as active mainline; confirm with real yields, dollar, USD/JPY, WGC ETF flows, and central-bank demand": "\u4fdd\u6301\u4e3a\u6d3b\u8dc3\u4e3b\u7ebf\uff1b\u7528\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u3001USD/JPY\u3001WGC ETF \u8d44\u91d1\u6d41\u548c\u592e\u884c\u9700\u6c42\u7ee7\u7eed\u786e\u8ba4",
+  "Macro mainline": "\u5b8f\u89c2\u4e3b\u7ebf",
+  "Upgrade to active research": "\u5347\u7ea7\u4e3a\u6d3b\u8dc3\u7814\u7a76",
+  "Next FRED real-yield, USD/JPY, WGC ETF-flow, and central-bank-demand update": "\u4e0b\u4e00\u6b21 FRED \u5b9e\u9645\u5229\u7387\u3001USD/JPY\u3001WGC ETF \u8d44\u91d1\u6d41\u548c\u592e\u884c\u9700\u6c42\u66f4\u65b0",
+  "Gold has moved from a price clue into a macro thesis: rate pressure, dollar pressure, central-bank demand, and ETF flow decide confirmation": "\u9ec4\u91d1\u5df2\u4ece\u4ef7\u683c\u7ebf\u7d22\u8fdb\u5165\u5b8f\u89c2\u5047\u8bbe\uff1a\u5229\u7387\u538b\u529b\u3001\u7f8e\u5143\u538b\u529b\u3001\u592e\u884c\u9700\u6c42\u548c ETF \u8d44\u91d1\u6d41\u51b3\u5b9a\u786e\u8ba4\u5ea6",
+  "Not an equity TAM story yet; miners and GDX/SIL only enter after macro and flow signals broaden": "\u8fd8\u4e0d\u662f\u6743\u76ca TAM \u6545\u4e8b\uff1b\u77ff\u80a1\u548c GDX/SIL \u53ea\u6709\u5728\u5b8f\u89c2\u548c\u8d44\u91d1\u6d41\u4fe1\u53f7\u6269\u6563\u540e\u624d\u7eb3\u5165",
+  "Trend signal is healthy, but high real yields keep the position vulnerable to rate and dollar rebounds": "\u8d8b\u52bf\u4fe1\u53f7\u5065\u5eb7\uff0c\u4f46\u9ad8\u5b9e\u9645\u5229\u7387\u4f7f\u5176\u5bb9\u6613\u53d7\u5229\u7387\u548c\u7f8e\u5143\u53cd\u5f39\u5f71\u54cd",
+  "Post-FOMC gold and silver strength raises the probability that precious metals are becoming a second H^3 mainline": "FOMC \u540e\u9ec4\u91d1\u548c\u767d\u94f6\u540c\u65f6\u8d70\u5f3a\uff0c\u63d0\u9ad8\u4e86\u8d35\u91d1\u5c5e\u6210\u4e3a H^3 \u7b2c\u4e8c\u6761\u4e3b\u7ebf\u7684\u6982\u7387",
+  "FRED / WGC / Silver Institute / H^3 precious-metals monitor": "FRED / WGC / Silver Institute / H^3 \u8d35\u91d1\u5c5e\u76d1\u63a7",
+  "Gold holds trend while real yields or the dollar stop rising, WGC flows and central-bank demand confirm, and silver or ratio repair broadens the move": "\u9ec4\u91d1\u7ef4\u6301\u8d8b\u52bf\uff0c\u5b9e\u9645\u5229\u7387\u6216\u7f8e\u5143\u505c\u6b62\u4e0a\u884c\uff0cWGC \u8d44\u91d1\u6d41\u548c\u592e\u884c\u9700\u6c42\u786e\u8ba4\uff0c\u767d\u94f6\u6216\u91d1\u94f6\u6bd4\u4fee\u590d\u6269\u6563\u884c\u60c5",
+  "Real yields and the dollar keep rising while GLD flows weaken, or gold fails to hold trend after the FOMC hike": "\u5b9e\u9645\u5229\u7387\u548c\u7f8e\u5143\u7ee7\u7eed\u4e0a\u884c\uff0c\u540c\u65f6 GLD \u8d44\u91d1\u6d41\u8d70\u5f31\uff1b\u6216 FOMC \u52a0\u606f\u540e\u9ec4\u91d1\u65e0\u6cd5\u7ef4\u6301\u8d8b\u52bf",
+  "Gold strength cannot survive high real yields, ETF outflows, and renewed dollar/yen stress; then it returns to watch-only status": "\u5982\u679c\u9ec4\u91d1\u5f3a\u52bf\u65e0\u6cd5\u7a7f\u8d8a\u9ad8\u5b9e\u9645\u5229\u7387\u3001ETF \u6d41\u51fa\u548c\u7f8e\u5143/\u65e5\u5143\u538b\u529b\u56de\u5347\uff0c\u5219\u56de\u5230\u4ec5\u89c2\u5bdf\u72b6\u6001",
+  "Macro watch": "\u5b8f\u89c2\u89c2\u5bdf",
+  "Post-FOMC precious-metals strength improved: gold is positive, silver beta is confirming, and the gold/silver ratio is repairing": "FOMC \u540e\u8d35\u91d1\u5c5e\u5f3a\u5ea6\u6539\u5584\uff1a\u9ec4\u91d1\u4e3a\u6b63\u3001\u767d\u94f6 beta \u786e\u8ba4\u3001\u91d1\u94f6\u6bd4\u6b63\u5728\u4fee\u590d",
+  "FRED / WGC / H^3 precious-metals monitor": "FRED / WGC / H^3 \u8d35\u91d1\u5c5e\u76d1\u63a7",
   "Gold": "\u9ec4\u91d1",
   "Silver": "\u767d\u94f6",
   "Gold/Silver ratio": "\u91d1\u94f6\u6bd4",
@@ -1085,7 +1106,17 @@ const t = (key) => i18n[state.lang][key] || i18n["en-US"][key] || key;
 const trValue = (value) => {
   if (value === null || value === undefined) return "";
   if (state.lang === "en-US") return valueTranslations[value] || value;
-  return zhValueTranslations[value] || value;
+  if (zhValueTranslations[value]) return zhValueTranslations[value];
+  if (typeof value !== "string") return value;
+  return value
+    .replace(/\bGold\b/g, "\u9ec4\u91d1")
+    .replace(/\bSilver\b/g, "\u767d\u94f6")
+    .replace(/gold\/silver ratio/gi, "\u91d1\u94f6\u6bd4")
+    .replace(/10Y real yield/g, "10Y \u5b9e\u9645\u5229\u7387")
+    .replace(/\bFed\b/g, "\u7f8e\u8054\u50a8")
+    .replace(/trend pending/g, "\u8d8b\u52bf\u5f85\u786e\u8ba4")
+    .replace(/real yield pending/g, "\u5b9e\u9645\u5229\u7387\u5f85\u786e\u8ba4")
+    .replace(/Fed path pending/g, "\u7f8e\u8054\u50a8\u8def\u5f84\u5f85\u786e\u8ba4");
 };
 
 function getFrameworkCards() {
