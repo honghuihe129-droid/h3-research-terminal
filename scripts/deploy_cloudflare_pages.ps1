@@ -36,4 +36,4 @@ if ($AccountId) {
   $env:CLOUDFLARE_ACCOUNT_ID = $AccountId
 }
 
-Invoke-Checked { npx.cmd wrangler pages deploy "dist" --project-name $ProjectName --branch $Branch } "Cloudflare Pages deploy"
+Invoke-Checked { npx.cmd --yes wrangler pages deploy "dist" --project-name $ProjectName --branch $Branch } "Cloudflare Pages deploy"
