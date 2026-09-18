@@ -501,7 +501,7 @@ function Get-PolicyMonitors {
       label = "FOMC decision"
       value = "+25bp to 3.75%-4.00%"
       status = "Completed Sep 16, 2026"
-      read = "FOMC raised the target range by 25bp; next read is whether 2Y/10Y yields, the dollar, USD/JPY, and gold absorb the hawkish rate path"
+      read = "Warsh-led FOMC raised the target range by 25bp; next read is whether 2Y/10Y yields, the dollar, USD/JPY, and gold absorb the hawkish rate path"
       source = "Federal Reserve"
       url = "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
     },
