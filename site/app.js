@@ -260,6 +260,19 @@ const i18n = {
     policyOutcomeRead: "Dovish hold supports gold and duration; hawkish hold or hike risks dollar strength, yen pressure, and gold volatility",
     policyNextTitle: "What changes the read",
     policyNextRead: "Upgrade gold only if FOMC, real rates, dollar, yen, and fund-flow signals stop fighting each other",
+    treasuryTitle: "US Treasury Monitor",
+    treasuryStatus: "Discount-rate anchor",
+    treasuryRead: "Treasuries are the shared gate for gold, growth-stock duration, the dollar, and USD/JPY carry pressure",
+    treasuryTwoYear: "2Y policy path",
+    treasuryTenYear: "10Y pricing anchor",
+    treasuryRealYield: "10Y real yield",
+    treasuryCurve: "10Y-2Y curve",
+    treasuryPolicyRead: "2Y yield tracks the market's Fed path; a re-acceleration keeps pressure on gold and long-duration assets",
+    treasuryDurationRead: "10Y yield is the global discount-rate anchor; high levels cap AI and other long-duration valuation expansion",
+    treasuryGoldRead: "Real yield is the cleanest macro test for gold: gold strength during high real yields points to hedge or reserve demand",
+    treasuryCurveRead: "Curve shape separates soft-landing relief from recession or fiscal-risk stress",
+    treasuryNextTitle: "Next treasury check",
+    treasuryNextRead: "Watch whether FOMC language moves 2Y first, whether 10Y follows, and whether real yields or USD/JPY confirm the gold read",
     preciousTitle: "Precious Metals Watch",
     preciousStatus: "Macro assets first",
     preciousRead: "Gold and silver enter H^3 as macro assets first. The judgment uses FRED, WGC, and Silver Institute factors; price is only a delayed trend reference, not an official redistributable quote source",
@@ -612,6 +625,19 @@ const i18n = {
     policyOutcomeRead: "\u9e3d\u6d3e\u6309\u5175\u4e0d\u52a8\u652f\u6301\u9ec4\u91d1\u548c\u957f\u4e45\u671f\u8d44\u4ea7\uff1b\u9e70\u6d3e\u6309\u5175\u4e0d\u52a8\u6216\u52a0\u606f\u4f1a\u589e\u52a0\u7f8e\u5143\u8d70\u5f3a\u3001\u65e5\u5143\u627f\u538b\u548c\u9ec4\u91d1\u6ce2\u52a8",
     policyNextTitle: "\u4ec0\u4e48\u4f1a\u6539\u53d8\u8bfb\u6570",
     policyNextRead: "\u53ea\u6709\u5f53 FOMC\u3001\u5b9e\u9645\u5229\u7387\u3001\u7f8e\u5143\u3001\u65e5\u5143\u548c\u8d44\u91d1\u6d41\u4fe1\u53f7\u4e0d\u518d\u4e92\u76f8\u6253\u67b6\u65f6\uff0c\u624d\u5347\u7ea7\u9ec4\u91d1\u4e3b\u7ebf",
+    treasuryTitle: "\u7f8e\u503a\u76d1\u63a7",
+    treasuryStatus: "\u8d34\u73b0\u7387\u951a",
+    treasuryRead: "\u7f8e\u503a\u662f\u9ec4\u91d1\u3001\u6210\u957f\u80a1\u4e45\u671f\u3001\u7f8e\u5143\u548c USD/JPY \u5957\u606f\u538b\u529b\u7684\u5171\u540c\u95f8\u95e8",
+    treasuryTwoYear: "2Y \u653f\u7b56\u8def\u5f84",
+    treasuryTenYear: "10Y \u5b9a\u4ef7\u951a",
+    treasuryRealYield: "10Y \u5b9e\u9645\u5229\u7387",
+    treasuryCurve: "10Y-2Y \u66f2\u7ebf",
+    treasuryPolicyRead: "2Y \u5229\u7387\u8ddf\u8e2a\u5e02\u573a\u5bf9\u7f8e\u8054\u50a8\u8def\u5f84\u7684\u5b9a\u4ef7\uff1b\u518d\u4e0a\u884c\u4f1a\u538b\u5236\u9ec4\u91d1\u548c\u957f\u4e45\u671f\u8d44\u4ea7",
+    treasuryDurationRead: "10Y \u5229\u7387\u662f\u5168\u7403\u8d44\u4ea7\u7684\u8d34\u73b0\u7387\u951a\uff1b\u9ad8\u4f4d\u4f1a\u538b\u5236 AI \u7b49\u957f\u4e45\u671f\u4f30\u503c\u6269\u5f20",
+    treasuryGoldRead: "\u5b9e\u9645\u5229\u7387\u662f\u9ec4\u91d1\u7684\u6700\u5e72\u51c0\u5b8f\u89c2\u68c0\u9a8c\uff1b\u9ad8\u5b9e\u9645\u5229\u7387\u4e0b\u9ec4\u91d1\u8d70\u5f3a\uff0c\u66f4\u50cf\u5bf9\u51b2\u6216\u50a8\u5907\u9700\u6c42",
+    treasuryCurveRead: "\u66f2\u7ebf\u5f62\u6001\u7528\u6765\u533a\u5206\u8f6f\u7740\u9646\u4fee\u590d\u3001\u8870\u9000\u9884\u671f\u548c\u8d22\u653f\u98ce\u9669\u538b\u529b",
+    treasuryNextTitle: "\u4e0b\u4e00\u7f8e\u503a\u68c0\u67e5",
+    treasuryNextRead: "\u770b FOMC \u8868\u8ff0\u662f\u5426\u5148\u63a8\u52a8 2Y\uff0c10Y \u662f\u5426\u8ddf\u968f\uff0c\u4ee5\u53ca\u5b9e\u9645\u5229\u7387\u548c USD/JPY \u80fd\u5426\u9a8c\u8bc1\u9ec4\u91d1\u5224\u65ad",
     preciousTitle: "\u8d35\u91d1\u5c5e\u89c2\u5bdf",
     preciousStatus: "\u5148\u4f5c\u4e3a\u5b8f\u89c2\u8d44\u4ea7",
     preciousRead: "\u9ec4\u91d1\u548c\u767d\u94f6\u5148\u4ee5\u5b8f\u89c2\u8d44\u4ea7\u8fdb\u5165 H^3\u3002\u5224\u65ad\u6838\u5fc3\u6765\u81ea FRED\u3001WGC \u548c Silver Institute \u56e0\u5b50\uff1b\u4ef7\u683c\u53ea\u4f5c\u4e3a\u5ef6\u8fdf\u8d8b\u52bf\u53c2\u8003\uff0c\u4e0d\u4f5c\u4e3a\u53ef\u518d\u5206\u53d1\u7684\u5b98\u65b9\u62a5\u4ef7\u6e90",
@@ -998,7 +1024,10 @@ const zhValueTranslations = {
   "CPI YoY": "CPI \u540c\u6bd4",
   "Unemployment rate": "\u5931\u4e1a\u7387",
   "Real GDP": "\u5b9e\u9645 GDP",
+  "2Y Treasury yield": "2 \u5e74\u671f\u7f8e\u503a\u6536\u76ca\u7387",
   "10Y Treasury yield": "10 \u5e74\u671f\u7f8e\u503a\u6536\u76ca\u7387",
+  "10Y real yield": "10 \u5e74\u671f\u5b9e\u9645\u5229\u7387",
+  "10Y-2Y spread": "10Y-2Y \u5229\u5dee",
   "Retail sales MoM": "\u96f6\u552e\u9500\u552e\u73af\u6bd4",
   "Nonfarm payrolls": "\u975e\u519c\u5c31\u4e1a",
   "2026 H1 YoY / Q2 +4.3%": "2026 \u4e0a\u534a\u5e74\u540c\u6bd4 / Q2 +4.3%",
@@ -1023,7 +1052,11 @@ const zhValueTranslations = {
   "Inflation is the rate-cut gatekeeper": "\u901a\u80c0\u4ecd\u662f\u964d\u606f\u95e8\u69db",
   "Labor market still orderly": "\u52b3\u52a8\u529b\u5e02\u573a\u4ecd\u6709\u79e9\u5e8f",
   "Growth remains positive": "\u589e\u957f\u4ecd\u4e3a\u6b63",
+  "Policy-path pressure remains high": "\u653f\u7b56\u8def\u5f84\u538b\u529b\u4ecd\u9ad8",
   "Discount-rate pressure remains high": "\u8d34\u73b0\u7387\u538b\u529b\u4ecd\u9ad8",
+  "Real-rate pressure is the gold gate": "\u5b9e\u9645\u5229\u7387\u662f\u9ec4\u91d1\u95f8\u95e8",
+  "Curve shape separates soft-landing relief from cycle stress": "\u66f2\u7ebf\u5f62\u6001\u7528\u6765\u533a\u5206\u8f6f\u7740\u9646\u4fee\u590d\u548c\u5468\u671f\u538b\u529b",
+  "Curve shape still flags cycle pressure": "\u66f2\u7ebf\u5f62\u6001\u4ecd\u63d0\u793a\u5468\u671f\u538b\u529b",
   "Demand still expanding": "\u9700\u6c42\u4ecd\u5728\u6269\u5f20",
   "Hiring positive but slower": "\u62db\u8058\u4ecd\u4e3a\u6b63\uff0c\u4f46\u8282\u594f\u653e\u7f13",
   "NBS": "\u56fd\u5bb6\u7edf\u8ba1\u5c40",
@@ -1088,6 +1121,11 @@ const signedTone = (value) => {
   if (/^\+/.test(text) || /[\s,(]\+\d/.test(text)) return "up";
   if (/^-/.test(text) || /[\s,(]-\d/.test(text)) return "down";
   return "neutral";
+};
+
+const parsePercent = (value) => {
+  const match = String(value || "").match(/-?\d+(?:\.\d+)?/);
+  return match ? Number(match[0]) : NaN;
 };
 
 const barColor = (score) => {
@@ -1995,6 +2033,75 @@ function renderPolicyMonitor(data) {
   `;
 }
 
+function renderTreasuryMonitor(data) {
+  const twoYear = pickMacro(data, ["2Y Treasury yield"]);
+  const tenYear = pickMacro(data, ["10Y Treasury yield"]);
+  const realYield = pickMacro(data, ["10Y real yield"]);
+  const curve = pickMacro(data, ["10Y-2Y spread"]);
+  const twoYearValue = parsePercent(twoYear?.value);
+  const tenYearValue = parsePercent(tenYear?.value);
+  const realYieldValue = parsePercent(realYield?.value);
+  const curveValue = parsePercent(curve?.value);
+  const cards = [
+    {
+      label: t("treasuryTwoYear"),
+      value: twoYear?.value || t("unknown"),
+      read: t("treasuryPolicyRead"),
+      source: twoYear?.source || "FRED",
+      date: twoYear?.delta || "",
+      tone: twoYearValue >= 4 ? "down" : "neutral"
+    },
+    {
+      label: t("treasuryTenYear"),
+      value: tenYear?.value || t("unknown"),
+      read: t("treasuryDurationRead"),
+      source: tenYear?.source || "FRED",
+      date: tenYear?.delta || "",
+      tone: tenYearValue >= 4.5 ? "down" : "neutral"
+    },
+    {
+      label: t("treasuryRealYield"),
+      value: realYield?.value || t("unknown"),
+      read: t("treasuryGoldRead"),
+      source: realYield?.source || "FRED",
+      date: realYield?.delta || "",
+      tone: realYieldValue >= 2 ? "down" : "neutral"
+    },
+    {
+      label: t("treasuryCurve"),
+      value: curve?.value || t("unknown"),
+      read: t("treasuryCurveRead"),
+      source: curve?.source || "FRED",
+      date: curve?.delta || "",
+      tone: Number.isFinite(curveValue) && curveValue < 0 ? "down" : "neutral"
+    }
+  ];
+
+  return `
+    <section class="treasury-monitor">
+      <div class="treasury-monitor-head">
+        <span>${t("treasuryTitle")}</span>
+        <strong>${t("treasuryStatus")}</strong>
+        <p>${t("treasuryRead")}</p>
+      </div>
+      <div class="treasury-monitor-grid">
+        ${cards.map((item) => `
+          <article class="${item.tone}">
+            <span>${item.label}</span>
+            <strong>${item.value}</strong>
+            <p>${item.read}</p>
+            <small>${trValue(item.source)}${item.date ? ` / ${trValue(item.date)}` : ""}</small>
+          </article>
+        `).join("")}
+      </div>
+      <div class="treasury-monitor-next">
+        <span>${t("treasuryNextTitle")}</span>
+        <p>${t("treasuryNextRead")}</p>
+      </div>
+    </section>
+  `;
+}
+
 function formatAssetPrice(item) {
   const value = Number(item.price);
   if (!Number.isFinite(value) || value <= 0) return "n/a";
@@ -2211,6 +2318,7 @@ function renderMacro(data) {
     ${renderMacroRegime(data)}
     ${renderValuationTemperature(data)}
     ${renderPolicyMonitor(data)}
+    ${renderTreasuryMonitor(data)}
     ${renderMacroTransmission(data)}
     <div class="macro-card-grid">
       ${macro.map((item) => `

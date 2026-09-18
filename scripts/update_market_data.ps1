@@ -563,7 +563,10 @@ function Get-DefaultUsMacroData {
     [ordered]@{ region = "United States"; metric = "CPI YoY"; value = "+2.2%"; delta = "FRED latest"; read = "Inflation is the rate-cut gatekeeper"; source = "FRED / BLS"; url = "https://fred.stlouisfed.org/series/CPIAUCSL" },
     [ordered]@{ region = "United States"; metric = "Unemployment rate"; value = "4.2%"; delta = "FRED latest"; read = "Labor market still orderly"; source = "FRED / BLS"; url = "https://fred.stlouisfed.org/series/UNRATE" },
     [ordered]@{ region = "United States"; metric = "Real GDP"; value = "+2.1%"; delta = "QoQ SAAR"; read = "Growth remains positive"; source = "FRED / BEA"; url = "https://fred.stlouisfed.org/series/A191RL1Q225SBEA" },
+    [ordered]@{ region = "United States"; metric = "2Y Treasury yield"; value = "4.74%"; delta = "FRED latest"; read = "Policy-path pressure remains high"; source = "FRED / Treasury"; url = "https://fred.stlouisfed.org/series/DGS2" },
     [ordered]@{ region = "United States"; metric = "10Y Treasury yield"; value = "4.57%"; delta = "FRED latest"; read = "Discount-rate pressure remains high"; source = "FRED / Treasury"; url = "https://fred.stlouisfed.org/series/DGS10" },
+    [ordered]@{ region = "United States"; metric = "10Y real yield"; value = "2.62%"; delta = "FRED latest"; read = "Real-rate pressure is the gold gate"; source = "FRED / Treasury"; url = "https://fred.stlouisfed.org/series/DFII10" },
+    [ordered]@{ region = "United States"; metric = "10Y-2Y spread"; value = "-0.17%"; delta = "FRED latest"; read = "Curve shape still flags cycle pressure"; source = "FRED / Treasury"; url = "https://fred.stlouisfed.org/series/T10Y2Y" },
     [ordered]@{ region = "United States"; metric = "Retail sales MoM"; value = "+0.2%"; delta = "FRED latest"; read = "Demand still expanding"; source = "FRED / Census"; url = "https://fred.stlouisfed.org/series/RSAFS" },
     [ordered]@{ region = "United States"; metric = "Nonfarm payrolls"; value = "+57k"; delta = "Monthly change"; read = "Hiring positive but slower"; source = "FRED / BLS"; url = "https://fred.stlouisfed.org/series/PAYEMS" }
   )
@@ -578,7 +581,10 @@ function Get-UsMacroData {
   $cpiYoy = (($cpi.value / $cpiPrior) - 1) * 100
   $unrate = Get-FredLatest "UNRATE"
   $gdp = Get-FredLatest "A191RL1Q225SBEA"
+  $twoYear = Get-FredLatest "DGS2"
   $tenYear = Get-FredLatest "DGS10"
+  $realYield = Get-FredLatest "DFII10"
+  $curve = Get-FredLatest "T10Y2Y"
   $retail = Get-FredLatest "RSAFS"
   $retailRows = @($retail.rows)
   $retailPrev = [double]$retailRows[$retailRows.Count - 2].PSObject.Properties["RSAFS"].Value
@@ -611,9 +617,24 @@ function Get-UsMacroData {
       url = "https://fred.stlouisfed.org/series/A191RL1Q225SBEA"
     },
     [ordered]@{
+      region = "United States"; metric = "2Y Treasury yield"; value = "$([Math]::Round($twoYear.value, 2).ToString("0.00"))%"
+      delta = $twoYear.date; read = "Policy-path pressure remains high"; source = "FRED / Treasury"
+      url = "https://fred.stlouisfed.org/series/DGS2"
+    },
+    [ordered]@{
       region = "United States"; metric = "10Y Treasury yield"; value = "$([Math]::Round($tenYear.value, 2).ToString("0.00"))%"
       delta = $tenYear.date; read = "Discount-rate pressure remains high"; source = "FRED / Treasury"
       url = "https://fred.stlouisfed.org/series/DGS10"
+    },
+    [ordered]@{
+      region = "United States"; metric = "10Y real yield"; value = "$([Math]::Round($realYield.value, 2).ToString("0.00"))%"
+      delta = $realYield.date; read = "Real-rate pressure is the gold gate"; source = "FRED / Treasury"
+      url = "https://fred.stlouisfed.org/series/DFII10"
+    },
+    [ordered]@{
+      region = "United States"; metric = "10Y-2Y spread"; value = Format-SignedPct $curve.value 2
+      delta = $curve.date; read = "Curve shape separates soft-landing relief from cycle stress"; source = "FRED / Treasury"
+      url = "https://fred.stlouisfed.org/series/T10Y2Y"
     },
     [ordered]@{
       region = "United States"; metric = "Retail sales MoM"; value = Format-SignedPct $retailMom 1
@@ -624,6 +645,36 @@ function Get-UsMacroData {
       region = "United States"; metric = "Nonfarm payrolls"; value = "$payrollSign$([Math]::Round($payrollDelta, 0))k"
       delta = "Monthly change, $($payrolls.date)"; read = "Hiring positive but slower"; source = "FRED / BLS"
       url = "https://fred.stlouisfed.org/series/PAYEMS"
+    }
+  )
+}
+
+function Get-UsTreasuryMacroData {
+  $twoYear = Get-FredLatest "DGS2"
+  $tenYear = Get-FredLatest "DGS10"
+  $realYield = Get-FredLatest "DFII10"
+  $curve = Get-FredLatest "T10Y2Y"
+
+  @(
+    [ordered]@{
+      region = "United States"; metric = "2Y Treasury yield"; value = "$([Math]::Round($twoYear.value, 2).ToString("0.00"))%"
+      delta = $twoYear.date; read = "Policy-path pressure remains high"; source = "FRED / Treasury"
+      url = "https://fred.stlouisfed.org/series/DGS2"
+    },
+    [ordered]@{
+      region = "United States"; metric = "10Y Treasury yield"; value = "$([Math]::Round($tenYear.value, 2).ToString("0.00"))%"
+      delta = $tenYear.date; read = "Discount-rate pressure remains high"; source = "FRED / Treasury"
+      url = "https://fred.stlouisfed.org/series/DGS10"
+    },
+    [ordered]@{
+      region = "United States"; metric = "10Y real yield"; value = "$([Math]::Round($realYield.value, 2).ToString("0.00"))%"
+      delta = $realYield.date; read = "Real-rate pressure is the gold gate"; source = "FRED / Treasury"
+      url = "https://fred.stlouisfed.org/series/DFII10"
+    },
+    [ordered]@{
+      region = "United States"; metric = "10Y-2Y spread"; value = Format-SignedPct $curve.value 2
+      delta = $curve.date; read = "Curve shape separates soft-landing relief from cycle stress"; source = "FRED / Treasury"
+      url = "https://fred.stlouisfed.org/series/T10Y2Y"
     }
   )
 }
@@ -659,6 +710,11 @@ try {
 } catch {
   $macro += Get-DefaultUsMacroData
 }
+try {
+  $treasuryMetrics = @("2Y Treasury yield", "10Y Treasury yield", "10Y real yield", "10Y-2Y spread")
+  $macro = @($macro | Where-Object { $treasuryMetrics -notcontains $_.metric })
+  $macro += @(Get-UsTreasuryMacroData)
+} catch {}
 $preciousMetals = @(Get-PreciousMetals $existing.preciousMetals)
 $preciousSignals = @(Get-PreciousSignals $existing.preciousSignals)
 $policyMonitors = @(Get-PolicyMonitors $existing.policyMonitors)
